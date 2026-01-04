@@ -1,9 +1,7 @@
 # PRINTORY – Print on Demand Website
 
 ## 1. Giới thiệu
-PRINTORY là website thương mại điện tử theo mô hình Print on Demand (POD),
-cho phép người dùng lựa chọn và thiết kế các sản phẩm in ấn cá nhân hóa
-như áo thun, ly, poster.
+PRINTORY được tạo ra để giữ lại những điều từng rất quan trọng, một khoảnh khắc, một hình ảnh, một câu chuyện riêng. Chúng tôi tin rằng cảm xúc không nên chỉ tồn tại trong trí nhớ, mà xứng đáng được hiện diện bằng hình hài cụ thể. Mỗi sản phẩm tại PRINTORY là một dấu ấn được in ra, được nâng niu và lưu giữ theo năm tháng. Bởi vì có những câu chuyện, nếu không giữ lại, thời gian sẽ mang chúng đi.
 
 ## 2. Công nghệ sử dụng
 - HTML5
@@ -16,21 +14,20 @@ như áo thun, ly, poster.
 - Home
 - Product List
 - Product Detail
-- Customize Product
+- Design
+- Preview
 - Cart
 - Checkout
-- About Us
-- Contact
-- Policy
+- Order
+- Sign up/Login
+- User profile
+- Support
+- Printory Blog
+- Blog detail
+
 
 ## 4. Phân công công việc
-- Thành viên 1: Home + Báo cáo chiến lược
-- Thành viên 2: Product List + Thiết kế Figma
-- Thành viên 3: Product Detail + Customize
-- Thành viên 4: Cart + Checkout + JavaScript
-- Thành viên 5: About + Contact + Policy + Test
+
 
 ## 5. Hướng dẫn chạy
-1. Clone repository về máy
-2. Mở file `index.html` bằng trình duyệt
-3. Không cần cài đặt thêm công cụ
+
