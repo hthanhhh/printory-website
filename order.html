@@ -77,16 +77,16 @@
 
     <!-- Orders List -->
     <div class="orders-grid">
-        <!-- Order 1 - Processing -->
+        <!-- Order 1 - Processing (HIỆN TẠI - KHÔNG CÓ REVIEW) -->
         <div class="order-card" data-status="processing">
             <div class="order-header">
                 <div class="order-id">
                     <span class="order-label">Mã đơn:</span>
-                    <strong>#PRT20231215001</strong>
+                    <strong>#PRT20240115001</strong>
                 </div>
                 <div class="order-date">
                     <span class="order-label">Ngày đặt:</span>
-                    15/12/2023
+                    15/01/2024
                 </div>
             </div>
             
@@ -126,16 +126,16 @@
             </div>
         </div>
 
-        <!-- Order 2 - Shipping -->
+        <!-- Order 2 - Shipping (HIỆN TẠI - KHÔNG CÓ REVIEW) -->
         <div class="order-card" data-status="shipping">
             <div class="order-header">
                 <div class="order-id">
                     <span class="order-label">Mã đơn:</span>
-                    <strong>#PRT20231210001</strong>
+                    <strong>#PRT20240110001</strong>
                 </div>
                 <div class="order-date">
                     <span class="order-label">Ngày đặt:</span>
-                    10/12/2023
+                    10/01/2024
                 </div>
             </div>
             
@@ -184,16 +184,16 @@
             </div>
         </div>
 
-        <!-- Order 3 - Delivered -->
+        <!-- Order 3 - Delivered (CÓ THỂ ĐÁNH GIÁ) -->
         <div class="order-card" data-status="delivered">
             <div class="order-header">
                 <div class="order-id">
                     <span class="order-label">Mã đơn:</span>
-                    <strong>#PRT20231205001</strong>
+                    <strong>#PRT20231215001</strong>
                 </div>
                 <div class="order-date">
                     <span class="order-label">Ngày đặt:</span>
-                    05/12/2023
+                    15/12/2023
                 </div>
             </div>
             
@@ -223,7 +223,56 @@
                     <span class="order-status status-delivered">
                         <i class="fas fa-check-circle"></i> Đã giao
                     </span>
-                    <button class="order-btn btn-review">
+                    <button class="order-btn btn-review" data-order-id="PRT20231215001">
+                        <i class="fas fa-star"></i> Đánh giá
+                    </button>
+                    <button class="order-btn btn-reorder">
+                        <i class="fas fa-redo"></i> Mua lại
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order 4 - Delivered (ĐÃ GIAO TỪ LÂU - CÓ THỂ XEM REVIEW) -->
+        <div class="order-card" data-status="delivered">
+            <div class="order-header">
+                <div class="order-id">
+                    <span class="order-label">Mã đơn:</span>
+                    <strong>#PRT20231120001</strong>
+                </div>
+                <div class="order-date">
+                    <span class="order-label">Ngày đặt:</span>
+                    20/11/2023
+                </div>
+            </div>
+            
+            <div class="order-items">
+                <div class="order-item">
+                    <div class="img-box">
+                        <img src="images/products/Áo thun trắng Unisex.png" alt="Áo thun trắng">
+                    </div>
+                    <div class="item-info">
+                        <div class="item-name">Áo thun Cotton - "Minimalist Design"</div>
+                        <div class="item-details">
+                            <span>Size: XL</span>
+                            <span>Màu: Trắng</span>
+                            <span>Số lượng: 1</span>
+                        </div>
+                        <div class="item-price">220,000 ₫</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="order-footer">
+                <div class="order-total">
+                    <span>Tổng cộng:</span>
+                    <strong class="total-price">220,000 ₫</strong>
+                </div>
+                <div class="order-actions">
+                    <span class="order-status status-delivered">
+                        <i class="fas fa-check-circle"></i> Đã giao
+                    </span>
+                    <button class="order-btn btn-review" data-order-id="PRT20231120001">
                         <i class="fas fa-star"></i> Đánh giá
                     </button>
                     <button class="order-btn btn-reorder">
@@ -245,17 +294,17 @@
             <div class="modal-body">
                 <div class="product-review">
                     <div class="img-box">
-                        <img src="images/products/Áo hoodie đen Unisex.png" alt="Hoodie">
+                        <img src="" alt="Sản phẩm" id="modal-product-img">
                     </div>
                     <div class="review-product-info">
-                        <h3>Hoodie Unisex - "Urban Street"</h3>
-                        <p>Mã đơn: #PRT20231205001</p>
+                        <h3 id="modal-product-name"></h3>
+                        <p id="modal-order-id"></p>
                     </div>
                 </div>
                 
                 <div class="rating-section">
                     <h4>Chất lượng sản phẩm</h4>
-                    <div class="stars" data-rating="0">
+                    <div class="stars" data-rating="0" data-type="quality">
                         <span class="star" data-value="1">★</span>
                         <span class="star" data-value="2">★</span>
                         <span class="star" data-value="3">★</span>
@@ -266,7 +315,7 @@
                 
                 <div class="rating-section">
                     <h4>Chất lượng in ấn</h4>
-                    <div class="stars" data-rating="0">
+                    <div class="stars" data-rating="0" data-type="printing">
                         <span class="star" data-value="1">★</span>
                         <span class="star" data-value="2">★</span>
                         <span class="star" data-value="3">★</span>
@@ -277,7 +326,7 @@
                 
                 <div class="rating-section">
                     <h4>Độ bền sản phẩm</h4>
-                    <div class="stars" data-rating="0">
+                    <div class="stars" data-rating="0" data-type="durability">
                         <span class="star" data-value="1">★</span>
                         <span class="star" data-value="2">★</span>
                         <span class="star" data-value="3">★</span>
@@ -300,82 +349,12 @@
         </div>
     </div>
 
-    <!-- Reviews Section -->
-    <div class="reviews-section">
+    <!-- Reviews Section - CHỈ HIỆN KHI CHỌN TAB "ĐÃ GIAO" -->
+    <div id="reviewsSection" class="reviews-section" style="display: none;">
         <h2 class="section-title">ĐÁNH GIÁ ĐÃ GỬI</h2>
         
         <div class="reviews-grid">
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-product">
-                        <div class="img-box small">
-                            <img src="images/products/Áo thun đen Unisex.png" alt="Áo thun">
-                        </div>
-                        <div>
-                            <h4>Áo thun Cotton - "Mặt trăng"</h4>
-                            <p class="review-date">Đánh giá ngày: 18/12/2023</p>
-                        </div>
-                    </div>
-                    <div class="review-rating">
-                        <div class="star-rating">
-                            <span class="filled">★</span>
-                            <span class="filled">★</span>
-                            <span class="filled">★</span>
-                            <span class="filled">★</span>
-                            <span>★</span>
-                        </div>
-                        <span class="rating-text">4/5</span>
-                    </div>
-                </div>
-                <div class="review-body">
-                    <p>Áo thun chất lượng rất tốt, vải cotton dày dặn, mặc thoáng mát. Hình in sắc nét, màu sắc tươi tắn. Đã giặt 3 lần nhưng hình in không bong tróc. Sẽ ủng hộ shop dài dài!</p>
-                </div>
-                <div class="review-helpful">
-                    <span>Đánh giá này có hữu ích?</span>
-                    <button class="helpful-btn">
-                        <i class="fas fa-thumbs-up"></i> Có (24)
-                    </button>
-                    <button class="helpful-btn">
-                        <i class="fas fa-thumbs-down"></i> Không (2)
-                    </button>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-product">
-                        <div class="img-box small">
-                            <img src="images/products/Cốc trắng basic.png" alt="Cốc sứ">
-                        </div>
-                        <div>
-                            <h4>Cốc sứ in hình - "Coffee Lover"</h4>
-                            <p class="review-date">Đánh giá ngày: 12/12/2023</p>
-                        </div>
-                    </div>
-                    <div class="review-rating">
-                        <div class="star-rating">
-                            <span class="filled">★</span>
-                            <span class="filled">★</span>
-                            <span class="filled">★</span>
-                            <span class="filled">★</span>
-                            <span class="filled">★</span>
-                        </div>
-                        <span class="rating-text">5/5</span>
-                    </div>
-                </div>
-                <div class="review-body">
-                    <p>Cốc rất đẹp, chất liệu dày, cầm chắc tay. Hình in màu sắc sống động, rõ nét. Dung tích vừa đủ cho 1 ly cà phê buổi sáng. Đóng gói cẩn thận, không bị vỡ trong quá trình vận chuyển.</p>
-                </div>
-                <div class="review-helpful">
-                    <span>Đánh giá này có hữu ích?</span>
-                    <button class="helpful-btn">
-                        <i class="fas fa-thumbs-up"></i> Có (31)
-                    </button>
-                    <button class="helpful-btn">
-                        <i class="fas fa-thumbs-down"></i> Không (1)
-                    </button>
-                </div>
-            </div>
+            <!-- Các review sẽ được thêm bằng JavaScript -->
         </div>
     </div>
 </div>
