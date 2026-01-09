@@ -5,953 +5,401 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRINTORY - Đơn Đặt Hàng</title>
     
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@500;600;800&family=Denk+One&family=Kanit:wght@700&family=UTM+Times&family=Mansalva&display=swap" rel="stylesheet">
 
     <!-- Font Awesome (Icon) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
-    <style>
-        /* ===== RESET CƠ BẢN ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --white: #ffffff;
-            --black: #000000;
-            --background: #053046;
-            --light-blue: #249dbc;
-            --lighter-blue: #b1d9ec;
-            --orange: #fa8501;
-            --gray: #d9d9d9;
-            --dark-gray: #a0a0a0;
-            --red: #ff0000;
-        }
-
-        /* ===== HEADER (COPY TỪ FILE BẠN CUNG CẤP) ===== */
-        header {
-            background-color: #053046;
-            padding: 16px 32px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-family: 'Kanit', sans-serif;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: 800;
-            color: white;
-            font-family: 'Baloo Thambi 2', sans-serif;
-        }
-
-        .logo span {
-            color: #fa8501;
-        }
-        
-        a {
-            text-decoration: none;
-            color: rgb(255, 255, 255);
-        }
-
-        .search-box {
-            flex: 0.9;
-            margin: 0 20px;
-            position: relative;
-            transform: translateY(1px);
-        }
-
-        .search-box input {
-            width: 100%;
-            max-width: 100%;
-            padding: 14px 20px 14px 50px;
-            border-radius: 30px;
-            border: none;
-            outline: none;
-            box-sizing: border-box;
-            font-family: 'Baloo Thambi 2', sans-serif;
-            font-size: 16px;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        .search-box input:focus {
-            box-shadow: 0 0 0 3px rgba(250, 133, 1, 0.3);
-            background-color: rgba(255, 255, 255, 0.15);
-        }
-
-        .search-box input::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .search-box i {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #a5a2a2;
-            font-size: 18px;
-            font-weight: 900;
-        }
-
-        .nav {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            color: #ffffff;
-            font-family: 'Baloo Thambi 2', sans-serif;
-            font-size: 20px; 
-        }
-
-        .nav a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold; 
-            padding: 8px 12px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-        
-        .nav a:hover {
-            background-color: rgba(250, 133, 1, 0.2);
-            transform: translateY(-2px);
-        }
-        
-        .nav a.active {
-            background-color: rgba(250, 133, 1, 0.3);
-        }
-
-        .cart-icon {
-            font-size: 20px; 
-            color: #fa8501;  
-        }
-
-        .cart-text {
-            font-family: 'Baloo Thambi 2', sans-serif;
-            color: white; 
-            margin-left: 8px;
-            font-size: 20px;    
-        }
-
-        .user {
-            display: flex;
-            align-items: center;
-            gap: 8px; 
-        }
-
-        .user-text {
-            font-family: 'Baloo Thambi 2', sans-serif;
-            color: white;
-            font-size: 20px;
-            font-weight: 800;
-            background-color: #fa8501;
-            padding: 8px 20px;
-            border-radius: 25px;
-            display: inline-block;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            line-height: 1.2;
-            box-shadow: 0 4px 8px rgba(250, 133, 1, 0.2);
-        }
-        
-        .user-text:hover {
-            background-color: #ff9a3d;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(250, 133, 1, 0.3);
-        }
-        
-        .cart-count {
-            background-color: var(--red);
-            color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            top: -5px;
-            right: -5px;
-        }
-
-        /* ===== MAIN CONTENT - PHẦN ĐƠN ĐẶT HÀNG ===== */
-        .main-content {
-            min-height: calc(100vh - 200px);
-            padding: 40px 0;
-            background-color: var(--background);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .page-title {
-            font-family: 'Baloo Thambi 2', sans-serif;
-            font-weight: 800;
-            font-size: 36px;
-            color: var(--orange);
-            margin-bottom: 30px;
-            text-align: center;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        
-        .order-count {
-            text-align: center;
-            font-family: 'Baloo Thambi 2', sans-serif;
-            font-size: 20px;
-            color: var(--lighter-blue);
-            margin-bottom: 40px;
-        }
-        
-        .order-count span {
-            color: var(--orange);
-            font-weight: bold;
-            font-size: 24px;
-        }
-        
-        /* ===== ORDER STATUS TABS ===== */
-        .status-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .status-tab {
-            padding: 12px 30px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-family: 'Kanit', sans-serif;
-            font-size: 16px;
-            color: var(--white);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .status-tab:hover {
-            background-color: rgba(36, 157, 188, 0.3);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(36, 157, 188, 0.4);
-        }
-        
-        .status-tab.active {
-            background-color: var(--light-blue);
-            color: var(--white);
-            box-shadow: 0 5px 15px rgba(36, 157, 188, 0.5);
-        }
-        
-        /* ===== ORDERS CONTAINER ===== */
-        .orders-container {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-        
-        .order-card {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .order-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-            border-color: rgba(250, 133, 1, 0.3);
-        }
-        
-        .order-header {
-            background-color: rgba(255, 255, 255, 0.08);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 30px;
-            border-left: 5px solid var(--orange);
-        }
-        
-        .order-id {
-            font-family: 'Denk One', sans-serif;
-            font-weight: 800;
-            font-size: 24px;
-            color: var(--lighter-blue);
-        }
-        
-        .order-status {
-            font-family: 'Kanit', sans-serif;
-            font-size: 18px;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: bold;
-        }
-        
-        .status-delivered {
-            background-color: rgba(0, 255, 0, 0.2);
-            color: #4caf50;
-        }
-        
-        .status-processing {
-            background-color: rgba(255, 193, 7, 0.2);
-            color: #ffc107;
-        }
-        
-        .status-pending {
-            background-color: rgba(33, 150, 243, 0.2);
-            color: #2196f3;
-        }
-        
-        .order-date {
-            font-family: 'Baloo Thambi 2', sans-serif;
-            font-weight: 500;
-            font-size: 18px;
-            color: var(--gray);
-            margin-top: 10px;
-        }
-        
-        /* ===== ORDER ITEMS ===== */
-        .order-items {
-            margin-bottom: 30px;
-        }
-        
-        .order-item {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .order-item:hover {
-            background-color: rgba(36, 157, 188, 0.1);
-            transform: translateX(5px);
-        }
-        
-        .item-image {
-            width: 100px;
-            height: 120px;
-            margin-right: 20px;
-            border-radius: 10px;
-            overflow: hidden;
-            flex-shrink: 0;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .item-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        
-        .item-image img:hover {
-            transform: scale(1.05);
-        }
-        
-        .item-details {
-            flex-grow: 1;
-        }
-        
-        .item-title {
-            font-family: 'Kanit', sans-serif;
-            font-size: 20px;
-            color: var(--lighter-blue);
-            margin-bottom: 8px;
-        }
-        
-        .item-info {
-            font-family: 'Baloo Thambi 2', sans-serif;
-            font-weight: 500;
-            color: var(--gray);
-            margin-bottom: 5px;
-        }
-        
-        .item-price {
-            font-family: 'Denk One', sans-serif;
-            font-size: 20px;
-            color: var(--orange);
-            font-weight: bold;
-            min-width: 120px;
-            text-align: right;
-        }
-        
-        /* ===== ORDER SUMMARY ===== */
-        .order-summary {
-            background-color: rgba(255, 255, 255, 0.08);
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 20px;
-        }
-        
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
-            font-family: 'Baloo Thambi 2', sans-serif;
-        }
-        
-        .summary-row:last-child {
-            border-bottom: none;
-        }
-        
-        .summary-label {
-            color: var(--gray);
-        }
-        
-        .summary-value {
-            color: var(--white);
-        }
-        
-        .total-row {
-            font-family: 'Kanit', sans-serif;
-            font-size: 22px;
-            color: var(--orange);
-            margin-top: 10px;
-            padding-top: 15px;
-            border-top: 2px solid var(--light-blue);
-        }
-        
-        /* ===== RATING SECTION ===== */
-        .rating-section {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 25px;
-            margin-top: 30px;
-        }
-        
-        .section-title {
-            font-family: 'Kanit', sans-serif;
-            font-size: 24px;
-            color: var(--lighter-blue);
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .rating-box {
-            background-color: rgba(255, 255, 255, 0.08);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .rating-title {
-            font-family: 'Baloo Thambi 2', sans-serif;
-            font-weight: 800;
-            font-size: 18px;
-            color: var(--orange);
-            margin-bottom: 15px;
-        }
-        
-        /* Star Rating */
-        .star-rating {
-            display: flex;
-            flex-direction: row-reverse;
-            justify-content: flex-end;
-            margin-bottom: 15px;
-        }
-        
-        .star-rating input {
-            display: none;
-        }
-        
-        .star-rating label {
-            font-size: 28px;
-            color: var(--gray);
-            cursor: pointer;
-            transition: all 0.2s ease;
-            margin-right: 5px;
-        }
-        
-        .star-rating input:checked ~ label,
-        .star-rating label:hover,
-        .star-rating label:hover ~ label {
-            color: var(--orange);
-        }
-        
-        textarea {
-            width: 100%;
-            height: 100px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            padding: 15px;
-            color: var(--white);
-            font-family: 'Baloo Thambi 2', sans-serif;
-            font-size: 16px;
-            resize: vertical;
-            margin-bottom: 20px;
-        }
-        
-        /* ===== BUTTON STYLES ===== */
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: linear-gradient(135deg, var(--orange), #ff9a3d);
-            color: var(--white);
-            border: none;
-            border-radius: 50px;
-            font-family: 'Kanit', sans-serif;
-            font-size: 16px;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(250, 133, 1, 0.4);
-            text-decoration: none;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(250, 133, 1, 0.6);
-            background: linear-gradient(135deg, #ff9a3d, var(--orange));
-        }
-        
-        .btn:active {
-            transform: translateY(0);
-            box-shadow: 0 3px 10px rgba(250, 133, 1, 0.4);
-        }
-        
-        /* ===== REVIEWS FROM OTHER USERS ===== */
-        .other-reviews {
-            margin-top: 30px;
-        }
-        
-        .review-card {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-left: 4px solid var(--orange);
-        }
-        
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        
-        .reviewer-name {
-            font-family: 'Kanit', sans-serif;
-            font-size: 16px;
-            color: var(--lighter-blue);
-        }
-        
-        .review-date {
-            font-family: 'Baloo Thambi 2', sans-serif;
-            font-size: 14px;
-            color: var(--gray);
-        }
-        
-        .review-stars {
-            color: var(--orange);
-            margin-bottom: 10px;
-        }
-        
-        .review-content {
-            font-family: 'Baloo Thambi 2', sans-serif;
-            font-size: 15px;
-            color: var(--white);
-            line-height: 1.5;
-        }
-        
-        /* ===== NO ORDERS MESSAGE ===== */
-        .no-orders {
-            text-align: center;
-            padding: 60px 20px;
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            border: 2px dashed rgba(255, 255, 255, 0.2);
-        }
-        
-        .no-orders h3 {
-            font-family: 'Kanit', sans-serif;
-            font-size: 24px;
-            color: var(--lighter-blue);
-            margin-bottom: 20px;
-        }
-        
-        .no-orders p {
-            font-family: 'Baloo Thambi 2', sans-serif;
-            font-size: 18px;
-            color: var(--gray);
-            margin-bottom: 30px;
-        }
-        
-        /* ===== FOOTER (COPY TỪ FILE BẠN CUNG CẤP) ===== */
-        .top-image {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            overflow: hidden;
-            background-color: #053046;
-            padding-top: 60px;
-            position: relative;
-        }
-        
-        /* SMALL BOX */
-        .small-box {
-            position: absolute;
-            top: 60px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 800px;
-            height: 180px;
-            background-color: #0f2b3d;
-            border-radius: 0 0 30px 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 15px 0;
-        }
-
-        .logo-text {
-            font-family: 'Denk One', sans-serif;
-            font-size: 100px;
-            font-weight: 800;
-            color: #ffffff;
-            text-align: center;
-            letter-spacing: 2px;
-            margin: 0 0 8px 0;
-            line-height: 1;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .logo-text span {
-            color: #fa8501;
-        }
-
-        .slogan-text {
-            font-family: 'Mansalva', sans-serif;
-            font-size: 22px;
-            font-weight: 700;
-            color: #ffffff;
-            text-align: center;
-            letter-spacing: 1px;
-            line-height: 1.2;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-        }
-        
-        .slogan-text span {
-            color: #fa8501;
-        }
-
-        /* FOOTER */
-        .footer {
-            flex: 1;
-            background-color: #1f3446;
-            color: #ffffff;
-            padding: 0 60px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: visible;
-        }
-
-        /* FOOTER TOP: 3 CỘT */
-        .footer-top {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr 1fr;
-            gap: 40px;
-            margin: 30px 0 40px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Cột 1: Logo + Slogan + Social */
-        .brand-col {
-            text-align: left;
-        }
-            
-        .footer-logo {
-            font-family: 'Denk One', sans-serif;
-            font-size: 32px;
-            font-weight: 800;
-            margin-bottom: 8px;
-            letter-spacing: 1px;
-        }
-
-        .footer-logo span {
-            color: #fa8501;
-        }
-
-        .footer-slogan {
-            font-family: 'Mansalva', sans-serif;
-            font-size: 16px;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 25px;
-            line-height: 1.5;
-        }
-
-        .footer-slogan span {
-            color: #fa8501;
-            font-weight: 600;
-        }
-
-        /* Social icons */
-        .socials {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .socials p {
-            font-family: 'UTM Times', sans-serif;
-            font-size: 18px;
-            font-weight: 500;
-            color: #ffffff;
-            margin-bottom: 15px;
-        }
-
-        .icon-container {
-            display: flex;
-            gap: 10px;
-        }
-
-        .socials a {
-            width: 38px;
-            height: 38px;
-            background-color: #2a4359;
-            color: #ffffff;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .socials a:hover {
-            background-color: #fa8501;
-            transform: translateY(-3px);
-        }
-        
-        /* Cột 2 và 3: Menu */
-        .footer-col {
-            text-align: left;
-        }
-
-        .footer-col h3 {
-            font-size: 18px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-family: 'UTM Times', sans-serif;
-        }
-
-        .footer-col ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 12px;
-        }
-
-        .footer-col ul li a {
-            color: rgba(255, 255, 255, 0.85);
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            display: block;
-            font-family: 'UTM Times', sans-serif;
-        }
-
-        .footer-col ul li a:hover {
-            color: #ffffff;
-            transform: translateX(5px);
-        }
-
-        /* COPYRIGHT SECTION */
-        .copyright-section {
-            background-color: #0f2b3d;
-            padding: 20px 40px;
-            text-align: right;
-            margin: 0 -60px;
-            width: calc(100% + 120px);
-            margin-top: auto;
-        }
-
-        .copyright-text {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: bold;
-            letter-spacing: 0.5px;
-            font-family: 'Baloo Thambi 2', sans-serif;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media screen and (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 20px;
-                padding: 15px 20px;
-            }
-            
-            .search-box {
-                margin: 0 15px;
-                flex: 1;
-                max-width: 100%;
-            }
-
-            .search-box input {
-                width: 100%;
-                max-width: 100%;
-                padding: 12px 15px 12px 45px;
-                font-size: 14px;
-            }
-
-            .search-box i {
-                font-size: 16px;
-                left: 12px;
-            }
-
-            .nav {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
-            
-            .footer-top {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                margin: 20px 0 30px;
-            }
-            
-            .brand-col, .footer-col {
-                text-align: center;
-            }
-            
-            .socials {
-                justify-content: center;
-                align-items: center;
-            }
-            
-            .copyright-section {
-                margin: 0 -20px;
-                width: calc(100% + 40px);
-                padding: 15px 20px;
-                text-align: center;
-            }
-            
-            .order-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-            
-            .order-item {
-                flex-wrap: wrap;
-            }
-            
-            .item-price {
-                text-align: left;
-                margin-top: 10px;
-                width: 100%;
-            }
-        }
-    </style>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="order.css">
 </head>
 <body>
-    <!-- Header (Copy từ file bạn cung cấp) -->
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                PRIN<span>TORY</span>
-            </a>
-        </div>
+
+<header>
+<div class="logo">
+    <a href="index.html">
+        PRIN<span>TORY</span>
+    </a>
+</div>
 
         <div class="search-box">
-            <i class="fa fa-search"></i>
-            <input type="text" id="searchInput" placeholder="Tìm kiếm...">
-        </div>
-        
+    <!-- Thay thẻ i bằng button -->
+    <button type="button" id="searchBtn">
+        <i class="fa fa-search"></i>
+    </button>
+    <input type="text" id="searchInput" placeholder="Tìm kiếm...">
+</div>
         <nav class="nav">
-            <a href="#" id="blog-link">Printory Blog</a>
-            <a href="#" id="support-link">Hỗ trợ</a>
-            <a href="#" class="active">
-                <i class="fa fa-shopping-cart cart-icon"></i>
-                <span class="cart-text">Đơn hàng</span>
-            </a>
-            <a href="#" class="user" id="login-link">
-                <span class="user-text">Đăng nhập</span>
-            </a>
+            <a href="#">Printory Blog</a>
+            <a href="#">Hỗ trợ</a>
+            <a href="#" class="cart">
+            <i class="fa fa-shopping-cart cart-icon"></i>
+        <span class="cart-text">Giỏ hàng</span>
+        </a>
+
+            <a href="#" class="user">
+        <span class="user-text">Đăng nhập</span>
+        </a>
+            
         </nav>
+        
     </header>
-    
-    <!-- Main Content - Phần đơn đặt hàng -->
-    <div class="main-content">
-        <div class="container">
-            <h1 class="page-title">ĐƠN ĐẶT HÀNG CỦA BẠN</h1>
-            
-            <div class="order-count">
-                Bạn có <span id="orderCount">2</span> đơn hàng
+
+<!-- MAIN CONTENT FOR ORDER PAGE -->
+<div class="category-header">
+    <div class="title-text">QUẢN LÝ ĐƠN HÀNG</div>
+</div>
+
+<div class="container">
+    <!-- User Info -->
+    <div class="user-info-section">
+        <div class="user-profile">
+            <div class="user-avatar">
+                <i class="fas fa-user-circle"></i>
             </div>
-            
-            <!-- Order Status Tabs -->
-            <div class="status-tabs">
-                <button class="status-tab active" data-status="all">Tất cả</button>
-                <button class="status-tab" data-status="delivered">Đã giao</button>
-                <button class="status-tab" data-status="processing">Đang giao</button>
-                <button class="status-tab" data-status="pending">Chờ xử lý</button>
-            </div>
-            
-            <!-- Orders Container -->
-            <div class="orders-container" id="ordersContainer">
-                <!-- Orders will be loaded here by JavaScript -->
+            <div class="user-details">
+                <h3>Nguyễn Văn A</h3>
+                <p><i class="fas fa-envelope"></i> nguyenvana@email.com</p>
+                <p><i class="fas fa-phone"></i> 0123 456 789</p>
             </div>
         </div>
     </div>
-    
-    <!-- Footer (Copy từ file bạn cung cấp) -->
-    <div class="top-image">
-        <div class="small-box">
-            <h1 class="logo-text">PRIN<span>TORY</span></h1>
-            <div class="small-box-bottom">
-                <p class="slogan-text">Your story,<span> we print!</span></p>
+
+    <!-- Order Filter Tabs -->
+    <div class="order-tabs">
+        <button class="order-tab active" data-filter="all">Tất cả đơn hàng</button>
+        <button class="order-tab" data-filter="processing">Đang xử lý</button>
+        <button class="order-tab" data-filter="shipping">Đang giao</button>
+        <button class="order-tab" data-filter="delivered">Đã giao</button>
+        <button class="order-tab" data-filter="cancelled">Đã hủy</button>
+    </div>
+
+    <!-- Orders List -->
+    <div class="orders-grid">
+        <!-- Order 1 - Processing -->
+        <div class="order-card" data-status="processing">
+            <div class="order-header">
+                <div class="order-id">
+                    <span class="order-label">Mã đơn:</span>
+                    <strong>#PRT20231215001</strong>
+                </div>
+                <div class="order-date">
+                    <span class="order-label">Ngày đặt:</span>
+                    15/12/2023
+                </div>
+            </div>
+            
+            <div class="order-items">
+                <div class="order-item">
+                    <div class="img-box">
+                        <img src="images/products/Áo thun đen Unisex.png" alt="Áo thun">
+                    </div>
+                    <div class="item-info">
+                        <div class="item-name">Áo thun Cotton - Thiết kế "Mặt trăng"</div>
+                        <div class="item-details">
+                            <span>Size: L</span>
+                            <span>Màu: Đen</span>
+                            <span>Số lượng: 1</span>
+                        </div>
+                        <div class="item-price">249,000 ₫</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="order-footer">
+                <div class="order-total">
+                    <span>Tổng cộng:</span>
+                    <strong class="total-price">249,000 ₫</strong>
+                </div>
+                <div class="order-actions">
+                    <span class="order-status status-processing">
+                        <i class="fas fa-clock"></i> Đang xử lý
+                    </span>
+                    <button class="order-btn btn-track">
+                        <i class="fas fa-map-marker-alt"></i> Theo dõi
+                    </button>
+                    <button class="order-btn btn-cancel">
+                        <i class="fas fa-times"></i> Hủy đơn
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order 2 - Shipping -->
+        <div class="order-card" data-status="shipping">
+            <div class="order-header">
+                <div class="order-id">
+                    <span class="order-label">Mã đơn:</span>
+                    <strong>#PRT20231210001</strong>
+                </div>
+                <div class="order-date">
+                    <span class="order-label">Ngày đặt:</span>
+                    10/12/2023
+                </div>
+            </div>
+            
+            <div class="order-items">
+                <div class="order-item">
+                    <div class="img-box">
+                        <img src="images/products/Túi tote đen basic.png" alt="Tote bag">
+                    </div>
+                    <div class="item-info">
+                        <div class="item-name">Tote Bag Canvas - "Forest Adventure"</div>
+                        <div class="item-details">
+                            <span>Màu: Xanh rêu</span>
+                            <span>Số lượng: 2</span>
+                        </div>
+                        <div class="item-price">378,000 ₫</div>
+                    </div>
+                </div>
+                <div class="order-item">
+                    <div class="img-box">
+                        <img src="images/products/Cốc trắng basic.png" alt="Cốc sứ">
+                    </div>
+                    <div class="item-info">
+                        <div class="item-name">Cốc sứ in hình - "Coffee Lover"</div>
+                        <div class="item-details">
+                            <span>Loại: Cốc 400ml</span>
+                            <span>Số lượng: 1</span>
+                        </div>
+                        <div class="item-price">129,000 ₫</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="order-footer">
+                <div class="order-total">
+                    <span>Tổng cộng:</span>
+                    <strong class="total-price">507,000 ₫</strong>
+                </div>
+                <div class="order-actions">
+                    <span class="order-status status-shipping">
+                        <i class="fas fa-shipping-fast"></i> Đang giao
+                    </span>
+                    <button class="order-btn btn-track">
+                        <i class="fas fa-map-marker-alt"></i> Theo dõi
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order 3 - Delivered -->
+        <div class="order-card" data-status="delivered">
+            <div class="order-header">
+                <div class="order-id">
+                    <span class="order-label">Mã đơn:</span>
+                    <strong>#PRT20231205001</strong>
+                </div>
+                <div class="order-date">
+                    <span class="order-label">Ngày đặt:</span>
+                    05/12/2023
+                </div>
+            </div>
+            
+            <div class="order-items">
+                <div class="order-item">
+                    <div class="img-box">
+                        <img src="images/products/Áo hoodie đen Unisex.png" alt="Hoodie">
+                    </div>
+                    <div class="item-info">
+                        <div class="item-name">Hoodie Unisex - "Urban Street"</div>
+                        <div class="item-details">
+                            <span>Size: M</span>
+                            <span>Màu: Xám</span>
+                            <span>Số lượng: 1</span>
+                        </div>
+                        <div class="item-price">389,000 ₫</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="order-footer">
+                <div class="order-total">
+                    <span>Tổng cộng:</span>
+                    <strong class="total-price">389,000 ₫</strong>
+                </div>
+                <div class="order-actions">
+                    <span class="order-status status-delivered">
+                        <i class="fas fa-check-circle"></i> Đã giao
+                    </span>
+                    <button class="order-btn btn-review">
+                        <i class="fas fa-star"></i> Đánh giá
+                    </button>
+                    <button class="order-btn btn-reorder">
+                        <i class="fas fa-redo"></i> Mua lại
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-    
-    <footer class="footer">
+
+    <!-- Review Modal -->
+    <div id="reviewModal" class="review-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-star"></i> ĐÁNH GIÁ SẢN PHẨM</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="product-review">
+                    <div class="img-box">
+                        <img src="images/products/Áo hoodie đen Unisex.png" alt="Hoodie">
+                    </div>
+                    <div class="review-product-info">
+                        <h3>Hoodie Unisex - "Urban Street"</h3>
+                        <p>Mã đơn: #PRT20231205001</p>
+                    </div>
+                </div>
+                
+                <div class="rating-section">
+                    <h4>Chất lượng sản phẩm</h4>
+                    <div class="stars" data-rating="0">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                </div>
+                
+                <div class="rating-section">
+                    <h4>Chất lượng in ấn</h4>
+                    <div class="stars" data-rating="0">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                </div>
+                
+                <div class="rating-section">
+                    <h4>Độ bền sản phẩm</h4>
+                    <div class="stars" data-rating="0">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                </div>
+                
+                <div class="review-form">
+                    <h4>Nhận xét của bạn</h4>
+                    <textarea id="reviewText" placeholder="Hãy chia sẻ trải nghiệm của bạn về sản phẩm..."></textarea>
+                    <div class="review-actions">
+                        <button class="order-btn btn-submit-review">
+                            <i class="fas fa-paper-plane"></i> Gửi đánh giá
+                        </button>
+                        <button class="order-btn btn-cancel-review">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reviews Section -->
+    <div class="reviews-section">
+        <h2 class="section-title">ĐÁNH GIÁ ĐÃ GỬI</h2>
+        
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-product">
+                        <div class="img-box small">
+                            <img src="images/products/Áo thun đen Unisex.png" alt="Áo thun">
+                        </div>
+                        <div>
+                            <h4>Áo thun Cotton - "Mặt trăng"</h4>
+                            <p class="review-date">Đánh giá ngày: 18/12/2023</p>
+                        </div>
+                    </div>
+                    <div class="review-rating">
+                        <div class="star-rating">
+                            <span class="filled">★</span>
+                            <span class="filled">★</span>
+                            <span class="filled">★</span>
+                            <span class="filled">★</span>
+                            <span>★</span>
+                        </div>
+                        <span class="rating-text">4/5</span>
+                    </div>
+                </div>
+                <div class="review-body">
+                    <p>Áo thun chất lượng rất tốt, vải cotton dày dặn, mặc thoáng mát. Hình in sắc nét, màu sắc tươi tắn. Đã giặt 3 lần nhưng hình in không bong tróc. Sẽ ủng hộ shop dài dài!</p>
+                </div>
+                <div class="review-helpful">
+                    <span>Đánh giá này có hữu ích?</span>
+                    <button class="helpful-btn">
+                        <i class="fas fa-thumbs-up"></i> Có (24)
+                    </button>
+                    <button class="helpful-btn">
+                        <i class="fas fa-thumbs-down"></i> Không (2)
+                    </button>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-product">
+                        <div class="img-box small">
+                            <img src="images/products/Cốc trắng basic.png" alt="Cốc sứ">
+                        </div>
+                        <div>
+                            <h4>Cốc sứ in hình - "Coffee Lover"</h4>
+                            <p class="review-date">Đánh giá ngày: 12/12/2023</p>
+                        </div>
+                    </div>
+                    <div class="review-rating">
+                        <div class="star-rating">
+                            <span class="filled">★</span>
+                            <span class="filled">★</span>
+                            <span class="filled">★</span>
+                            <span class="filled">★</span>
+                            <span class="filled">★</span>
+                        </div>
+                        <span class="rating-text">5/5</span>
+                    </div>
+                </div>
+                <div class="review-body">
+                    <p>Cốc rất đẹp, chất liệu dày, cầm chắc tay. Hình in màu sắc sống động, rõ nét. Dung tích vừa đủ cho 1 ly cà phê buổi sáng. Đóng gói cẩn thận, không bị vỡ trong quá trình vận chuyển.</p>
+                </div>
+                <div class="review-helpful">
+                    <span>Đánh giá này có hữu ích?</span>
+                    <button class="helpful-btn">
+                        <i class="fas fa-thumbs-up"></i> Có (31)
+                    </button>
+                    <button class="helpful-btn">
+                        <i class="fas fa-thumbs-down"></i> Không (1)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+        <div class="footer-header">
+        </div>
+
         <!-- TOP SECTION: 3 cột -->
         <div class="footer-top">
             <!-- Cột 1: Logo + Slogan + Social -->
             <div class="brand-col">
                 <h2 class="footer-logo">PRIN<span>TORY</span></h2>
-                <p class="footer-slogan">Your story, <span>we print!</span></p>
+                   <p class="footer-slogan">Your story, <span>we print!</span></p>
                 <div class="socials">
                     <p>Thông tin liên hệ</p>
                     <div class="icon-container">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-threads"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                        <a href="#"><i class="fab fa-telegram"></i></a>
-                    </div>
+    <a href="#"><img src="images/icons/facebook.png" alt="Facebook" width="80" height="80"></a>
+        <a href="#"><img src="images/icons/instagram.png" alt="Instagram" width="80" height="80"></a>
+        <a href="#"><img src="images/icons/thread.png" alt="Threads" width="80" height="80"></a>
+        <a href="#"><img src="images/icons/tiktok.png" alt="TikTok" width="80" height="80"></a>
+        <a href="#"><img src="images/icons/telegram.png" alt="Telegram" width="80" height="80"></a>
+</div>
+
                 </div>
             </div>
 
@@ -979,7 +427,7 @@
             </div>
         </div>
 
-        <!-- COPYRIGHT SECTION -->
+        <!-- COPYRIGHT SECTION: Nền đậm dưới cùng -->
         <div class="copyright-section">
             <div class="copyright-text">
                 BẢN QUYỀN THUỘC VỀ PRINTORY ©
@@ -987,230 +435,7 @@
         </div>
     </footer>
 
-    <script>
-        // ===== DỮ LIỆU ĐƠN HÀNG MẪU =====
-        const orders = [
-            {
-                id: "PRINT-001",
-                date: "15/01/2025",
-                status: "delivered",
-                items: [
-                    {
-                        name: "Áo Thun Tay Lỡ Vintage",
-                        // 🖼️ THAY LINK ẢNH 1 Ở ĐÂY
-                        image: "D:\PRINTORY\images\products\Áo body đen Nữ.png",
-                        size: "M",
-                        design: "Retro Print",
-                        quantity: 2,
-                        price: 220000
-                    },
-                    {
-                        name: "Áo Thun Basic Cotton",
-                        // 🖼️ THAY LINK ẢNH 2 Ở ĐÂY
-                        image: "images/products/ao-thun-2.jpg",
-                        size: "L",
-                        design: "Minimalist",
-                        quantity: 1,
-                        price: 180000
-                    }
-                ],
-                shippingFee: 25000,
-                reviews: [
-                    {
-                        name: "Trần Minh Hiếu",
-                        date: "18/01/2025",
-                        rating: 5,
-                        content: "Áo chất lượng cao, hình in không bong tróc sau nhiều lần giặt. Rất đáng tiền!"
-                    },
-                    {
-                        name: "Đỗ Trúc Anh",
-                        date: "16/01/2025",
-                        rating: 4,
-                        content: "Thiết kế đẹp, form áo chuẩn. Màu sắc giống hình 100%. Ship nhanh, đóng gói cẩn thận."
-                    }
-                ]
-            },
-            {
-                id: "PRINT-002",
-                date: "10/01/2025",
-                status: "processing",
-                items: [
-                    {
-                        name: "Áo Body Đen Nữ Dáng Ôm",
-                        // 🖼️ THAY LINK ẢNH 3 Ở ĐÂY
-                        image: "images/products/body-den.jpg",
-                        size: "S",
-                        design: "Butterfly Print",
-                        quantity: 1,
-                        price: 280000
-                    }
-                ],
-                shippingFee: 30000,
-                reviews: []
-            }
-        ];
-
-        // ===== HIỂN THỊ ĐƠN HÀNG =====
-        function renderOrders(filterStatus = 'all') {
-            const container = document.getElementById('ordersContainer');
-            
-            // Lọc đơn hàng theo trạng thái
-            let filteredOrders = orders;
-            if (filterStatus !== 'all') {
-                filteredOrders = orders.filter(order => order.status === filterStatus);
-            }
-            
-            // Cập nhật số lượng đơn hàng
-            document.getElementById('orderCount').textContent = filteredOrders.length;
-            
-            if (filteredOrders.length === 0) {
-                container.innerHTML = `
-                    <div class="no-orders">
-                        <h3>Không có đơn hàng nào</h3>
-                        <p>Bạn chưa có đơn hàng nào trong trạng thái này.</p>
-                        <a href="#" class="btn">Tiếp tục mua sắm</a>
-                    </div>
-                `;
-                return;
-            }
-            
-            // Hiển thị đơn hàng
-            container.innerHTML = filteredOrders.map(order => {
-                const subtotal = order.items.reduce((sum, item) => sum + (item.quantity * item.price), 0);
-                const total = subtotal + order.shippingFee;
-                
-                return `
-                    <div class="order-card">
-                        <div class="order-header">
-                            <div class="order-id">ĐƠN #${order.id}</div>
-                            <div class="order-status ${order.status === 'delivered' ? 'status-delivered' : order.status === 'processing' ? 'status-processing' : 'status-pending'}">
-                                ${order.status === 'delivered' ? 'ĐÃ GIAO' : order.status === 'processing' ? 'ĐANG GIAO' : 'CHỜ XỬ LÝ'}
-                            </div>
-                            <div class="order-date">Ngày đặt: ${order.date}</div>
-                        </div>
-                        
-                        <div class="order-items">
-                            ${order.items.map(item => `
-                                <div class="order-item">
-                                    <div class="item-image">
-                                        <img src="${item.image}" alt="${item.name}">
-                                    </div>
-                                    <div class="item-details">
-                                        <div class="item-title">${item.name}</div>
-                                        <div class="item-info">Size: ${item.size} | Design: ${item.design}</div>
-                                        <div class="item-info">Số lượng: ${item.quantity} × ${item.price.toLocaleString('vi-VN')}đ</div>
-                                    </div>
-                                    <div class="item-price">${(item.quantity * item.price).toLocaleString('vi-VN')}đ</div>
-                                </div>
-                            `).join('')}
-                        </div>
-                        
-                        <div class="order-summary">
-                            <div class="summary-row">
-                                <div class="summary-label">Tạm tính:</div>
-                                <div class="summary-value">${subtotal.toLocaleString('vi-VN')}đ</div>
-                            </div>
-                            <div class="summary-row">
-                                <div class="summary-label">Phí vận chuyển:</div>
-                                <div class="summary-value">${order.shippingFee.toLocaleString('vi-VN')}đ</div>
-                            </div>
-                            <div class="summary-row total-row">
-                                <div class="summary-label">TỔNG CỘNG:</div>
-                                <div class="summary-value">${total.toLocaleString('vi-VN')}đ</div>
-                            </div>
-                        </div>
-                        
-                        ${order.status === 'delivered' ? `
-                        <div class="rating-section">
-                            <h2 class="section-title">ĐÁNH GIÁ ĐƠN HÀNG</h2>
-                            
-                            <div class="rating-box">
-                                <h3 class="rating-title">ĐÁNH GIÁ SẢN PHẨM</h3>
-                                
-                                <!-- Star Rating -->
-                                <div class="star-rating" data-order-id="${order.id}">
-                                    <input type="radio" id="star5-${order.id}" name="rating-${order.id}" value="5">
-                                    <label for="star5-${order.id}" title="Tuyệt vời">★</label>
-                                    <input type="radio" id="star4-${order.id}" name="rating-${order.id}" value="4">
-                                    <label for="star4-${order.id}" title="Tốt">★</label>
-                                    <input type="radio" id="star3-${order.id}" name="rating-${order.id}" value="3">
-                                    <label for="star3-${order.id}" title="Bình thường">★</label>
-                                    <input type="radio" id="star2-${order.id}" name="rating-${order.id}" value="2">
-                                    <label for="star2-${order.id}" title="Không tốt">★</label>
-                                    <input type="radio" id="star1-${order.id}" name="rating-${order.id}" value="1">
-                                    <label for="star1-${order.id}" title="Rất tệ">★</label>
-                                </div>
-                                
-                                <textarea id="review-text-${order.id}" placeholder="Chia sẻ trải nghiệm của bạn..."></textarea>
-                                
-                                <button class="btn submit-review" data-order-id="${order.id}">
-                                    <i class="fas fa-paper-plane"></i> GỬI ĐÁNH GIÁ
-                                </button>
-                            </div>
-                            
-                            <!-- Reviews from other users -->
-                            ${order.reviews && order.reviews.length > 0 ? `
-                            <div class="other-reviews">
-                                <h3 class="rating-title">ĐÁNH GIÁ TỪ KHÁCH HÀNG KHÁC</h3>
-                                ${order.reviews.map(review => `
-                                    <div class="review-card">
-                                        <div class="review-header">
-                                            <div class="reviewer-name">${review.name}</div>
-                                            <div class="review-date">${review.date}</div>
-                                        </div>
-                                        <div class="review-stars">
-                                            ${'★'.repeat(review.rating)}${'☆'.repeat(5-review.rating)}
-                                        </div>
-                                        <div class="review-content">${review.content}</div>
-                                    </div>
-                                `).join('')}
-                            </div>
-                            ` : ''}
-                        </div>
-                        ` : ''}
-                        
-                        ${order.status === 'processing' ? `
-                        <div style="margin-top: 20px; text-align: center;">
-                            <button class="btn">
-                                <i class="fas fa-shipping-fast"></i> THEO DÕI ĐƠN HÀNG
-                            </button>
-                        </div>
-                        ` : ''}
-                    </div>
-                `;
-            }).join('');
-        }
-
-        // ===== XỬ LÝ SỰ KIỆN =====
-        document.addEventListener('DOMContentLoaded', function() {
-            // Hiển thị đơn hàng ban đầu
-            renderOrders();
-            
-            // Xử lý chuyển tab trạng thái
-            document.querySelectorAll('.status-tab').forEach(tab => {
-                tab.addEventListener('click', function() {
-                    document.querySelectorAll('.status-tab').forEach(t => t.classList.remove('active'));
-                    this.classList.add('active');
-                    const status = this.getAttribute('data-status');
-                    renderOrders(status);
-                });
-            });
-            
-            // Thêm cart count
-            const cartCount = document.createElement('div');
-            cartCount.className = 'cart-count';
-            cartCount.textContent = '2';
-            document.querySelector('.cart-icon').parentElement.style.position = 'relative';
-            document.querySelector('.cart-icon').parentElement.appendChild(cartCount);
-            
-            // Tìm kiếm đơn giản
-            document.getElementById('searchInput').addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    alert('Tính năng tìm kiếm đang phát triển');
-                    this.value = '';
-                }
-            });
-        });
-    </script>
+    <!-- JavaScript -->
+    <script src="order.js"></script>
 </body>
 </html>
