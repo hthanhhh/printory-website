@@ -10,14 +10,192 @@ document.addEventListener('DOMContentLoaded', function() {
     const reviewButtons = document.querySelectorAll('.btn-review');
     const stars = document.querySelectorAll('.star');
     const submitReviewBtn = document.querySelector('.btn-submit-review');
-    const helpfulButtons = document.querySelectorAll('.helpful-btn');
     const cancelOrderButtons = document.querySelectorAll('.btn-cancel');
     const reorderButtons = document.querySelectorAll('.btn-reorder');
     const trackButtons = document.querySelectorAll('.btn-track');
     const searchBtn = document.getElementById('searchBtn');
     const searchInput = document.getElementById('searchInput');
+    const reviewsSection = document.getElementById('reviewsSection');
+    const reviewsGrid = document.querySelector('.reviews-grid');
+
+    // ===== DỮ LIỆU ĐÁNH GIÁ ĐÃ GỬI (QUÁ KHỨ) =====
+    const pastReviews = [
+        {
+            id: 1,
+            orderId: "PRT20231015001",
+            orderDate: "15/10/2023",
+            productName: "Áo thun Cotton - 'Ocean Wave'",
+            productImage: "images/products/Áo thun xanh pastel Unisex.png",
+            reviewDate: "20/10/2023",
+            rating: 5,
+            quality: 5,
+            printing: 4,
+            durability: 5,
+            comment: "Áo rất đẹp, chất liệu cotton mềm mại, thoáng mát. Hình in rõ nét, màu sắc tươi tắn. Đã giặt nhiều lần vẫn không phai màu. Sẽ mua thêm!",
+            helpful: 42,
+            notHelpful: 2
+        },
+        {
+            id: 2,
+            orderId: "PRT20230910001",
+            orderDate: "10/09/2023",
+            productName: "Tote Bag Canvas - 'Minimalist'",
+            productImage: "images/products/Túi tote trắng basic.png",
+            reviewDate: "18/09/2023",
+            rating: 4,
+            quality: 4,
+            printing: 5,
+            durability: 4,
+            comment: "Túi chất lượng tốt, vải dày dặn, đường may chắc chắn. Hình in đơn giản nhưng đẹp. Size vừa đủ đựng laptop 13 inch và các vật dụng cá nhân.",
+            helpful: 28,
+            notHelpful: 1
+        },
+        {
+            id: 3,
+            orderId: "PRT20230805001",
+            orderDate: "05/08/2023",
+            productName: "Cốc sứ in hình - 'Morning Coffee'",
+            productImage: "images/products/Cốc trắng basic.png",
+            reviewDate: "12/08/2023",
+            rating: 5,
+            quality: 5,
+            printing: 5,
+            durability: 5,
+            comment: "Cốc rất đẹp, chất liệu sứ cao cấp, dày dặn. Hình in sống động, rõ nét. Dung tích 400ml vừa đủ cho 1 ly cà phê buổi sáng. Đóng gói cẩn thận.",
+            helpful: 35,
+            notHelpful: 0
+        },
+        {
+            id: 4,
+            orderId: "PRT20230720001",
+            orderDate: "20/07/2023",
+            productName: "Hoodie Unisex - 'Street Style'",
+            productImage: "images/products/Áo hoodie xám Unisex.png",
+            reviewDate: "28/07/2023",
+            rating: 4,
+            quality: 4,
+            printing: 4,
+            durability: 5,
+            comment: "Áo hoodie ấm áp, chất liệu tốt. Form áo chuẩn, mặc rất đẹp. Hình in không bong tróc sau nhiều lần giặt. Màu sắc giống hình 100%.",
+            helpful: 31,
+            notHelpful: 3
+        }
+    ];
+
+    // ===== DỮ LIỆU ĐƠN HÀNG HIỆN TẠI =====
+    const currentOrders = [
+        {
+            orderId: "PRT20240115001",
+            date: "15/01/2024",
+            status: "processing",
+            productName: "Áo thun Cotton - Thiết kế 'Mặt trăng'",
+            productImage: "images/products/Áo thun đen Unisex.png",
+            size: "L",
+            color: "Đen",
+            quantity: 1,
+            price: 249000
+        },
+        {
+            orderId: "PRT20240110001",
+            date: "10/01/2024",
+            status: "shipping",
+            items: [
+                {
+                    name: "Tote Bag Canvas - 'Forest Adventure'",
+                    image: "images/products/Túi tote đen basic.png",
+                    color: "Xanh rêu",
+                    quantity: 2,
+                    price: 189000
+                },
+                {
+                    name: "Cốc sứ in hình - 'Coffee Lover'",
+                    image: "images/products/Cốc trắng basic.png",
+                    type: "Cốc 400ml",
+                    quantity: 1,
+                    price: 129000
+                }
+            ]
+        },
+        {
+            orderId: "PRT20231215001",
+            date: "15/12/2023",
+            status: "delivered",
+            productName: "Hoodie Unisex - 'Urban Street'",
+            productImage: "images/products/Áo hoodie đen Unisex.png",
+            size: "M",
+            color: "Xám",
+            quantity: 1,
+            price: 389000
+        },
+        {
+            orderId: "PRT20231120001",
+            date: "20/11/2023",
+            status: "delivered",
+            productName: "Áo thun Cotton - 'Minimalist Design'",
+            productImage: "images/products/Áo thun trắng Unisex.png",
+            size: "XL",
+            color: "Trắng",
+            quantity: 1,
+            price: 220000
+        }
+    ];
+
+    // ===== HIỆN THỊ ĐÁNH GIÁ ĐÃ GỬI =====
+    function displayPastReviews() {
+        reviewsGrid.innerHTML = '';
+        
+        pastReviews.forEach(review => {
+            const reviewCard = document.createElement('div');
+            reviewCard.className = 'review-card';
+            reviewCard.innerHTML = `
+                <div class="review-header">
+                    <div class="review-product">
+                        <div class="img-box small">
+                            <img src="${review.productImage}" alt="${review.productName}">
+                        </div>
+                        <div>
+                            <h4>${review.productName}</h4>
+                            <p class="review-date">Mua ngày: ${review.orderDate} | Đánh giá: ${review.reviewDate}</p>
+                        </div>
+                    </div>
+                    <div class="review-rating">
+                        <div class="star-rating">
+                            ${'<span class="filled">★</span>'.repeat(review.rating)}${'<span>★</span>'.repeat(5 - review.rating)}
+                        </div>
+                        <span class="rating-text">${review.rating}/5</span>
+                    </div>
+                </div>
+                <div class="review-body">
+                    <div class="rating-details">
+                        <span>Chất lượng: ${review.quality}/5</span>
+                        <span>In ấn: ${review.printing}/5</span>
+                        <span>Độ bền: ${review.durability}/5</span>
+                    </div>
+                    <p>${review.comment}</p>
+                </div>
+                <div class="review-helpful">
+                    <span>Đánh giá này có hữu ích?</span>
+                    <button class="helpful-btn" data-review-id="${review.id}" data-type="helpful">
+                        <i class="fas fa-thumbs-up"></i> Có (${review.helpful})
+                    </button>
+                    <button class="helpful-btn" data-review-id="${review.id}" data-type="not-helpful">
+                        <i class="fas fa-thumbs-down"></i> Không (${review.notHelpful})
+                    </button>
+                </div>
+            `;
+            
+            reviewsGrid.appendChild(reviewCard);
+        });
+        
+        // Thêm sự kiện cho nút helpful
+        document.querySelectorAll('.helpful-btn').forEach(button => {
+            button.addEventListener('click', handleHelpfulClick);
+        });
+    }
 
     // ===== HIỆU ỨNG TAB LỌC ĐƠN HÀNG =====
+    let currentFilter = 'all';
+    
     orderTabs.forEach(tab => {
         tab.addEventListener('click', function() {
             // Xóa active class từ tất cả tabs
@@ -34,7 +212,16 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Lọc đơn hàng
             const filter = this.getAttribute('data-filter');
+            currentFilter = filter;
             filterOrders(filter);
+            
+            // Hiển thị/ẩn phần đánh giá đã gửi
+            if (filter === 'delivered') {
+                reviewsSection.style.display = 'block';
+                displayPastReviews();
+            } else {
+                reviewsSection.style.display = 'none';
+            }
         });
     });
 
@@ -80,9 +267,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ===== MODAL ĐÁNH GIÁ =====
+    let currentReviewOrder = null;
+    let currentReviewProduct = null;
+    let currentReviewImage = null;
+
     reviewButtons.forEach(button => {
         button.addEventListener('click', function() {
-            openReviewModal();
+            const orderId = this.getAttribute('data-order-id');
+            const orderCard = this.closest('.order-card');
+            const productName = orderCard.querySelector('.item-name').textContent;
+            const productImage = orderCard.querySelector('.img-box img').src;
+            
+            currentReviewOrder = orderId;
+            currentReviewProduct = productName;
+            currentReviewImage = productImage;
+            
+            openReviewModal(orderId, productName, productImage);
             
             // Hiệu ứng button click
             this.style.transform = 'scale(0.9)';
@@ -92,23 +292,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    function openReviewModal() {
+    function openReviewModal(orderId, productName, productImage) {
+        // Cập nhật thông tin sản phẩm trong modal
+        document.getElementById('modal-product-img').src = productImage;
+        document.getElementById('modal-product-name').textContent = productName;
+        document.getElementById('modal-order-id').textContent = `Mã đơn: #${orderId}`;
+        
+        // Reset form
+        resetStars();
+        document.getElementById('reviewText').value = '';
+        
+        // Hiển thị modal
         reviewModal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
-        
-        // Reset stars
-        resetStars();
-        
-        // Reset textarea
-        const reviewText = document.getElementById('reviewText');
-        if (reviewText) {
-            reviewText.value = '';
-        }
     }
 
     function closeReviewModal() {
         reviewModal.style.display = 'none';
         document.body.style.overflow = 'auto';
+        currentReviewOrder = null;
+        currentReviewProduct = null;
+        currentReviewImage = null;
     }
 
     // Đóng modal khi click nút đóng
@@ -134,19 +338,25 @@ document.addEventListener('DOMContentLoaded', function() {
             star.classList.remove('active');
             star.style.color = '#d9d9d9';
         });
+        
+        // Reset data-rating
+        document.querySelectorAll('.stars').forEach(stars => {
+            stars.setAttribute('data-rating', '0');
+        });
     }
 
     stars.forEach(star => {
         star.addEventListener('click', function() {
             const value = parseInt(this.getAttribute('data-value'));
             const parentStars = this.parentElement;
-            const allStars = parentStars.querySelectorAll('.star');
+            const type = parentStars.getAttribute('data-type');
             
             // Đặt rating cho parent element
             parentStars.setAttribute('data-rating', value);
             
-            // Cập nhật trạng thái stars
-            allStars.forEach((s, index) => {
+            // Cập nhật trạng thái stars trong nhóm này
+            const allStarsInGroup = parentStars.querySelectorAll('.star');
+            allStarsInGroup.forEach((s, index) => {
                 if (index < value) {
                     s.classList.add('active');
                     s.style.color = '#fa8501';
@@ -166,9 +376,9 @@ document.addEventListener('DOMContentLoaded', function() {
         star.addEventListener('mouseover', function() {
             const value = parseInt(this.getAttribute('data-value'));
             const parentStars = this.parentElement;
-            const allStars = parentStars.querySelectorAll('.star');
+            const allStarsInGroup = parentStars.querySelectorAll('.star');
             
-            allStars.forEach((s, index) => {
+            allStarsInGroup.forEach((s, index) => {
                 if (index < value) {
                     s.style.color = '#ffcc00';
                 }
@@ -177,10 +387,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         star.addEventListener('mouseout', function() {
             const parentStars = this.parentElement;
-            const allStars = parentStars.querySelectorAll('.star');
+            const allStarsInGroup = parentStars.querySelectorAll('.star');
             const currentRating = parseInt(parentStars.getAttribute('data-rating')) || 0;
             
-            allStars.forEach((s, index) => {
+            allStarsInGroup.forEach((s, index) => {
                 if (index >= currentRating) {
                     s.style.color = '#d9d9d9';
                 }
@@ -188,27 +398,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ===== GỬI ĐÁNH GIÁ =====
+    // ===== GỬI ĐÁNH GIÁ MỚI =====
     if (submitReviewBtn) {
         submitReviewBtn.addEventListener('click', function() {
             const reviewText = document.getElementById('reviewText').value.trim();
-            const starRatings = document.querySelectorAll('.stars[data-rating]');
+            const starGroups = document.querySelectorAll('.stars');
+            
+            // Lấy rating từ các nhóm sao
+            const qualityRating = parseInt(document.querySelector('.stars[data-type="quality"]').getAttribute('data-rating')) || 0;
+            const printingRating = parseInt(document.querySelector('.stars[data-type="printing"]').getAttribute('data-rating')) || 0;
+            const durabilityRating = parseInt(document.querySelector('.stars[data-type="durability"]').getAttribute('data-rating')) || 0;
+            
+            const averageRating = Math.round((qualityRating + printingRating + durabilityRating) / 3);
             
             // Kiểm tra đánh giá
-            let hasRating = false;
-            let totalRating = 0;
-            let ratingCount = 0;
-            
-            starRatings.forEach(stars => {
-                const rating = parseInt(stars.getAttribute('data-rating')) || 0;
-                if (rating > 0) {
-                    hasRating = true;
-                    totalRating += rating;
-                    ratingCount++;
-                }
-            });
-            
-            if (!hasRating) {
+            if (averageRating === 0) {
                 showNotification('Vui lòng chọn ít nhất 1 sao để đánh giá!');
                 return;
             }
@@ -225,8 +429,29 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Mô phỏng gửi dữ liệu
             setTimeout(() => {
-                // Thêm đánh giá mới vào danh sách
-                addNewReview(reviewText, Math.round(totalRating / ratingCount));
+                // Thêm đánh giá mới vào danh sách đánh giá đã gửi
+                const newReview = {
+                    id: pastReviews.length + 1,
+                    orderId: currentReviewOrder,
+                    orderDate: getCurrentDate(),
+                    productName: currentReviewProduct,
+                    productImage: currentReviewImage,
+                    reviewDate: getCurrentDate(),
+                    rating: averageRating,
+                    quality: qualityRating,
+                    printing: printingRating,
+                    durability: durabilityRating,
+                    comment: reviewText,
+                    helpful: 0,
+                    notHelpful: 0
+                };
+                
+                pastReviews.unshift(newReview); // Thêm vào đầu mảng
+                
+                // Nếu đang xem tab "Đã giao", cập nhật lại danh sách đánh giá
+                if (currentFilter === 'delivered') {
+                    displayPastReviews();
+                }
                 
                 // Thông báo thành công
                 showNotification('Cảm ơn bạn đã đánh giá! Đánh giá của bạn đã được ghi nhận.');
@@ -241,6 +466,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Đóng modal
                 closeReviewModal();
+                
+                // Cập nhật nút "Đánh giá" thành "Đã đánh giá"
+                updateReviewButton(currentReviewOrder);
+                
             }, 1500);
             
             // Hiệu ứng button click
@@ -251,59 +480,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function addNewReview(text, rating) {
-        const reviewsGrid = document.querySelector('.reviews-grid');
-        const newReview = document.createElement('div');
-        newReview.className = 'review-card';
-        
-        // Tạo HTML cho đánh giá mới
-        newReview.innerHTML = `
-            <div class="review-header">
-                <div class="review-product">
-                    <div class="img-box small">
-                        <img src="images/products/Áo hoodie đen Unisex.png" alt="Hoodie">
-                    </div>
-                    <div>
-                        <h4>Hoodie Unisex - "Urban Street"</h4>
-                        <p class="review-date">Đánh giá ngày: ${getCurrentDate()}</p>
-                    </div>
-                </div>
-                <div class="review-rating">
-                    <div class="star-rating">
-                        ${'<span class="filled">★</span>'.repeat(rating)}${'<span>★</span>'.repeat(5 - rating)}
-                    </div>
-                    <span class="rating-text">${rating}/5</span>
-                </div>
-            </div>
-            <div class="review-body">
-                <p>${text}</p>
-            </div>
-            <div class="review-helpful">
-                <span>Đánh giá này có hữu ích?</span>
-                <button class="helpful-btn">
-                    <i class="fas fa-thumbs-up"></i> Có (0)
-                </button>
-                <button class="helpful-btn">
-                    <i class="fas fa-thumbs-down"></i> Không (0)
-                </button>
-            </div>
-        `;
-        
-        // Thêm vào đầu danh sách
-        reviewsGrid.insertBefore(newReview, reviewsGrid.firstChild);
-        
-        // Thêm sự kiện cho nút helpful mới
-        newReview.querySelectorAll('.helpful-btn').forEach(button => {
-            button.addEventListener('click', handleHelpfulClick);
+    function updateReviewButton(orderId) {
+        // Tìm nút đánh giá của đơn hàng tương ứng và cập nhật
+        document.querySelectorAll('.btn-review').forEach(button => {
+            if (button.getAttribute('data-order-id') === orderId) {
+                button.innerHTML = '<i class="fas fa-check"></i> Đã đánh giá';
+                button.disabled = true;
+                button.style.opacity = '0.7';
+                button.style.cursor = 'not-allowed';
+            }
         });
-        
-        // Hiệu ứng thêm mới
-        newReview.style.opacity = '0';
-        newReview.style.transform = 'translateY(20px)';
-        setTimeout(() => {
-            newReview.style.opacity = '1';
-            newReview.style.transform = 'translateY(0)';
-        }, 50);
     }
 
     function getCurrentDate() {
@@ -338,6 +524,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     this.style.display = 'none';
                     const trackBtn = orderCard.querySelector('.btn-track');
                     if (trackBtn) trackBtn.style.display = 'none';
+                    const reviewBtn = orderCard.querySelector('.btn-review');
+                    if (reviewBtn) reviewBtn.style.display = 'none';
                     
                     // Thông báo thành công
                     showNotification('Đơn hàng đã được hủy thành công!');
@@ -353,7 +541,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===== NÚT MUA LẠI =====
     reorderButtons.forEach(button => {
         button.addEventListener('click', function() {
-            showNotification('Sản phẩm đã được thêm vào giỏ hàng!');
+            const orderCard = this.closest('.order-card');
+            const productName = orderCard.querySelector('.item-name').textContent;
+            
+            showNotification(`Đã thêm "${productName}" vào giỏ hàng!`);
             
             // Hiệu ứng button click
             this.style.transform = 'scale(0.9)';
@@ -366,7 +557,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===== NÚT THEO DÕI =====
     trackButtons.forEach(button => {
         button.addEventListener('click', function() {
-            showNotification('Đang mở trang theo dõi đơn hàng...');
+            const orderCard = this.closest('.order-card');
+            const orderId = orderCard.querySelector('.order-id strong').textContent;
+            
+            showNotification(`Mở trang theo dõi đơn hàng ${orderId}...`);
             
             // Hiệu ứng button click
             this.style.transform = 'scale(0.9)';
@@ -378,14 +572,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ===== NÚT HỮU ÍCH =====
     function handleHelpfulClick() {
-        const icon = this.querySelector('i');
+        const reviewId = parseInt(this.getAttribute('data-review-id'));
+        const type = this.getAttribute('data-type');
         const text = this.textContent;
         const countMatch = text.match(/\((\d+)\)/);
         
         if (countMatch) {
             const currentCount = parseInt(countMatch[1]);
             const newCount = currentCount + 1;
-            this.innerHTML = `${icon.outerHTML} ${text.replace(/\(\d+\)/, `(${newCount})`)}`;
+            this.innerHTML = this.innerHTML.replace(/\(\d+\)/, `(${newCount})`);
+            
+            // Cập nhật dữ liệu
+            const reviewIndex = pastReviews.findIndex(r => r.id === reviewId);
+            if (reviewIndex !== -1) {
+                if (type === 'helpful') {
+                    pastReviews[reviewIndex].helpful = newCount;
+                } else {
+                    pastReviews[reviewIndex].notHelpful = newCount;
+                }
+            }
         }
         
         // Hiệu ứng button click
@@ -395,13 +600,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 200);
         
         // Thông báo
-        const action = text.includes('Có') ? 'có ích' : 'không hữu ích';
+        const action = type === 'helpful' ? 'có ích' : 'không hữu ích';
         showNotification(`Cảm ơn bạn đã bình chọn đánh giá này ${action}!`);
     }
-
-    helpfulButtons.forEach(button => {
-        button.addEventListener('click', handleHelpfulClick);
-    });
 
     // ===== TÌM KIẾM =====
     if (searchBtn && searchInput) {
@@ -458,18 +659,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const orderButtons = document.querySelectorAll('.order-btn');
     orderButtons.forEach(button => {
         button.addEventListener('mousedown', function() {
-            this.style.transform = 'translateY(2px)';
-            this.style.boxShadow = '0 2px 0 #b35f00';
+            if (!this.disabled) {
+                this.style.transform = 'translateY(2px)';
+                this.style.boxShadow = '0 2px 0 #b35f00';
+            }
         });
         
         button.addEventListener('mouseup', function() {
-            this.style.transform = 'translateY(-2px)';
-            this.style.boxShadow = '0 6px 0 #b35f00';
+            if (!this.disabled) {
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 6px 0 #b35f00';
+            }
         });
         
         button.addEventListener('mouseleave', function() {
-            this.style.transform = '';
-            this.style.boxShadow = '0 4px 0 #b35f00';
+            if (!this.disabled) {
+                this.style.transform = '';
+                this.style.boxShadow = '0 4px 0 #b35f00';
+            }
         });
     });
 
@@ -539,4 +746,34 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.transform = '';
         });
     }
+    
+    // Thêm CSS cho rating details
+    const style = document.createElement('style');
+    style.textContent = `
+        .rating-details {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 10px;
+            font-family: 'Baloo Thambi 2', sans-serif;
+            color: #b1d9ec;
+            font-size: 14px;
+        }
+        
+        .rating-details span {
+            background: rgba(36, 157, 188, 0.1);
+            padding: 5px 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(36, 157, 188, 0.3);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .review-card {
+            animation: fadeIn 0.5s ease;
+        }
+    `;
+    document.head.appendChild(style);
 });
