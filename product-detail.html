@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printory - Chi Tiết Sản Phẩm</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@500;600;800&family=Denk+One&family=Kanit:wght@700&family=UTM+Times&family=Mansalva&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (Icon) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+    header {
+        background-color: #053046;
+        padding: 16px 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: 'Kanit', sans-serif;
+    }
+
+    .logo {
+        font-size: 28px;
+        font-weight: 800;
+        color: white;
+        font-family: 'Baloo Thambi 2', sans-serif;
+    }
+
+    .logo span {
+        color: #fa8501;
+    }
+    a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
+
+    .search-box {
+        flex: 0.9;
+        margin: 0 20px;
+        position: relative;
+        transform: translateY(1px);
+    }
+
+    /* Input search */
+    .search-box input {
+        width: 100%; /* full width trong container */
+        max-width: 100%; /* 👈 giới hạn không vượt container */
+        padding: 14px 20px 14px 70px;
+        border-radius: 30px;
+        border: none;
+        outline: none;
+        transition: none; /* 👈 bỏ animation tự động mở rộng */
+        box-sizing: border-box;
+    }
+
+    /* Nếu trước đây bạn có effect focus kiểu này, xóa hoặc giới hạn: */
+    .search-box input:focus {
+        width: 100%; /* hoặc max-width: 100% */
+        /* xóa các transform/transition kiểu mở rộng */
+    }
+
+    /* Button (nếu có) */
+    .search-box button {
+        position: absolute;
+        left: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    /* Icon */
+    .search-box i {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #a5a2a2;
+        font-size: 18px;
+        font-weight: 900;
+    }
+
+    @media screen and (max-width: 768px) {
+        .search-box {
+            margin: 0 15px; 
+            flex: 1; 
+            max-width: 100%; /* 👈 giới hạn không vượt container */
+        }
+
+        .search-box input {
+            width: 100%;
+            max-width: 100%; /* 👈 không mở rộng vượt container */
+            padding: 12px 15px 12px 45px;
+            font-size: 14px;
+            transition: none; /* 👈 bỏ animation width */
+        }
+
+        .search-box i {
+            font-size: 16px;
+            left: 12px;
+        }
+
+        .search-box button {
+            left: 12px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .search-box input {
+            padding: 10px 12px 10px 40px;
+            font-size: 13px;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .search-box i {
+            font-size: 14px;
+            left: 10px;
+        }
+
+        .search-box button {
+            left: 10px;
+        }
+    }
+
+
+            /* ===== NAV ===== */
+    .nav {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        color: #ffffff;
+        font-family: 'Baloo Thambi 2', sans-serif;
+        font-size: 20px; 
+    }
+
+    .nav a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold; 
+    }
+
+    .cart-icon {
+        font-size: 20px; 
+        color: #fa8501;  
+    
+    }
+
+    .cart-text {
+        font-family: 'Baloo Thambi 2', sans-serif;
+        color: white; 
+        margin-left: 8px;
+        font-size: 20px;    
+    }
+
+
+    .user {
+        display: flex;
+        align-items: center;
+        gap: 8px; 
+    }
+
+    .user-text {
+        font-family: 'Baloo Thambi 2', sans-serif;
+        color: white;
+        font-size: 20px;
+        font-weight: 800; /* Thêm độ đậm */
+        background-color: #fa8501; /* Màu cam */
+        padding: 8px 20px; /* Padding lớn hơn cho font 20px */
+        border-radius: 25px; /* Bo góc lớn hơn */
+        display: inline-block;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        line-height: 1.2;
+        box-shadow: 0 4px 8px rgba(250, 133, 1, 0.2);
+    }
+
+
+        :root {
+            --white: #ffffff; --background: #053046; --blue-light: #249dbc;
+            --blue-lighter: #b1d9ec; --orange: #fa8501; --gray: #d9d9d9;
+            --red: #ff0000; --dark-bar: #021a27; --dark-card: #032131;
+            --text-color: #e0e0e0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--background); color: var(--text-color); font-family: 'Baloo Thambi 2', cursive; font-weight: 500; }
+
+        /* --- HEADER (THANH NGANG TỐI CHO DANH MỤC) --- */
+        .category-header {
+            background-color: var(--dark-bar);
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        .title-text {
+            font-weight: 800; font-size: 2.2rem; color: #ffcc33; text-transform: uppercase;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* --- CATEGORY NAV --- */
+        .cat-nav { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
+        
+        .cat-item {
+            cursor: pointer; padding: 10px 15px; border-radius: 15px; width: 100px;
+            transition: all 0.2s ease; border: 2px solid transparent;
+            display: flex;
+            flex-direction: column; /* Xếp icon trên, chữ dưới */
+            align-items: center;    /* Căn giữa tất cả thành phần theo chiều ngang */
+            text-align: center;
+                }
+        
+        .cat-item img { width: 50px; height: 50px; display: block; margin: 0 auto 5px; }
+        .cat-item span { font-family: 'Kanit', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--white); }
+
+        .cat-item:hover { transform: scale(1.1); }
+
+        /* Style Active chuẩn theo hình: viền trắng bo tròn */
+        .cat-item.active {
+            border: 2px solid var(--white);
+            background: rgba(36, 157, 188, 0.3);
+        }
+
+        /* --- CHI TIẾT SẢN PHẨM --- */
+        .product-detail-card {
+            background-color: var(--dark-card);
+            border-radius: 25px;
+            padding: 30px;
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        @media (max-width: 768px) {
+            .product-detail-card { flex-direction: column; }
+        }
+
+        .product-image-section { flex: 1; text-align: center; }
+        .product-image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            background-color: var(--gray);
+            padding: 20px;
+        }
+
+        .product-info-section { flex: 1.5; text-align: left; }
+        .product-info-section h2 {
+            font-family: 'Denk One', sans-serif;
+            font-size: 2.2rem;
+            color: var(--blue-lighter);
+            margin-bottom: 10px;
+        }
+        .product-info-section p.price {
+            font-family: 'Kanit', sans-serif;
+            font-size: 2.5rem;
+            color: var(--red);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* Options (Color, Size, Quantity) */
+        .option-group { margin-bottom: 15px; }
+        .option-group label {
+            display: block;
+            font-family: 'Kanit', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--white);
+        }
+        .color-options span, .size-options span {
+            display: inline-block;
+            width: 35px; height: 35px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        .color-options span:hover, .size-options span:hover { transform: scale(1.15); }
+        .color-options span.selected, .size-options span.selected { border-color: var(--blue-light); box-shadow: 0 0 10px var(--blue-light); }
+
+        .size-options span {
+            width: auto; border-radius: 10px; padding: 5px 12px;
+            background-color: #042232; color: var(--white);
+            font-family: 'Kanit', sans-serif; font-size: 0.9rem; text-align: center;
+        }
+
+        .quantity-control { display: flex; align-items: center; gap: 10px; margin-top: 15px; }
+        .quantity-control button {
+            background-color: var(--blue-light); color: var(--white);
+            border: none; border-radius: 8px; width: 40px; height: 40px;
+            font-size: 1.5rem; font-weight: 700; cursor: pointer;
+            transition: all 0.1s; box-shadow: 0 4px 0 #1a6f87;
+        }
+        .quantity-control button:active { transform: translateY(2px); box-shadow: 0 2px 0 #1a6f87; }
+        .quantity-control input {
+            background-color: var(--dark-bar); color: var(--white);
+            border: none; border-radius: 8px; width: 60px; height: 40px;
+            text-align: center; font-size: 1.2rem; font-weight: 700;
+        }
+
+        /* Action Buttons */
+        .action-buttons { display: flex; gap: 20px; margin-top: 30px; }
+        .action-buttons button {
+            flex: 1; padding: 15px 20px; border-radius: 15px; border: none;
+            font-family: 'Baloo Thambi 2', cursive; font-weight: 800; font-size: 1.1rem;
+            cursor: pointer; transition: all 0.1s;
+        }
+        .btn-design { background-color: var(--blue-light); color: var(--white); box-shadow: 0 6px 0 #1a6f87; }
+        .btn-add-cart { background-color: var(--orange); color: var(--white); box-shadow: 0 6px 0 #b35f00; }
+        .btn-design:active { transform: translateY(3px); box-shadow: 0 3px 0 #1a6f87; }
+        .btn-add-cart:active { transform: translateY(3px); box-shadow: 0 3px 0 #b35f00; }
+
+        /* --- MÔ TẢ & ĐÁNH GIÁ --- */
+        .info-section {
+            background-color: var(--dark-card);
+            border-radius: 25px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            text-align: left;
+        }
+        .info-section h3 {
+            font-family: 'Denk One', sans-serif;
+            font-size: 1.8rem;
+            color: var(--blue-lighter);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .info-section p { line-height: 1.6; margin-bottom: 10px; font-size: 0.95rem; }
+
+        /* Reviews */
+        .review-item { border-bottom: 1px dashed rgba(255,255,255,0.1); padding: 15px 0; }
+        .review-item:last-child { border-bottom: none; }
+        .reviewer-name { font-family: 'Kanit', sans-serif; font-weight: 700; color: var(--white); font-size: 1.1rem; }
+        .review-stars { color: #ffcc33; margin: 5px 0; }
+        .review-content { font-size: 0.9rem; line-height: 1.5; }
+        .view-all-reviews {
+            background: none; border: none; color: var(--blue-light);
+            cursor: pointer; font-family: 'Kanit', sans-serif; font-size: 1rem;
+            margin-top: 15px; float: right;
+        }
+        .view-all-reviews:hover { text-decoration: underline; }
+
+
+        /* --- SẢN PHẨM TƯƠNG TỰ --- */
+        .similar-products {
+    background-color: var(--dark-card);
+    border-radius: 25px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    text-align: center;
+    }
+
+    .similar-products h3 {
+        font-family: 'Denk One', sans-serif;
+        font-size: 1.8rem;
+        color: var(--blue-lighter);
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        text-align: left; /* Căn trái tiêu đề giống hình mẫu */
+    }
+
+    /* Sử dụng chung style grid của trang sản phẩm */
+    .similar-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    @media (max-width: 900px) {
+        .similar-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* Card tương tự bây giờ dùng chung style với .card ở trang chủ */
+    .similar-card {
+        background-color: #032131; 
+        border-radius: 25px; 
+        padding: 15px; 
+        text-align: left;
+        position: relative; 
+        transition: all 0.2s; 
+        border: 1px solid rgba(255,255,255,0.05);
+        cursor: pointer;
+    }
+
+    .similar-card:hover { 
+        transform: translateY(-5px); 
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4); 
+    }
+
+    .similar-card:active { 
+        transform: scale(0.95); 
+    }
+
+    .similar-card .img-box { 
+        background: var(--gray); 
+        border-radius: 20px; 
+        padding: 10px; 
+        aspect-ratio: 1/1; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        margin-bottom: 12px; 
+    }
+
+    .similar-card .img-box img { 
+        width: 100%; 
+        object-fit: contain; 
+    }
+
+    .similar-card .heart { 
+        position: absolute; bottom: 60px; right: 25px; font-size: 1.3rem; cursor: pointer; 
+    }
+
+    .similar-card .name { 
+        font-family: 'Denk One', sans-serif; 
+        font-size: 0.9rem; 
+        height: 2.6em; 
+        margin-bottom: 5px; 
+        text-transform: uppercase; 
+        color: var(--white);
+    }
+
+    .similar-card .stars { 
+        color: #ffcc33; 
+        font-size: 0.75rem; 
+        margin-bottom: 8px; 
+    }
+
+    .similar-card .price { 
+        font-family: 'Kanit', sans-serif; 
+        color: var(--red); 
+        font-size: 1.2rem; 
+        font-weight: 700; 
+    }
+    #loadMoreBtnSimilar {
+    background-color: var(--orange); 
+    color: var(--white); 
+    border: none;
+    padding: 12px 45px; 
+    border-radius: 12px; 
+    font-weight: 800; 
+    font-size: 1.2rem;
+    cursor: pointer; 
+    box-shadow: 0 6px 0 #b35f00; /* Đổ bóng khối màu cam đậm */
+    transition: 0.1s; 
+    margin: 30px auto 50px auto;
+    display: block; /* Căn giữa nút */
+    }
+
+    #loadMoreBtnSimilar:active { 
+        transform: translateY(4px); /* Hiệu ứng lún xuống khi nhấn */
+        box-shadow: 0 2px 0 #b35f00; 
+    }
+
+    .hidden { 
+        display: none !important; 
+    }
+        /* Footer */
+        .footer {
+            flex: 1; /* chiếm nửa màn hình */
+            background-color: #1f3446;
+            color: #ffffff;
+            padding: 0 60px; /* Chỉ padding trái phải */
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: visible; /* thay vì hidden */
+        }
+
+        /* ===== FOOTER HEADER (NỀN ĐẬM TRÊN CÙNG) ===== */
+        .footer-header {
+            width: 100%;
+            margin: 0;
+        }
+
+        .footer-header h2 {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+
+        .footer-header h2 span {
+            color: #fa8501;
+        }
+
+        .footer-header p {
+            font-size: 16px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 5px;
+        }
+
+        .footer-header p span {
+            color: #fa8501;
+            font-weight: 600;
+        }
+
+        /* ===== FOOTER TOP: 3 CỘT ===== */
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 40px;
+            margin: 30px 0 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Cột 1: Logo + Slogan + Social */
+        .brand-col {
+            text-align: left;
+        }
+            
+        .footer-logo {
+            font-family: 'Denk One', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .footer-logo span {
+            color: #fa8501;
+        }
+
+        .footer-slogan {
+            font-family: 'Mansalva', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .footer-slogan span {
+            color: #fa8501;
+            font-weight: 600;
+        }
+
+        /* Social icons */
+.socials {
+    display: flex;
+    flex-direction: column;
+}
+
+.socials p {
+    font-family: 'UTM Times', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+/* Chọn tất cả các thẻ a sau thẻ p */
+.socials p ~ a {
+    margin: 0 6px; /* Khoảng cách giữa các icon */
+}
+
+/* Đảm bảo các icon nằm trên cùng một hàng */
+.socials a {
+    width: 38px;
+    height: 38px;
+    background-color: #2a4359;
+    color: #ffffff;
+    border-radius: 50%;
+    display: inline-flex; /* Quan trọng: inline-flex để nằm ngang */
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.socials a:hover {
+    background-color: #fa8501;
+    transform: translateY(-3px);
+}
+        /* Cột 2 và 3: Menu */
+        .footer-col {
+            text-align: left;
+        }
+
+        .footer-col h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: 'UTM Times', sans-serif;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: block;
+            font-family: 'UTM Times', sans-serif;
+        }
+
+        .footer-col ul li a:hover {
+            color: #ffffff;
+            transform: translateX(5px);
+            
+            
+        }
+
+        /* ===== COPYRIGHT SECTION (NỀN ĐẬM DƯỚI CÙNG) ===== */
+        .copyright-section {
+            background-color: #0f2b3d; /* Màu đậm hơn */
+            padding: 20px 40px;
+            text-align: right;
+            margin: 0 -60px; /* Mở rộng ra ngoài padding */
+            width: calc(100% + 120px);
+            margin-top: auto; /* Đẩy xuống dưới cùng */
+            
+        }
+
+        .copyright-text {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            font-family: 'Baloo Thambi 2', sans-serif;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .footer {
+                padding: 0 40px;
+            }
+            
+            .footer-header, .copyright-section {
+                margin: 0 -40px;
+                width: calc(100% + 80px);
+            }
+            
+            .footer-header {
+                padding: 20px 30px;
+            }
+            
+            .footer-top {
+                gap: 30px;
+                margin: 25px 0 35px;
+            }
+            
+            .copyright-section {
+                padding: 18px 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin: 20px 0 30px;
+            }
+            
+            .brand-col, .footer-col {
+                text-align: center;
+            }
+            
+            .socials {
+                justify-content: center;
+            }
+            
+            .footer-col ul li a:hover {
+                transform: none;
+            }
+            
+            .footer-header, .copyright-section {
+                margin: 0 -20px;
+                width: calc(100% + 40px);
+                padding: 15px 20px;
+            }
+            
+            .footer-header h2 {
+                font-size: 28px;
+            }
+            
+            .footer-header p {
+                font-size: 14px;
+            }
+            
+            .copyright-section {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer {
+                padding: 0 20px;
+            }
+            
+            .footer-header, .copyright-section {
+                margin: 0 -20px;
+                width: calc(100% + 40px);
+                padding: 12px 15px;
+            }
+            
+            .footer-header h2 {
+                font-size: 24px;
+            }
+            
+            .footer-header p {
+                font-size: 13px;
+            }
+            
+            .footer-logo {
+                font-size: 28px;
+            }
+            
+            .footer-slogan {
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+            
+            .socials a {
+                width: 36px;
+                height: 36px;
+                font-size: 15px;
+            }
+            
+            .footer-col h3 {
+                font-size: 16px;
+                margin-bottom: 15px;
+            }
+            
+            .footer-col ul li a {
+                font-size: 14px;
+            }
+            
+            .copyright-text {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+<div class="logo">
+    <a href="index.html">
+        PRIN<span>TORY</span>
+    </a>
+</div>
+
+        <div class="search-box">
+    <!-- Thay thẻ i bằng button -->
+    <button type="button" id="searchBtn">
+        <i class="fa fa-search"></i>
+    </button>
+    <input type="text" id="searchInput" placeholder="Tìm kiếm...">
+</div>
+        <nav class="nav">
+            <a href="#">Printory Blog</a>
+            <a href="#">Hỗ trợ</a>
+            <a href="#" class="cart">
+            <i class="fa fa-shopping-cart cart-icon"></i>
+        <span class="cart-text">Giỏ hàng</span>
+        </a>
+
+            <a href="#" class="user">
+        <span class="user-text">Đăng nhập</span>
+        </a>
+            
+        </nav>
+        
+    </header>
+
+<div class="category-header"><div class="title-text">DANH MỤC SẢN PHẨM</div></div>
+
+<div class="container">
+    <div class="cat-nav" id="catNav"></div>
+
+    <div class="product-detail-card">
+        <div class="product-image-section">
+            <img id="productMainImage" src="images/products/Áo thun trắng Unisex.png" alt="Áo thun trắng Unisex">
+        </div>
+        <div class="product-info-section">
+            <h2 id="productName">ÁO THUN TRẮNG UNISEX</h2>
+            <p class="price" id="productPrice">200.000 đ</p>
+
+            <div class="option-group">
+                <label>Màu sắc:</label>
+                <div class="color-options" id="colorOptions">
+                    <span style="background-color: #ffffff;" data-color="trang" class="selected"></span>
+                    <span style="background-color: #000000;" data-color="den"></span>
+                    <span style="background-color: #ff0000;" data-color="do"></span>
+                    <span style="background-color: #c0c0c0;" data-color="xam"></span>
+                    <span style="background-color: #f7cac9;" data-color="hong"></span>
+                    <span style="background-color: #a7d9de;" data-color="xanhpastel"></span>
+                    <span style="background-color: #0d283c;" data-color="xanhden"></span>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <label>Kích thước:</label>
+                <div class="size-options" id="sizeOptions">
+                    <span data-size="s">S</span>
+                    <span data-size="m" class="selected">M</span>
+                    <span data-size="l">L</span>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <label>Số lượng:</label>
+                <div class="quantity-control">
+                    <button onclick="changeQuantity(-1)">-</button>
+                    <input type="text" id="quantityInput" value="1" readonly>
+                    <button onclick="changeQuantity(1)">+</button>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn-design">Thiết kế ngay</button>
+                <button class="btn-add-cart">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <h3>Mô tả:</h3>
+        <p>Áo thun Basic được thiết kế theo phong cách tối giản, phù hợp cho mọi hoạt động thường ngày như đi học, đi làm, dạo phố hay tập luyện nhẹ. Màu trắng tinh tế mang lại sự sạch sẽ, trẻ trung và dễ dàng phối với mọi loại trang phục.</p>
+        <p>Chất liệu 100% cotton cao cấp giúp bề mặt vải mềm mịn, nhẹ và thoáng khí, tạo cảm giác thoải mái khi mặc. Ưu điểm nổi bật là giữ Form tốt, không nhăn, không xù lông và có độ bền cao sau thời gian dài sử dụng.</p>
+        <p>Sản phẩm thích hợp sử dụng hằng ngày và dễ phối cùng jeans, quần short hoặc jogger. Thiết kế đơn giản nhưng tinh tế, phù hợp với mọi phong cách thời trang.</p>
+        <p style="font-style: italic; font-size: 0.85rem;">Hướng dẫn bảo quản: giặt máy nhẹ, không tẩy, lộn trái khi giặt, hạn chế sấy nhiệt cao để giữ Form và độ bền của áo.</p>
+    </div>
+
+    <div class="info-section">
+        <h3>Đánh giá <span class="view-all-reviews" onclick="alert('Chức năng xem tất cả đánh giá đang phát triển!')">Xem chi tiết>></span></h3>
+        <div class="review-item">
+            <div class="reviewer-name">Nhật Chương</div>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-content">Áo mặc rất thoải mái, chất vải mềm, không bị xù mấy cả ngày. Mình mua 2 cái để mặc đi học và đi chơi đều ổn. Size đúng chuẩn, form đẹp.</div>
+        </div>
+        <div class="review-item">
+            <div class="reviewer-name">Nhật Chương</div>
+            <div class="review-stars">★★★★☆</div>
+            <div class="review-content">Giá rẻ mà chất lại tốt. Giặt vài lần không bị xù lông hay mất form. Mình mua về phối với quần jean rách đẹp.</div>
+        </div>
+    </div>
+
+    <div class="similar-products">
+        <h3>CÁC SẢN PHẨM TƯƠNG TỰ</h3>
+        <div class="similar-grid" id="similarProductsGrid">
+            </div>
+        <button id="loadMoreBtnSimilar" class="hidden" onclick="handleLoadMoreSimilar()">XEM THÊM >></button>
+    </div>
+
+</div>
+
+<footer class="footer">
+        <div class="footer-header">
+        </div>
+
+        <!-- TOP SECTION: 3 cột -->
+        <div class="footer-top">
+            <!-- Cột 1: Logo + Slogan + Social -->
+            <div class="brand-col">
+                <h2 class="footer-logo">PRIN<span>TORY</span></h2>
+                   <p class="footer-slogan">Your story, <span>we print!</span></p>
+                <div class="socials">
+                    <p>Thông tin liên hệ</p>
+                    <div class="icon-container">
+    <a href="#"><img src="images/icons/facebook.png" alt="Facebook" width="80" height="80"></a>
+        <a href="#"><img src="images/icons/instagram.png" alt="Instagram" width="80" height="80"></a>
+        <a href="#"><img src="images/icons/thread.png" alt="Threads" width="80" height="80"></a>
+        <a href="#"><img src="images/icons/tiktok.png" alt="TikTok" width="80" height="80"></a>
+        <a href="#"><img src="images/icons/telegram.png" alt="Telegram" width="80" height="80"></a>
+</div>
+
+                </div>
+            </div>
+
+            <!-- Cột 2: Về PRINTORY -->
+            <div class="footer-col">
+                <h3>Về PRINTORY</h3>
+                <ul>
+                    <li><a href="about_us.html">Câu chuyện thương hiệu</a></li>
+                    <li><a href="#">Giá trị cốt lõi</a></li>
+                    <li><a href="#">Cộng đồng</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Cột 3: Đặt hàng & hỗ trợ -->
+            <div class="footer-col">
+                <h3>Đặt hàng & hỗ trợ</h3>
+                <ul>
+                    <li><a href="#">Hỏi đáp</a></li>
+                    <li><a href="#">Hướng dẫn mua hàng</a></li>
+                    <li><a href="#">Chính sách khách hàng</a></li>
+                    <li><a href="#">Điều khoản bảo mật</a></li>
+                    <li><a href="#">Liên hệ với chúng tôi</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- COPYRIGHT SECTION: Nền đậm dưới cùng -->
+        <div class="copyright-section">
+            <div class="copyright-text">
+                BẢN QUYỀN THUỘC VỀ PRINTORY ©
+            </div>
+        </div>
+    </footer>
+
+<script>
+    // Dữ liệu sản phẩm (Giữ nguyên danh sách đầy đủ của bạn)
+    const products = {
+        'ao-thun': [
+            { name: 'Áo thun trắng Unisex', price: '200.000 đ', img: 'Áo thun trắng Unisex.png', desc: 'Cotton 100%, co giãn 4 chiều, thấm hút mồ hôi cực tốt.', reviews: [{user: 'Minh', stars: 5, text: 'Vải dày dặn, rất ưng!'}] },
+            { name: 'Áo thun xanh đen Unisex', price: '200.000 đ', img: 'Áo thun xanh đen Unisex.png', desc: 'Màu xanh đen sang trọng, bền màu, không ra màu khi giặt.', reviews: [] },
+            { name: 'Áo thun đen Unisex', price: '200.000 đ', img: 'Áo thun đen Unisex.png', desc: 'Sắc đen basic, dễ phối đồ cho cả nam và nữ.', reviews: [] },
+            { name: 'Áo body đỏ Nữ', price: '175.000 đ', img: 'Áo body đỏ Nữ.png', desc: 'Dáng ôm quyến rũ, chất thun gân mịn màng.', reviews: [] },
+            { name: 'Áo body đen Nữ', price: '175.000 đ', img: 'Áo body đen Nữ.png', desc: 'Tôn dáng tối đa, phù hợp mặc lót hoặc mặc riêng.', reviews: [] },
+            { name: 'Áo body xám Nữ', price: '175.000 đ', img: 'Áo body xám Nữ.png', desc: 'Màu xám lông chuột trẻ trung, thanh lịch.', reviews: [] },
+            { name: 'Áo thun đen Nam', price: '210.000 đ', img: 'Áo thun đen Nam.png', desc: 'Form dáng khỏe khoắn, vai rộng cho phái mạnh.', reviews: [] },
+            { name: 'Áo thun hồng Unisex', price: '200.000 đ', img: 'Áo thun hồng Unisex.png', desc: 'Hồng pastel nhẹ nhàng, cực kỳ tôn da.', reviews: [] },
+            { name: 'Áo thun xanh pastel', price: '200.000 đ', img: 'Áo thun xanh pastel Unisex.png', desc: 'Màu xanh dịu mát, mang lại cảm giác dễ chịu.', reviews: [] },
+            { name: 'Áo thun xám Unisex', price: '200.000 đ', img: 'Áo thun xám Unisex.png', desc: 'Chất vải bền bỉ, không xù lông sau nhiều lần giặt.', reviews: [] }
+        ],
+        'hoodie': [
+            { name: 'Áo hoodie đen Unisex', price: '350.000 đ', img: 'Áo hoodie đen Unisex.png', desc: 'Nỉ bông dày dặn, giữ ấm tốt cho mùa đông.', reviews: [] },
+            { name: 'Áo hoodie trắng Unisex', price: '350.000 đ', img: 'Áo hoodie trắng Unisex.png', desc: 'Trắng tinh khôi, form rộng thoải mái.', reviews: [] },
+            { name: 'Áo hoodie xám Unisex', price: '350.000 đ', img: 'Áo hoodie xám Unisex.png', desc: 'Phong cách năng động, phù hợp dạo phố.', reviews: [] }
+        ],
+        'sweater': [
+            { name: 'Áo sweater đen Unisex', price: '320.000 đ', img: 'Áo sweater đen Unisex.png', desc: 'Vải chân cua cao cấp, đường may tỉ mỉ.', reviews: [] },
+            { name: 'Áo sweater trắng Unisex', price: '320.000 đ', img: 'Áo sweater trắng Unisex.png', desc: 'Màu trắng basic, dễ dàng in hình cá nhân.', reviews: [] },
+            { name: 'Áo sweater hồng Unisex', price: '320.000 đ', img: 'Áo sweater hồng Unisex.png', desc: 'Ngọt ngào và trẻ trung cho ngày se lạnh.', reviews: [] },
+            { name: 'Áo sweater xám Unisex', price: '320.000 đ', img: 'Áo sweater xám Unisex.png', desc: 'Màu xám trung tính, không lỗi mốt.', reviews: [] },
+            { name: 'Áo sweater xanh pastel', price: '320.000 đ', img: 'Áo sweater xanh pastel Unisex.png', desc: 'Màu sắc mới lạ, nổi bật trong đám đông.', reviews: [] }
+        ],
+        'tui-tote': [
+            { name: 'Túi tote đen basic', price: '120.000 đ', img: 'Túi tote đen basic.png', desc: 'Vải canvas bền, đựng vừa laptop 14 inch.', reviews: [] },
+            { name: 'Túi tote kem basic', price: '120.000 đ', img: 'Túi tote kem basic.png', desc: 'Màu kem vintage, phù hợp đi học đi chơi.', reviews: [] },
+            { name: 'Túi tote trắng basic', price: '120.000 đ', img: 'Túi tote trắng basic.png', desc: 'Sạch sẽ, in hình màu sắc cực nổi.', reviews: [] },
+            { name: 'Túi tote đen lớn', price: '150.000 đ', img: 'Túi tote đen lớn.png', desc: 'Dung tích lớn, chứa được cả thế giới của bạn.', reviews: [] },
+            { name: 'Túi tote kem lớn', price: '150.000 đ', img: 'Túi tote kem lớn.png', desc: 'Chắc chắn, chịu lực tốt.', reviews: [] },
+            { name: 'Túi tote trắng bảng to', price: '160.000 đ', img: 'Túi tote trắng bảng to.png', desc: 'Quai đeo bảng to không gây đau vai.', reviews: [] },
+            { name: 'Túi tote đen bảng to', price: '160.000 đ', img: 'Túi tote đen bảng to đặc biệt.png', desc: 'Phiên bản đặc biệt với chất vải dày hơn.', reviews: [] }
+        ],
+        'coc': [
+            { name: 'Cốc trắng basic', price: '80.000 đ', img: 'Cốc trắng basic.png', desc: 'Sứ cao cấp, lòng cốc mịn dễ vệ sinh.', reviews: [] },
+            { name: 'Cốc đen basic', price: '85.000 đ', img: 'Cốc đenbasic.png', desc: 'Lớp men đen lì sang trọng.', reviews: [] },
+            { name: 'Cốc xanh basic', price: '85.000 đ', img: 'Cốc xanh basic.png', desc: 'Màu xanh dương tươi mát.', reviews: [] },
+            { name: 'Cốc hồng basic', price: '85.000 đ', img: 'Cốc hồng basic.png', desc: 'Màu hồng ngọt ngào.', reviews: [] },
+            { name: 'Cốc nâu basic', price: '85.000 đ', img: 'Cốc nâu basic.png', desc: 'Màu nâu trầm ấm.', reviews: [] }
+        ],
+        'mu': [
+            { name: 'Mũ lưỡi trai đen', price: '150.000 đ', img: 'Mũ lưỡi trai đen Hip Hop.png', desc: 'Kaki cao cấp, form nón đứng chuẩn.', reviews: [] },
+            { name: 'Mũ lưỡi trai trắng', price: '150.000 đ', img: 'Mũ lưỡi trai trắng Unisex.png', desc: 'Trắng tinh khôi, khóa điều chỉnh tiện lợi.', reviews: [] },
+            { name: 'Mũ lưỡi trai xám', price: '150.000 đ', img: 'Mũ lưỡi trai xám Unisex.png', desc: 'Màu xám bền màu, khó bám bẩn.', reviews: [] },
+            { name: 'Mũ bán vé số', price: '50.000 đ', img: 'Mũ bán vé số chống nắng.png', desc: 'Bảo vệ da dưới trời nắng gắt hiệu quả.', reviews: [] }
+        ],
+        'tat': [
+            { name: 'Tất đen cổ thấp', price: '30.000 đ', img: 'Tất đen cổ thấp.png', desc: 'Thun mềm, ôm sát và không gây mùi.', reviews: [] },
+            { name: 'Tất trắng cotton', price: '30.000 đ', img: 'Tất trắng cotton.png', desc: 'Thấm hút mồ hôi chân tuyệt đối.', reviews: [] },
+            { name: 'Tất xám cotton', price: '30.000 đ', img: 'Tất xám cotton.png', desc: 'Dày dặn, êm ái khi đi giày thể thao.', reviews: [] },
+            { name: 'Tất xanh lá cotton', price: '30.000 đ', img: 'Tất xanh lá cotton cổ thấp.png', desc: 'Màu sắc cá tính, nổi bật.', reviews: [] }
+        ]
+    };
+
+    const categories = [
+        { id: 'ao-thun', name: 'Áo thun', icon: 'tshirt-icon.png' },
+        { id: 'hoodie', name: 'Hoodie', icon: 'hoodie-icon.png' },
+        { id: 'sweater', name: 'Sweater', icon: 'sweater1-icon.png' },
+        { id: 'tui-tote', name: 'Túi Tote', icon: 'tote1-icon.png' },
+        { id: 'coc', name: 'Cốc', icon: 'mug-icon.png' },
+        { id: 'mu', name: 'Mũ', icon: 'cap-icon.png' },
+        { id: 'tat', name: 'Tất', icon: 'sock-icon.png' }
+    ];
+
+    let currentCat = 'ao-thun';
+    let currentProduct = null;
+
+    function initCatNav() {
+        const nav = document.getElementById('catNav');
+        if(!nav) return;
+        nav.innerHTML = '';
+        categories.forEach(c => {
+            nav.innerHTML += `
+                <div class="cat-item ${c.id === currentCat ? 'active' : ''}" onclick="setCategory('${c.id}', this)">
+                    <img src="images/icons/${c.icon}"><span>${c.name}</span>
+                </div>`;
+        });
+    }
+
+    function setCategory(cat, el) {
+        document.querySelectorAll('.cat-item').forEach(i => i.classList.remove('active'));
+        if(el) el.classList.add('active');
+        currentCat = cat;
+        renderSimilarProducts(currentCat, 4); 
+    }
+
+    function renderSimilarProducts(cat, limit = 4) {
+        const grid = document.getElementById('similarProductsGrid');
+        const btn = document.getElementById('loadMoreBtnSimilar');
+        if(!grid) return;
+
+        const list = products[cat] || [];
+        grid.innerHTML = '';
+        const filteredList = list.filter(p => p.name !== currentProduct?.name);
+
+        filteredList.slice(0, limit).forEach(p => {
+            grid.innerHTML += `
+                <div class="similar-card" onclick="loadProductDetail('${cat}', '${p.name}')">
+                    <div class="img-box"><img src="images/products/${p.img}"></div>
+                    <div class="heart">🤍</div>
+                    <div class="name">${p.name}</div>
+                    <div class="price">${p.price}</div>
+                </div>`;
+        });
+
+        // FIX LỖI NÚT XEM THÊM:
+        if(btn) {
+            if (filteredList.length > limit) {
+                btn.classList.remove('hidden');
+                btn.style.display = "block";
+            } else {
+                btn.classList.add('hidden');
+                btn.style.display = "none";
+            }
+        }
+    }
+
+    // FIX LỖI HÀM XEM THÊM: Phải lấy đúng currentCat
+    function handleLoadMoreSimilar() {
+        renderSimilarProducts(currentCat, 999);
+        const btn = document.getElementById('loadMoreBtnSimilar');
+        if(btn) btn.style.display = "none";
+    }
+
+    // FIX LỖI MÀU SẮC/SIZE: Dùng Event Delegation
+    function setupOptions() {
+        const colorOpt = document.querySelector('.color-options');
+        const sizeOpt = document.querySelector('.size-options');
+
+        if(colorOpt) {
+            colorOpt.onclick = (e) => {
+                if(e.target.tagName === 'SPAN') {
+                    colorOpt.querySelectorAll('span').forEach(s => s.classList.remove('selected'));
+                    e.target.classList.add('selected');
+                }
+            };
+        }
+        if(sizeOpt) {
+            sizeOpt.onclick = (e) => {
+                if(e.target.tagName === 'SPAN') {
+                    sizeOpt.querySelectorAll('span').forEach(s => s.classList.remove('selected'));
+                    e.target.classList.add('selected');
+                }
+            };
+        }
+    }
+
+    function changeQuantity(delta) {
+        const input = document.getElementById('quantityInput');
+        let current = parseInt(input.value);
+        current += delta;
+        if (current < 1) current = 1;
+        input.value = current;
+    }
+
+    function loadProductDetail(category, productName) {
+        const product = products[category].find(p => p.name === productName);
+        if (product) {
+            currentProduct = product;
+            currentCat = category; // Rất quan trọng để nút Xem thêm chạy đúng
+
+            document.getElementById('productMainImage').src = `images/products/${product.img}`;
+            document.getElementById('productName').innerText = product.name.toUpperCase();
+            document.getElementById('productPrice').innerText = product.price;
+            
+            // Cập nhật mô tả & đánh giá
+            const infoSections = document.querySelectorAll('.info-section');
+            if(infoSections[0]) infoSections[0].querySelector('p').innerText = product.desc;
+            if(infoSections[1]) {
+                let html = `<h3>Đánh giá <span class="view-all-reviews">Xem chi tiết>></span></h3>`;
+                if(product.reviews.length > 0) {
+                    product.reviews.forEach(r => {
+                        html += `<div class="review-item"><b>${r.user}</b> <span style="color:#ffcc33">${'★'.repeat(r.stars)}</span><p>${r.text}</p></div>`;
+                    });
+                } else {
+                    html += `<p style="font-style:italic; margin-top:10px;">Chưa có đánh giá.</p>`;
+                }
+                infoSections[1].innerHTML = html;
+            }
+
+            document.getElementById('quantityInput').value = 1;
+            renderSimilarProducts(category, 4);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+
+    window.onload = () => {
+        initCatNav();
+        setupOptions(); // Kích hoạt sự kiện màu sắc/size
+        loadProductDetail('ao-thun', 'Áo thun trắng Unisex'); 
+    };
+</script>
+
+</body>
+</html>
