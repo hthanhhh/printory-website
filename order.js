@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const reviewsSection = document.getElementById('reviewsSection');
     const reviewsGrid = document.querySelector('.reviews-grid');
 
-    // ===== DỮ LIỆU ĐÁNH GIÁ ĐÃ GỬI (QUÁ KHỨ) =====
+    // ===== DỮ LIỆU ĐÁNH GIÁ ĐÃ GỬI =====
     const pastReviews = [
         {
             id: 1,
@@ -82,64 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     ];
 
-    // ===== DỮ LIỆU ĐƠN HÀNG HIỆN TẠI =====
-    const currentOrders = [
-        {
-            orderId: "PRT20240115001",
-            date: "15/01/2024",
-            status: "processing",
-            productName: "Áo thun Cotton - Thiết kế 'Mặt trăng'",
-            productImage: "images/products/Áo thun đen Unisex.png",
-            size: "L",
-            color: "Đen",
-            quantity: 1,
-            price: 249000
-        },
-        {
-            orderId: "PRT20240110001",
-            date: "10/01/2024",
-            status: "shipping",
-            items: [
-                {
-                    name: "Tote Bag Canvas - 'Forest Adventure'",
-                    image: "images/products/Túi tote đen basic.png",
-                    color: "Xanh rêu",
-                    quantity: 2,
-                    price: 189000
-                },
-                {
-                    name: "Cốc sứ in hình - 'Coffee Lover'",
-                    image: "images/products/Cốc trắng basic.png",
-                    type: "Cốc 400ml",
-                    quantity: 1,
-                    price: 129000
-                }
-            ]
-        },
-        {
-            orderId: "PRT20231215001",
-            date: "15/12/2023",
-            status: "delivered",
-            productName: "Hoodie Unisex - 'Urban Street'",
-            productImage: "images/products/Áo hoodie đen Unisex.png",
-            size: "M",
-            color: "Xám",
-            quantity: 1,
-            price: 389000
-        },
-        {
-            orderId: "PRT20231120001",
-            date: "20/11/2023",
-            status: "delivered",
-            productName: "Áo thun Cotton - 'Minimalist Design'",
-            productImage: "images/products/Áo thun trắng Unisex.png",
-            size: "XL",
-            color: "Trắng",
-            quantity: 1,
-            price: 220000
-        }
-    ];
-
     // ===== HIỆN THỊ ĐÁNH GIÁ ĐÃ GỬI =====
     function displayPastReviews() {
         reviewsGrid.innerHTML = '';
@@ -191,6 +133,15 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.helpful-btn').forEach(button => {
             button.addEventListener('click', handleHelpfulClick);
         });
+    }
+
+    // ===== CẬP NHẬT RATING VALUE =====
+    function updateRatingValue(type, value) {
+        const valueElement = document.getElementById(`${type}-value`);
+        if (valueElement) {
+            valueElement.textContent = `${value}/5`;
+            valueElement.style.color = value > 0 ? '#fa8501' : '#d9d9d9';
+        }
     }
 
     // ===== HIỆU ỨNG TAB LỌC ĐƠN HÀNG =====
@@ -305,14 +256,27 @@ document.addEventListener('DOMContentLoaded', function() {
         // Hiển thị modal
         reviewModal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
+        
+        // Thêm hiệu ứng fade in
+        setTimeout(() => {
+            const modalContent = document.querySelector('.modal-content');
+            modalContent.style.transform = 'scale(1)';
+            modalContent.style.opacity = '1';
+        }, 10);
     }
 
     function closeReviewModal() {
-        reviewModal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-        currentReviewOrder = null;
-        currentReviewProduct = null;
-        currentReviewImage = null;
+        const modalContent = document.querySelector('.modal-content');
+        modalContent.style.transform = 'scale(0.9)';
+        modalContent.style.opacity = '0';
+        
+        setTimeout(() => {
+            reviewModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            currentReviewOrder = null;
+            currentReviewProduct = null;
+            currentReviewImage = null;
+        }, 300);
     }
 
     // Đóng modal khi click nút đóng
@@ -337,11 +301,14 @@ document.addEventListener('DOMContentLoaded', function() {
         stars.forEach(star => {
             star.classList.remove('active');
             star.style.color = '#d9d9d9';
+            star.style.textShadow = 'none';
         });
         
-        // Reset data-rating
+        // Reset data-rating và value hiển thị
         document.querySelectorAll('.stars').forEach(stars => {
             stars.setAttribute('data-rating', '0');
+            const type = stars.getAttribute('data-type');
+            updateRatingValue(type, 0);
         });
     }
 
@@ -353,6 +320,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Đặt rating cho parent element
             parentStars.setAttribute('data-rating', value);
+            updateRatingValue(type, value);
             
             // Cập nhật trạng thái stars trong nhóm này
             const allStarsInGroup = parentStars.querySelectorAll('.star');
@@ -360,14 +328,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (index < value) {
                     s.classList.add('active');
                     s.style.color = '#fa8501';
+                    s.style.textShadow = '0 0 8px rgba(250, 133, 1, 0.5)';
                 } else {
                     s.classList.remove('active');
                     s.style.color = '#d9d9d9';
+                    s.style.textShadow = 'none';
                 }
             });
             
             // Hiệu ứng cho sao được click
-            this.style.transform = 'scale(1.5)';
+            this.style.transform = 'scale(1.3)';
             setTimeout(() => {
                 this.style.transform = '';
             }, 300);
@@ -377,12 +347,16 @@ document.addEventListener('DOMContentLoaded', function() {
             const value = parseInt(this.getAttribute('data-value'));
             const parentStars = this.parentElement;
             const allStarsInGroup = parentStars.querySelectorAll('.star');
+            const currentRating = parseInt(parentStars.getAttribute('data-rating')) || 0;
             
-            allStarsInGroup.forEach((s, index) => {
-                if (index < value) {
-                    s.style.color = '#ffcc00';
-                }
-            });
+            // Chỉ highlight khi chưa có rating hoặc đang chọn rating mới
+            if (currentRating === 0) {
+                allStarsInGroup.forEach((s, index) => {
+                    if (index < value) {
+                        s.style.color = '#ffcc00';
+                    }
+                });
+            }
         });
         
         star.addEventListener('mouseout', function() {
@@ -402,7 +376,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (submitReviewBtn) {
         submitReviewBtn.addEventListener('click', function() {
             const reviewText = document.getElementById('reviewText').value.trim();
-            const starGroups = document.querySelectorAll('.stars');
             
             // Lấy rating từ các nhóm sao
             const qualityRating = parseInt(document.querySelector('.stars[data-type="quality"]').getAttribute('data-rating')) || 0;
@@ -488,6 +461,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 button.disabled = true;
                 button.style.opacity = '0.7';
                 button.style.cursor = 'not-allowed';
+                button.style.background = '#666';
+                button.style.boxShadow = '0 4px 0 #444';
             }
         });
     }
@@ -680,38 +655,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ===== HIỆU ỨNG NAV LINK =====
-    const navLinks = document.querySelectorAll('.nav a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            if (this.getAttribute('href') === '#') {
-                e.preventDefault();
-                showNotification('Tính năng đang phát triển');
-            }
-        });
-    });
-
     // ===== THÔNG BÁO =====
     function showNotification(message) {
         // Tạo notification element
         const notification = document.createElement('div');
         notification.className = 'notification';
         notification.textContent = message;
-        notification.style.cssText = `
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            background: linear-gradient(135deg, #249dbc, #1a7a94);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-            z-index: 9999;
-            transform: translateX(400px);
-            transition: transform 0.3s ease;
-            font-family: 'Baloo Thambi 2', sans-serif;
-            max-width: 300px;
-        `;
         
         document.body.appendChild(notification);
         
@@ -747,25 +696,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Thêm CSS cho rating details
+    // Thêm CSS cho animation
     const style = document.createElement('style');
     style.textContent = `
-        .rating-details {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 10px;
-            font-family: 'Baloo Thambi 2', sans-serif;
-            color: #b1d9ec;
-            font-size: 14px;
-        }
-        
-        .rating-details span {
-            background: rgba(36, 157, 188, 0.1);
-            padding: 5px 10px;
-            border-radius: 10px;
-            border: 1px solid rgba(36, 157, 188, 0.3);
-        }
-        
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -773,6 +706,14 @@ document.addEventListener('DOMContentLoaded', function() {
         
         .review-card {
             animation: fadeIn 0.5s ease;
+        }
+        
+        .star {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .star.active {
+            text-shadow: 0 0 8px rgba(250, 133, 1, 0.7);
         }
     `;
     document.head.appendChild(style);
