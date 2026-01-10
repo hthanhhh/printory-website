@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRINTORY - Đơn Đặt Hàng</title>
     
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@500;600;800&family=Denk+One&family=Kanit:wght@700&family=UTM+Times&family=Mansalva&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome (Icon) -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
     <!-- Main CSS -->
@@ -17,34 +18,31 @@
 <body>
 
 <header>
-<div class="logo">
-    <a href="index.html">
-        PRIN<span>TORY</span>
-    </a>
-</div>
+    <div class="logo">
+        <a href="index.html">
+            PRIN<span>TORY</span>
+        </a>
+    </div>
 
-        <div class="search-box">
-    <!-- Thay thẻ i bằng button -->
-    <button type="button" id="searchBtn">
-        <i class="fa fa-search"></i>
-    </button>
-    <input type="text" id="searchInput" placeholder="Tìm kiếm...">
-</div>
-        <nav class="nav">
-            <a href="#">Printory Blog</a>
-            <a href="#">Hỗ trợ</a>
-            <a href="#" class="cart">
+    <div class="search-box">
+        <button type="button" id="searchBtn">
+            <i class="fa fa-search"></i>
+        </button>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm...">
+    </div>
+    
+    <nav class="nav">
+        <a href="#">Printory Blog</a>
+        <a href="#">Hỗ trợ</a>
+        <a href="#" class="cart">
             <i class="fa fa-shopping-cart cart-icon"></i>
-        <span class="cart-text">Giỏ hàng</span>
+            <span class="cart-text">Giỏ hàng</span>
         </a>
-
-            <a href="#" class="user">
-        <span class="user-text">Đăng nhập</span>
+        <a href="#" class="user">
+            <span class="user-text">Đăng nhập</span>
         </a>
-            
-        </nav>
-        
-    </header>
+    </nav>
+</header>
 
 <!-- MAIN CONTENT FOR ORDER PAGE -->
 <div class="category-header">
@@ -77,7 +75,7 @@
 
     <!-- Orders List -->
     <div class="orders-grid">
-        <!-- Order 1 - Processing (HIỆN TẠI - KHÔNG CÓ REVIEW) -->
+        <!-- Order 1 - Processing -->
         <div class="order-card" data-status="processing">
             <div class="order-header">
                 <div class="order-id">
@@ -126,7 +124,7 @@
             </div>
         </div>
 
-        <!-- Order 2 - Shipping (HIỆN TẠI - KHÔNG CÓ REVIEW) -->
+        <!-- Order 2 - Shipping -->
         <div class="order-card" data-status="shipping">
             <div class="order-header">
                 <div class="order-id">
@@ -184,7 +182,7 @@
             </div>
         </div>
 
-        <!-- Order 3 - Delivered (CÓ THỂ ĐÁNH GIÁ) -->
+        <!-- Order 3 - Delivered -->
         <div class="order-card" data-status="delivered">
             <div class="order-header">
                 <div class="order-id">
@@ -233,7 +231,7 @@
             </div>
         </div>
 
-        <!-- Order 4 - Delivered (ĐÃ GIAO TỪ LÂU - CÓ THỂ XEM REVIEW) -->
+        <!-- Order 4 - Delivered -->
         <div class="order-card" data-status="delivered">
             <div class="order-header">
                 <div class="order-id">
@@ -302,54 +300,66 @@
                     </div>
                 </div>
                 
+                <!-- Rating section với layout mới -->
                 <div class="rating-section">
-                    <h4>Chất lượng sản phẩm</h4>
-                    <div class="stars" data-rating="0" data-type="quality">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
+                    <div class="rating-row">
+                        <span class="label">Chất lượng sản phẩm</span>
+                        <div class="stars-container">
+                            <div class="stars" data-rating="0" data-type="quality">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                            </div>
+                            <span class="rating-value" id="quality-value">0/5</span>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="rating-section">
-                    <h4>Chất lượng in ấn</h4>
-                    <div class="stars" data-rating="0" data-type="printing">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
+                    
+                    <div class="rating-row">
+                        <span class="label">Chất lượng in ấn</span>
+                        <div class="stars-container">
+                            <div class="stars" data-rating="0" data-type="printing">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                            </div>
+                            <span class="rating-value" id="printing-value">0/5</span>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="rating-section">
-                    <h4>Độ bền sản phẩm</h4>
-                    <div class="stars" data-rating="0" data-type="durability">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
+                    
+                    <div class="rating-row">
+                        <span class="label">Độ bền sản phẩm</span>
+                        <div class="stars-container">
+                            <div class="stars" data-rating="0" data-type="durability">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                            </div>
+                            <span class="rating-value" id="durability-value">0/5</span>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="review-form">
                     <h4>Nhận xét của bạn</h4>
-                    <textarea id="reviewText" placeholder="Hãy chia sẻ trải nghiệm của bạn về sản phẩm..."></textarea>
+                    <textarea id="reviewText" placeholder="Chia sẻ trải nghiệm của bạn về sản phẩm..."></textarea>
                     <div class="review-actions">
+                        <button class="order-btn btn-cancel-review">Hủy</button>
                         <button class="order-btn btn-submit-review">
                             <i class="fas fa-paper-plane"></i> Gửi đánh giá
                         </button>
-                        <button class="order-btn btn-cancel-review">Hủy</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Reviews Section - CHỈ HIỆN KHI CHỌN TAB "ĐÃ GIAO" -->
+    <!-- Reviews Section -->
     <div id="reviewsSection" class="reviews-section" style="display: none;">
         <h2 class="section-title">ĐÁNH GIÁ ĐÃ GỬI</h2>
         
@@ -360,61 +370,56 @@
 </div>
 
 <footer class="footer">
-        <div class="footer-header">
-        </div>
-
-        <!-- TOP SECTION: 3 cột -->
-        <div class="footer-top">
-            <!-- Cột 1: Logo + Slogan + Social -->
-            <div class="brand-col">
-                <h2 class="footer-logo">PRIN<span>TORY</span></h2>
-                   <p class="footer-slogan">Your story, <span>we print!</span></p>
-                <div class="socials">
-                    <p>Thông tin liên hệ</p>
-                    <div class="icon-container">
-    <a href="#"><img src="images/icons/facebook.png" alt="Facebook" width="80" height="80"></a>
-        <a href="#"><img src="images/icons/instagram.png" alt="Instagram" width="80" height="80"></a>
-        <a href="#"><img src="images/icons/thread.png" alt="Threads" width="80" height="80"></a>
-        <a href="#"><img src="images/icons/tiktok.png" alt="TikTok" width="80" height="80"></a>
-        <a href="#"><img src="images/icons/telegram.png" alt="Telegram" width="80" height="80"></a>
-</div>
-
+    <div class="footer-top">
+        <!-- Cột 1: Logo + Slogan + Social -->
+        <div class="brand-col">
+            <h2 class="footer-logo">PRIN<span>TORY</span></h2>
+            <p class="footer-slogan">Your story, <span>we print!</span></p>
+            <div class="socials">
+                <p>Thông tin liên hệ</p>
+                <div class="icon-container">
+                    <a href="#"><img src="images/icons/facebook.png" alt="Facebook" width="30" height="30"></a>
+                    <a href="#"><img src="images/icons/instagram.png" alt="Instagram" width="30" height="30"></a>
+                    <a href="#"><img src="images/icons/thread.png" alt="Threads" width="30" height="30"></a>
+                    <a href="#"><img src="images/icons/tiktok.png" alt="TikTok" width="30" height="30"></a>
+                    <a href="#"><img src="images/icons/telegram.png" alt="Telegram" width="30" height="30"></a>
                 </div>
             </div>
-
-            <!-- Cột 2: Về PRINTORY -->
-            <div class="footer-col">
-                <h3>Về PRINTORY</h3>
-                <ul>
-                    <li><a href="about_us.html">Câu chuyện thương hiệu</a></li>
-                    <li><a href="#">Giá trị cốt lõi</a></li>
-                    <li><a href="#">Cộng đồng</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </div>
-
-            <!-- Cột 3: Đặt hàng & hỗ trợ -->
-            <div class="footer-col">
-                <h3>Đặt hàng & hỗ trợ</h3>
-                <ul>
-                    <li><a href="#">Hỏi đáp</a></li>
-                    <li><a href="#">Hướng dẫn mua hàng</a></li>
-                    <li><a href="#">Chính sách khách hàng</a></li>
-                    <li><a href="#">Điều khoản bảo mật</a></li>
-                    <li><a href="#">Liên hệ với chúng tôi</a></li>
-                </ul>
-            </div>
         </div>
 
-        <!-- COPYRIGHT SECTION: Nền đậm dưới cùng -->
-        <div class="copyright-section">
-            <div class="copyright-text">
-                BẢN QUYỀN THUỘC VỀ PRINTORY ©
-            </div>
+        <!-- Cột 2: Về PRINTORY -->
+        <div class="footer-col">
+            <h3>Về PRINTORY</h3>
+            <ul>
+                <li><a href="about_us.html">Câu chuyện thương hiệu</a></li>
+                <li><a href="#">Giá trị cốt lõi</a></li>
+                <li><a href="#">Cộng đồng</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
         </div>
-    </footer>
 
-    <!-- JavaScript -->
-    <script src="order.js"></script>
+        <!-- Cột 3: Đặt hàng & hỗ trợ -->
+        <div class="footer-col">
+            <h3>Đặt hàng & hỗ trợ</h3>
+            <ul>
+                <li><a href="#">Hỏi đáp</a></li>
+                <li><a href="#">Hướng dẫn mua hàng</a></li>
+                <li><a href="#">Chính sách khách hàng</a></li>
+                <li><a href="#">Điều khoản bảo mật</a></li>
+                <li><a href="#">Liên hệ với chúng tôi</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- COPYRIGHT SECTION -->
+    <div class="copyright-section">
+        <div class="copyright-text">
+            BẢN QUYỀN THUỘC VỀ PRINTORY ©
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="order.js"></script>
 </body>
 </html>
