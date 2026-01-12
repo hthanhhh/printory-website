@@ -42,10 +42,7 @@ Home
         └── Blog Details
 
 
-## 4. Phân công công việc
-
-
-## 5. Hướng dẫn chạy
+## 4. Hướng dẫn chạy
 ### 🔹 Yêu cầu
 - Trình duyệt web hiện đại (Google Chrome, Microsoft Edge, Firefox)
 - Visual Studio Code (khuyến nghị)
@@ -83,20 +80,34 @@ http://127.0.0.1:5500/index.html
 - **Folder**: `/root`
 4. Lưu lại và chờ GitHub khởi tạo
 5. Truy cập website tại:
-https://<username>.github.io/<repository-name>/
+https://github.com/hthanhhh/printory-website.git
 
 ---
 
 ### 🔹 Cấu trúc thư mục chính
 
-printory-website/
-├── index.html
+prinstory-website/
+│
+├── about_us.html
 ├── auth.html
 ├── cart.html
 ├── checkout.html
+├── designs.html
+├── index.html
+├── order.html
+├── preview.html
+├── products.html
+├── product-detail.html
+├── PrintoryBlog.html
+├── PrintoryBlogDetail.html
+├── support.html
 ├── user-profile.html
+├── your-story.html
+│
+├── componet/
 ├── css/
 ├── js/
+├── font/
 └── images/
 
 
