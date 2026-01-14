@@ -1,0 +1,154 @@
+body,
+html {
+  background-color: #fffded;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 60px;
+  padding: 20px 0;
+}
+
+.hero-image-container {
+  flex: 1;
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 20px 20px 0px rgba(2, 38, 55, 0.05);
+  z-index: 2;
+  position: relative;
+}
+
+.hero-content {
+  flex: 1.2;
+}
+
+.hero-content h1 {
+  font-family: "Kanit", sans-serif;
+  font-size: 3.5em;
+  line-height: 1.1;
+  margin: 10px 0 20px 0;
+  color: #022637;
+  font-weight: bolder;
+}
+
+.hero-tagline {
+  color: #d32f2f;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+}
+
+.highlight {
+  color: #d32f2f;
+}
+
+h2 {
+  border-left: 5px solid #022637;
+  padding-left: 15px;
+  margin-top: 40px;
+}
+
+.voucher-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.voucher-card {
+  background: rgba(2, 38, 55, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px dashed #022637;
+  text-align: center;
+}
+
+/* --- PHẦN CSS MỚI CHO BỘ SƯU TẬP --- */
+.collection-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.gallery-item {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px);
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-caption {
+  padding: 15px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9em;
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+/* ---------------------------------- */
+
+.cta-button {
+  display: inline-block;
+  background-color: #022637;
+  color: #fffded;
+  padding: 15px 40px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(2, 38, 55, 0.2);
+  background-color: #044361;
+}
+
+@media (max-width: 850px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  .hero-image {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  .hero-content h1 {
+    font-size: 2.5em;
+  }
+}

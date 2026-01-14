@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Printory - Danh Mục Sản Phẩm</title>
+
+    <link rel="stylesheet" href="css/font.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/products.css" />
+    <link rel="stylesheet" href="component/footer.css" />
+    <link rel="stylesheet" href="component/header.css" />
+  </head>
+  <body>
+    <!--HEADER-->
+    <header>
+      <div class="logo">
+        <a href="index.html"> PRIN<span>TORY</span> </a>
+      </div>
+
+      <div class="search-box">
+        <button type="button" id="searchBtn">
+          <i class="fa fa-search"></i>
+        </button>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
+      </div>
+      <nav class="nav">
+        <a href="PrintoryBlog.html">Printory Blog</a>
+        <a href="support.html">Hỗ trợ</a>
+        <a href="cart.html" class="cart">
+          <i class="fa fa-shopping-cart cart-icon"></i>
+          <span class="cart-text">Giỏ hàng</span>
+        </a>
+
+        <a href="auth.html" class="user">
+          <span class="user-text">Đăng nhập</span>
+        </a>
+      </nav>
+    </header>
+    <!--MAIN CONTENT-->
+
+    <div class="category-header">
+      <div class="title-text">DANH MỤC SẢN PHẨM</div>
+    </div>
+
+    <div class="container">
+      <div class="cat-nav">
+        <div class="cat-item active" onclick="setCategory('ao-thun', this)">
+          <img src="images/icons/tshirt-icon.png" /><span>Áo thun</span>
+        </div>
+        <div class="cat-item" onclick="setCategory('hoodie', this)">
+          <img src="images/icons/hoodie-icon.png" /><span>Hoodie</span>
+        </div>
+        <div class="cat-item" onclick="setCategory('sweater', this)">
+          <img src="images/icons/sweater1-icon.png" /><span>Sweater</span>
+        </div>
+        <div class="cat-item" onclick="setCategory('tui-tote', this)">
+          <img src="images/icons/tote1-icon.png" /><span>Túi Tote</span>
+        </div>
+        <div class="cat-item" onclick="setCategory('coc', this)">
+          <img src="images/icons/mug-icon.png" /><span>Cốc</span>
+        </div>
+        <div class="cat-item" onclick="setCategory('mu', this)">
+          <img src="images/icons/cap-icon.png" /><span>Mũ</span>
+        </div>
+        <div class="cat-item" onclick="setCategory('tat', this)">
+          <img src="images/icons/sock-icon.png" /><span>Tất</span>
+        </div>
+      </div>
+
+      <div class="grid" id="productGrid"></div>
+
+      <button id="loadMoreBtn" onclick="handleLoadMore()">XEM THÊM >></button>
+    </div>
+
+    <!--FOOTER-->
+
+    <footer class="footer">
+      <div class="top-image">
+        <img src="images/banners/footer.jpg" alt="Printory Banner" />
+        <div class="small-box">
+          <div class="logo-text">
+            <a href="../index.html">PRIN<span>TORY</span></a>
+          </div>
+          <div class="small-box-bottom">
+            <p class="slogan-text">Your story,<span> we print!</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-content">
+        <div class="footer-header"></div>
+        <div class="footer-top">
+          <div class="brand-col">
+            <div class="footer-logo">
+              <a href="index.html">PRIN<span>TORY</span></a>
+            </div>
+            <p class="footer-slogan">Your story, <span>we print!</span></p>
+            <div class="socials">
+              <p>Thông tin liên hệ</p>
+              <div class="icon-container">
+                <a href="#"
+                  ><img
+                    src="images/icons/facebook.png"
+                    alt="Facebook"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/instagram.png"
+                    alt="Instagram"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/thread.png"
+                    alt="Threads"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/tiktok.png"
+                    alt="TikTok"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/telegram.png"
+                    alt="Telegram"
+                    width="80"
+                    height="80"
+                /></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Về PRINTORY</h3>
+            <ul>
+              <li><a href="about_us.html">Câu chuyện thương hiệu</a></li>
+              <li><a href="about_us.html">Giá trị cốt lõi</a></li>
+              <li><a href="PrintoryBlog.html">Cộng đồng</a></li>
+              <li><a href="PrintoryBlog.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Đặt hàng & hỗ trợ</h3>
+            <ul>
+              <li><a href="support.html">Hỏi đáp</a></li>
+              <li><a href="support.html">Hướng dẫn mua hàng</a></li>
+              <li><a href="support.html">Chính sách khách hàng</a></li>
+              <li><a href="support.html">Điều khoản bảo mật</a></li>
+              <li><a href="support.html">Liên hệ với chúng tôi</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright-section">
+        <div class="copyright-text">BẢN QUYỀN THUỘC VỀ PRINTORY ©</div>
+      </div>
+    </footer>
+
+    <script src="js/products.js"></script>
+  </body>
+</html>

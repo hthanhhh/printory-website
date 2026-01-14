@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preview - PRINTORY</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;500;600;700;800&family=Denk+One&family=Kanit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/preview.css" />
+    <link rel="stylesheet" href="component/footer.css" />
+    <link rel="stylesheet" href="component/header.css" />
+  </head>
+  <body>
+    <!--HEADER-->
+    <header>
+      <div class="logo">
+        <a href="index.html"> PRIN<span>TORY</span> </a>
+      </div>
+
+      <div class="search-box">
+        <button type="button" id="searchBtn">
+          <i class="fa fa-search"></i>
+        </button>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
+      </div>
+      <nav class="nav">
+        <a href="PrintoryBlog.html">Printory Blog</a>
+        <a href="support.html">Hỗ trợ</a>
+        <a href="cart.html" class="cart">
+          <i class="fa fa-shopping-cart cart-icon"></i>
+          <span class="cart-text">Giỏ hàng</span>
+        </a>
+
+        <div class="user" id="loginBtn">
+          <span class="user-text">Đăng nhập</span>
+        </div>
+
+        <div class="user-profile" id="userProfile" style="display: none">
+          <img src="../images/icons/user.png" class="user-avatar" />
+          <span id="usernameDisplay">Hi, User</span>
+        </div>
+      </nav>
+    </header>
+    <!--MAIN CONTENT-->
+
+    <div class="container">
+      <div class="preview-header">
+        <h1 class="title">XEM TRƯỚC THIẾT KẾ CỦA BẠN</h1>
+        <p class="subtitle">Kiểm tra thiết kế trước khi thêm vào giỏ hàng</p>
+      </div>
+
+      <div class="preview-content">
+        <!-- Preview Area -->
+        <div class="preview-section">
+          <div class="product-preview">
+            <div class="preview-box">
+              <div class="product-image">
+                <img
+                  src="images/products/Áo thun trắng Unisex.png"
+                  id="mainProductImg"
+                />
+              </div>
+              <div class="design-overlay">
+                <div class="demo-design">
+                  <img src="images/banners/mau.png" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Zoom Controls -->
+            <div class="zoom-controls">
+              <button class="zoom-btn" id="zoomOut">
+                <i class="fas fa-search-minus"></i>
+              </button>
+              <span class="zoom-level" id="zoomLevel">100%</span>
+              <button class="zoom-btn" id="zoomIn">
+                <i class="fas fa-search-plus"></i>
+              </button>
+            </div>
+
+            <!-- View Angles -->
+            <div class="view-angles">
+              <button class="angle-btn active">
+                <i class="fas fa-user"></i>
+                <span>Mặt trước</span>
+              </button>
+              <button class="angle-btn">
+                <i class="fas fa-user"></i>
+                <span>Mặt sau</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="product-info-section">
+          <div class="product-details">
+            <h2 class="product-name">Áo Thun Trắng Unisex</h2>
+            <p class="product-description">
+              Áo thun cotton cao cấp với thiết kế của bạn
+            </p>
+
+            <!-- Size Selection -->
+            <div class="size-selection">
+              <label class="selection-label">Kích thước:</label>
+              <div class="size-options">
+                <button class="size-btn">S</button>
+              </div>
+            </div>
+
+            <!-- Quantity -->
+            <div class="quantity-selection">
+              <label class="selection-label">Số lượng:</label>
+              <div class="quantity-controls">
+                <h2>1</h2>
+              </div>
+            </div>
+
+            <!-- Price -->
+            <div class="price-info">
+              <span class="price-label">Giá:</span>
+              <span class="price-value" id="totalPrice">200,000đ</span>
+              <span class="price-note">(Đã bao gồm thiết kế)</span>
+            </div>
+
+            <!-- Design Summary -->
+            <div class="design-summary">
+              <h3 class="summary-title">
+                <i class="fas fa-palette"></i> Thiết kế của bạn
+              </h3>
+              <div class="summary-content">
+                <p class="summary-item">
+                  <i class="fas fa-check-circle"></i> Đã thêm 1 hình ảnh
+                </p>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+              <button class="btn-secondary" id="backToEdit">
+                <a href="your-story.html">
+                  <i class="fas fa-edit"></i> Quay lại chỉnh sửa
+                </a>
+              </button>
+              <button class="btn-primary" id="addToCart">
+                <a href="cart.html">
+                  <i class="fas fa-shopping-cart"></i> Thêm vào giỏ hàng
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Info -->
+      <div class="additional-info">
+        <div class="info-card">
+          <i class="fas fa-truck"></i>
+          <h3>Giao hàng miễn phí</h3>
+          <p>Cho đơn hàng trên 500,000đ</p>
+        </div>
+        <div class="info-card">
+          <i class="fas fa-undo"></i>
+          <h3>Đổi trả dễ dàng</h3>
+          <p>Trong vòng 7 ngày</p>
+        </div>
+        <div class="info-card">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Bảo hành chất lượng</h3>
+          <p>In ấn bền màu, không phai</p>
+        </div>
+      </div>
+    </div>
+    <!--FOOTER-->
+
+    <footer class="footer">
+      <div class="top-image">
+        <img src="images/banners/footer.jpg" alt="Printory Banner" />
+        <div class="small-box">
+          <div class="logo-text">
+            <a href="../index.html">PRIN<span>TORY</span></a>
+          </div>
+          <div class="small-box-bottom">
+            <p class="slogan-text">Your story,<span> we print!</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-content">
+        <div class="footer-header"></div>
+        <div class="footer-top">
+          <div class="brand-col">
+            <div class="footer-logo">
+              <a href="index.html">PRIN<span>TORY</span></a>
+            </div>
+            <p class="footer-slogan">Your story, <span>we print!</span></p>
+            <div class="socials">
+              <p>Thông tin liên hệ</p>
+              <div class="icon-container">
+                <a href="#"
+                  ><img
+                    src="images/icons/facebook.png"
+                    alt="Facebook"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/instagram.png"
+                    alt="Instagram"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/thread.png"
+                    alt="Threads"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/tiktok.png"
+                    alt="TikTok"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/telegram.png"
+                    alt="Telegram"
+                    width="80"
+                    height="80"
+                /></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Về PRINTORY</h3>
+            <ul>
+              <li><a href="about_us.html">Câu chuyện thương hiệu</a></li>
+              <li><a href="about_us.html">Giá trị cốt lõi</a></li>
+              <li><a href="PrintoryBlog.html">Cộng đồng</a></li>
+              <li><a href="PrintoryBlog.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Đặt hàng & hỗ trợ</h3>
+            <ul>
+              <li><a href="support.html">Hỏi đáp</a></li>
+              <li><a href="support.html">Hướng dẫn mua hàng</a></li>
+              <li><a href="support.html">Chính sách khách hàng</a></li>
+              <li><a href="support.html">Điều khoản bảo mật</a></li>
+              <li><a href="support.html">Liên hệ với chúng tôi</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright-section">
+        <div class="copyright-text">BẢN QUYỀN THUỘC VỀ PRINTORY ©</div>
+      </div>
+    </footer>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+      <i class="fas fa-check-circle"></i>
+      <span>Đã thêm vào giỏ hàng!</span>
+    </div>
+
+    <script src="js/preview.js"></script>
+  </body>
+</html>

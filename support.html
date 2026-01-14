@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Printory - Hỗ trợ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/font.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="css/support.css" />
+    <link rel="stylesheet" href="component/footer.css" />
+    <link rel="stylesheet" href="component/header.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="logo">
+        <a href="index.html"> PRIN<span>TORY</span> </a>
+      </div>
+
+      <div class="search-box">
+        <button type="button" id="searchBtn">
+          <i class="fa fa-search"></i>
+        </button>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
+      </div>
+      <nav class="nav">
+        <a href="PrintoryBlog.html">Printory Blog</a>
+        <a href="support.html" class="active">Hỗ trợ</a>
+        <a href="cart.html" class="cart">
+          <i class="fa fa-shopping-cart cart-icon"></i>
+          <span class="cart-text">Giỏ hàng</span>
+        </a>
+        <a href="auth.html" class="user">
+          <span class="user-text">Đăng nhập</span>
+        </a>
+      </nav>
+    </header>
+
+    <section class="support-main">
+      <div class="support-container">
+        <div class="breadcrumb"></div>
+
+        <section class="support-hero reveal">
+          <div class="hero-content">
+            <h1>Chúng tôi có thể giúp gì cho bạn?</h1>
+            <p>
+              Tìm câu trả lời cho câu hỏi của bạn hoặc liên hệ với đội ngũ hỗ
+              trợ của chúng tôi
+            </p>
+          </div>
+        </section>
+
+        <section class="faq-section reveal">
+          <h2 class="section-title">Câu hỏi thường gặp</h2>
+
+          <div class="faq-grid">
+            <div class="faq-category">
+              <h3>
+                <i class="fas fa-shopping-cart"></i> Đặt hàng & Thanh toán
+              </h3>
+              <div class="faq-list">
+                <div class="faq-item">
+                  <button class="faq-question">
+                    Làm thế nào để theo dõi đơn hàng của tôi?
+                    <i class="fas fa-chevron-down"></i>
+                  </button>
+                  <div class="faq-answer">
+                    <p>
+                      Sau khi đặt hàng thành công, bạn sẽ nhận được email xác
+                      nhận với mã theo dõi. Bạn có thể sử dụng mã này trên trang
+                      "Theo dõi đơn hàng" của chúng tôi.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-question">
+                    Tôi có thể thay đổi hoặc hủy đơn hàng không?
+                    <i class="fas fa-chevron-down"></i>
+                  </button>
+                  <div class="faq-answer">
+                    <p>
+                      Bạn có thể thay đổi hoặc hủy đơn hàng trong vòng 2 giờ sau
+                      khi đặt. Sau thời gian này, đơn hàng đã được xử lý và
+                      không thể thay đổi.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-question">
+                    Printory chấp nhận những phương thức thanh toán nào?
+                    <i class="fas fa-chevron-down"></i>
+                  </button>
+                  <div class="faq-answer">
+                    <p>
+                      Chúng tôi chấp nhận: Thẻ tín dụng/ghi nợ (Visa,
+                      Mastercard), Ví điện tử (Momo, ZaloPay), Chuyển khoản ngân
+                      hàng và COD (trả tiền khi nhận hàng).
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-category">
+              <h3>
+                <i class="fas fa-shipping-fast"></i> Vận chuyển & Giao hàng
+              </h3>
+              <div class="faq-list">
+                <div class="faq-item">
+                  <button class="faq-question">
+                    Thời gian giao hàng là bao lâu?
+                    <i class="fas fa-chevron-down"></i>
+                  </button>
+                  <div class="faq-answer">
+                    <p>
+                      Thời gian giao hàng tiêu chuẩn: 3-5 ngày làm việc cho khu
+                      vực thành phố, 5-7 ngày cho khu vực ngoại thành.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-question">
+                    Chi phí vận chuyển là bao nhiêu?
+                    <i class="fas fa-chevron-down"></i>
+                  </button>
+                  <div class="faq-answer">
+                    <p>
+                      Miễn phí vận chuyển cho đơn hàng từ 500.000đ trở lên. Dưới
+                      500.000đ: 30.000đ cho nội thành, 50.000đ cho ngoại thành.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-question">
+                    Tôi có thể giao hàng đến đâu?
+                    <i class="fas fa-chevron-down"></i>
+                  </button>
+                  <div class="faq-answer">
+                    <p>
+                      Chúng tôi giao hàng toàn quốc. Đối với khu vực hải đảo,
+                      vui lòng liên hệ trước để biết thông tin chi tiết.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-category">
+              <h3><i class="fas fa-tshirt"></i> Sản phẩm & Thiết kế</h3>
+              <div class="faq-list">
+                <div class="faq-item">
+                  <button class="faq-question">
+                    Làm thế nào để tự thiết kế sản phẩm?
+                    <i class="fas fa-chevron-down"></i>
+                  </button>
+                  <div class="faq-answer">
+                    <p>
+                      Sử dụng công cụ thiết kế trực tuyến của chúng tôi. Bạn có
+                      thể tải ảnh lên, chọn vị trí in, điều chỉnh kích thước và
+                      xem trước sản phẩm.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-question">
+                    Chất liệu sản phẩm như thế nào?
+                    <i class="fas fa-chevron-down"></i>
+                  </button>
+                  <div class="faq-answer">
+                    <p>
+                      Áo thun: 100% cotton, co giãn 4 chiều. Hoodie/Sweater: Vải
+                      nỉ mềm, giữ ấm tốt. Tất cả sản phẩm đều được in bằng công
+                      nghệ ép nhiệt cao cấp.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-question">
+                    Tôi có thể sử dụng hình ảnh có bản quyền không?
+                    <i class="fas fa-chevron-down"></i>
+                  </button>
+                  <div class="faq-answer">
+                    <p>
+                      Không. Bạn phải có quyền sử dụng hình ảnh hoặc sử dụng
+                      hình ảnh tự sáng tạo. Chúng tôi không chịu trách nhiệm về
+                      vi phạm bản quyền.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-category">
+              <h3><i class="fas fa-exchange-alt"></i> Đổi trả & Bảo hành</h3>
+              <div class="faq-list">
+                <div class="faq-item">
+                  <button class="faq-question">
+                    Chính sách đổi trả như thế nào?
+                    <i class="fas fa-chevron-down"></i>
+                  </button>
+                  <div class="faq-answer">
+                    <p>
+                      Đổi/trả trong vòng 7 ngày nếu sản phẩm lỗi, sai mẫu hoặc
+                      không đúng kích thước. Sản phẩm phải còn nguyên tag và
+                      chưa qua sử dụng.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-question">
+                    Bảo hành hình in được bao lâu?
+                    <i class="fas fa-chevron-down"></i>
+                  </button>
+                  <div class="faq-answer">
+                    <p>
+                      Chúng tôi bảo hành hình in trong 1 năm. Nếu hình in bong
+                      tróc, phai màu trong thời gian này, chúng tôi sẽ đổi sản
+                      phẩm mới.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-question">
+                    Làm sao để yêu cầu đổi trả?
+                    <i class="fas fa-chevron-down"></i>
+                  </button>
+                  <div class="faq-answer">
+                    <p>
+                      Liên hệ qua email support@printory.vn hoặc gọi hotline
+                      1900 1234. Cung cấp mã đơn hàng và hình ảnh sản phẩm có
+                      vấn đề.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact-section reveal">
+          <div class="contact-container">
+            <div class="contact-info">
+              <h2>Không tìm thấy câu trả lời?</h2>
+              <p>Đội ngũ hỗ trợ của chúng tôi luôn sẵn sàng giúp đỡ bạn</p>
+
+              <div class="contact-methods">
+                <div class="contact-method">
+                  <i class="fas fa-envelope"></i>
+                  <div>
+                    <h4>Email hỗ trợ</h4>
+                    <p>support@printory.vn</p>
+                    <small>Phản hồi trong vòng 24 giờ</small>
+                  </div>
+                </div>
+
+                <div class="contact-method">
+                  <i class="fas fa-phone"></i>
+                  <div>
+                    <h4>Hotline</h4>
+                    <p>1900 1234</p>
+                    <small>Thứ 2 - Thứ 7: 8:00 - 20:00</small>
+                  </div>
+                </div>
+
+                <div class="contact-method">
+                  <i class="fas fa-comments"></i>
+                  <div>
+                    <h4>Chat trực tuyến</h4>
+                    <p>Hỗ trợ trực tiếp</p>
+                    <small>Có sẵn 24/7</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-form">
+              <h3>Gửi tin nhắn cho chúng tôi</h3>
+              <form id="supportForm">
+                <div class="form-group">
+                  <label for="name">Họ và tên *</label>
+                  <input type="text" id="name" name="name" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="orderNumber">Mã đơn hàng (nếu có)</label>
+                  <input type="text" id="orderNumber" name="orderNumber" />
+                </div>
+
+                <div class="form-group">
+                  <label for="topic">Chủ đề *</label>
+                  <select id="topic" name="topic" required>
+                    <option value="">Chọn chủ đề</option>
+                    <option value="order">Đặt hàng & Thanh toán</option>
+                    <option value="shipping">Vận chuyển & Giao hàng</option>
+                    <option value="product">Sản phẩm & Thiết kế</option>
+                    <option value="return">Đổi trả & Bảo hành</option>
+                    <option value="other">Khác</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Nội dung *</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="attachment"
+                    >Tệp đính kèm (hình ảnh, nếu cần)</label
+                  >
+                  <input
+                    type="file"
+                    id="attachment"
+                    name="attachment"
+                    accept="image/*"
+                  />
+                </div>
+
+                <button type="submit" class="submit-btn">
+                  <i class="fas fa-paper-plane"></i> Gửi yêu cầu
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="quick-links reveal">
+          <h2>Thông tin hữu ích</h2>
+          <div class="links-grid">
+            <a href="#" class="link-card">
+              <i class="fas fa-file-alt"></i>
+              <h4>Chính sách bảo mật</h4>
+              <p>Tìm hiểu về cách chúng tôi bảo vệ thông tin của bạn</p>
+            </a>
+
+            <a href="#" class="link-card">
+              <i class="fas fa-truck"></i>
+              <h4>Chính sách vận chuyển</h4>
+              <p>Thông tin chi tiết về giao hàng và thời gian vận chuyển</p>
+            </a>
+
+            <a href="#" class="link-card">
+              <i class="fas fa-undo"></i>
+              <h4>Chính sách đổi trả</h4>
+              <p>Hướng dẫn chi tiết về quy trình đổi trả sản phẩm</p>
+            </a>
+
+            <a href="#" class="link-card">
+              <i class="fas fa-palette"></i>
+              <h4>Hướng dẫn thiết kế</h4>
+              <p>Cách tạo và tối ưu thiết kế cho sản phẩm của bạn</p>
+            </a>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+
+    <footer class="footer">
+      <div class="top-image">
+        <img src="images/banners/footer.jpg" alt="Printory Banner" />
+        <div class="small-box">
+          <div class="logo-text">
+            <a href="../index.html">PRIN<span>TORY</span></a>
+          </div>
+          <div class="small-box-bottom">
+            <p class="slogan-text">Your story,<span> we print!</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-content">
+        <div class="footer-header"></div>
+        <div class="footer-top">
+          <div class="brand-col">
+            <div class="footer-logo">
+              <a href="index.html">PRIN<span>TORY</span></a>
+            </div>
+            <p class="footer-slogan">Your story, <span>we print!</span></p>
+            <div class="socials">
+              <p>Thông tin liên hệ</p>
+              <div class="icon-container">
+                <a href="#"
+                  ><img
+                    src="images/icons/facebook.png"
+                    alt="Facebook"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/instagram.png"
+                    alt="Instagram"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/thread.png"
+                    alt="Threads"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/tiktok.png"
+                    alt="TikTok"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/telegram.png"
+                    alt="Telegram"
+                    width="80"
+                    height="80"
+                /></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Về PRINTORY</h3>
+            <ul>
+              <li><a href="about_us.html">Câu chuyện thương hiệu</a></li>
+              <li><a href="about_us.html">Giá trị cốt lõi</a></li>
+              <li><a href="PrintoryBlog.html">Cộng đồng</a></li>
+              <li><a href="PrintoryBlog.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Đặt hàng & hỗ trợ</h3>
+            <ul>
+              <li><a href="support.html">Hỏi đáp</a></li>
+              <li><a href="support.html">Hướng dẫn mua hàng</a></li>
+              <li><a href="support.html">Chính sách khách hàng</a></li>
+              <li><a href="support.html">Điều khoản bảo mật</a></li>
+              <li><a href="support.html">Liên hệ với chúng tôi</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright-section">
+        <div class="copyright-text">BẢN QUYỀN THUỘC VỀ PRINTORY ©</div>
+      </div>
+    </footer>
+
+    <script src="js/support.js"></script>
+  </body>
+</html>

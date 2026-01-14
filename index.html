@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Printory - Câu chuyện</title>
+
+    <link rel="stylesheet" href="css/font.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="component/footer.css" />
+    <link rel="stylesheet" href="component/header.css" />
+  </head>
+
+  <body>
+    <!--HEADER-->
+    <header>
+      <div class="logo">
+        <a href="index.html"> PRIN<span>TORY</span> </a>
+      </div>
+
+      <div class="search-box">
+        <button type="button" id="searchBtn">
+          <i class="fa fa-search"></i>
+        </button>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
+      </div>
+      <nav class="nav">
+        <a href="PrintoryBlog.html">Printory Blog</a>
+        <a href="support.html">Hỗ trợ</a>
+        <a href="cart.html" class="cart">
+          <i class="fa fa-shopping-cart cart-icon"></i>
+          <span class="cart-text">Giỏ hàng</span>
+        </a>
+
+        <div class="user" id="loginBtn">
+          <span class="user-text">Đăng nhập</span>
+        </div>
+
+        <div class="user-profile" id="userProfile" style="display: none">
+          <img src="images/icons/user.png" class="user-avatar" />
+          <span id="usernameDisplay">Hi, User</span>
+        </div>
+      </nav>
+    </header>
+    <!--MAIN CONTENT-->
+    <section class="hero reveal">
+      <div class="hero-box">
+        <h1>CÂU CHUYỆN CỦA PRINTORY</h1>
+
+        <p>
+          PRINTORY được tạo ra để giữ lại những điều từng rất quan trọng, một
+          khoảnh khắc, một hình ảnh, một câu chuyện riêng. Chúng tôi tin rằng
+          cảm xúc không chỉ tồn tại trong trí nhớ, mà xứng đáng được hiện diện
+          bằng hình ảnh cụ thể. Mỗi sản phẩm tại PRINTORY là một dấu ấn được in
+          ra, được nâng niu và lưu giữ theo năm tháng. Bởi vì có những câu
+          chuyện,nếu không giữ lại, thời gian sẽ mang chúng đi.
+        </p>
+
+        <button class="hero-btn" onclick="window.location.href='about_us.html'">
+          Your story, <span>we print!</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="products-section reveal">
+      <div class="container">
+        <h2 class="section-title">DANH MỤC SẢN PHẨM</h2>
+
+        <div class="categories">
+          <div
+            class="category-item reveal delay-1"
+            onclick="window.location.href='#'"
+          >
+            <img src="images/icons/tshirt-icon.png" class="category-icon" />
+            <span>Áo thun</span>
+          </div>
+
+          <div
+            class="category-item reveal delay-2"
+            onclick="window.location.href='#'"
+          >
+            <img src="images/icons/hoodie-icon.png" class="category-icon" />
+            <span>Hoodie</span>
+          </div>
+
+          <div
+            class="category-item reveal delay-3"
+            onclick="window.location.href='#'"
+          >
+            <img src="images/icons/sweater1-icon.png" class="category-icon" />
+            <span>Sweater</span>
+          </div>
+
+          <div
+            class="category-item reveal delay-4"
+            onclick="window.location.href='#'"
+          >
+            <img src="images/icons/tote1-icon.png" class="category-icon" />
+            <span>Túi Tote</span>
+          </div>
+
+          <div
+            class="category-item reveal delay-1"
+            onclick="window.location.href='#'"
+          >
+            <img src="images/icons/mug-icon.png" class="category-icon" />
+            <span>Cốc</span>
+          </div>
+
+          <div
+            class="category-item reveal delay-2"
+            onclick="window.location.href='#'"
+          >
+            <img src="images/icons/cap-icon.png" class="category-icon" />
+            <span>Mũ</span>
+          </div>
+
+          <div
+            class="category-item reveal delay-3"
+            onclick="window.location.href='#'"
+          >
+            <img src="images/icons/sock-icon.png" class="category-icon" />
+            <span>Tất</span>
+          </div>
+        </div>
+
+        <!-- ===== CHỈ HIỂN THỊ 4 SẢN PHẨM ĐẦU TIÊN ===== -->
+        <div class="grid" id="productGrid">
+          <div class="card reveal delay-1">
+            <a
+              href="product-detail.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="img-box">
+                <img
+                  class="product-img"
+                  src="images/products/Áo thun trắng Unisex.png"
+                />
+              </div>
+              <div class="name">ÁO THUN TRẮNG UNISEX</div>
+              <div class="stars">★★★★☆</div>
+              <div class="price">200.000 đ</div>
+            </a>
+          </div>
+
+          <div class="card reveal delay-2">
+            <a
+              href="product-detail.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="img-box">
+                <img
+                  class="product-img"
+                  src="images/products/Áo thun đen Unisex-back.png"
+                />
+              </div>
+              <div class="name">ÁO THUN ĐEN UNISEX</div>
+              <div class="stars">★★★☆☆</div>
+              <div class="price">200.000 đ</div>
+            </a>
+          </div>
+
+          <div class="card reveal delay-3">
+            <a
+              href="product-detail.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="img-box">
+                <img
+                  class="product-img"
+                  src="images/products/Áo body đỏ Nữ.png"
+                />
+              </div>
+              <div class="name">ÁO BODY ĐỎ NỮ</div>
+              <div class="stars">★★★★★</div>
+              <div class="price">175.000 đ</div>
+            </a>
+          </div>
+
+          <div class="card reveal delay-4">
+            <a
+              href="product-detail.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="img-box">
+                <img
+                  class="product-img"
+                  src="images/products/Áo thun xanh đen Unisex.png"
+                />
+              </div>
+              <div class="name">ÁO THUN XANH ĐEN UNISEX</div>
+              <div class="stars">★★★★☆</div>
+              <div class="price">200.000 đ</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- ===== THAY ĐỔI: Nút xem thêm với style mới giống products.html ===== -->
+        <button id="loadMoreBtn" onclick="window.location.href='products.html'">
+          XEM THÊM >>
+        </button>
+      </div>
+    </section>
+    <!-- ===== THIẾT KẾ NỔI BẬT ===== -->
+    <section class="featured-designs reveal">
+      <div class="container">
+        <h2 class="featured-title reveal delay-1">THIẾT KẾ NỔI BẬT</h2>
+
+        <div class="featured-list">
+          <!-- Item 1 -->
+          <div class="featured-card low reveal delay-1">
+            <img src="images/designs/meo.png" alt="meo" />
+            <h3>bé mèo nhỏ lo âu</h3>
+            <p>Thiết kế bởi hthuc</p>
+            <div class="stars">★★★★★</div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="featured-card high reveal delay-2">
+            <img src="images/designs/AMAZING GOOD JOB.png" alt="Amazing" />
+            <h3>AMAZING GOOD JOB</h3>
+            <p>Thiết kế bởi hlinh</p>
+            <div class="stars">★★★★★</div>
+          </div>
+
+          <!-- Item nổi bật -->
+          <div class="featured-card center highlight reveal delay-3">
+            <img src="images/designs/Alien.png" alt="Alien Cute" />
+            <h3>Alien người ngoài hành tinh</h3>
+            <p>Thiết kế bởi btram</p>
+            <div class="stars">★★★★★</div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="featured-card high reveal delay-2">
+            <img src="images/designs/Cam.png" alt="Orange" />
+            <h3>Cam ơi thương lấy quýt cùng</h3>
+            <p>Thiết kế bởi hthanh</p>
+            <div class="stars">★★★★★</div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="featured-card low reveal delay-1">
+            <img src="images/designs/VIETNAM.png" alt="Vietnam" />
+            <h3>VIETNAM</h3>
+            <p>Thiết kế bởi dhuy</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+
+        <div class="featured-btn reveal delay-4">
+          <a href="designs.html">DANH MỤC THIẾT KẾ</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Phần Hero mới từ screenshot -->
+    <section class="hero-main reveal">
+      <div class="hero-inner">
+        <div class="hero-image">
+          <img src="images/banners/pic1.jpg" alt="hoodie" />
+        </div>
+
+        <div class="hero-content">
+          <h1>Print your story!</h1>
+
+          <div class="hero-text">
+            <p>
+              Tự tay mang câu chuyện của bạn vào từng sản phẩm.
+              <br />
+              Biến mỗi sản phẩm trở thành dấu ấn riêng của chính bạn!
+            </p>
+          </div>
+
+          <a href="products.html" class="hero-btn">Khám phá ngay thôi!</a>
+        </div>
+      </div>
+    </section>
+    <!--FOOTER-->
+
+    <footer class="footer">
+      <div class="top-image">
+        <img src="images/banners/footer.jpg" alt="Printory Banner" />
+        <div class="small-box">
+          <div class="logo-text">
+            <a href="../index.html">PRIN<span>TORY</span></a>
+          </div>
+          <div class="small-box-bottom">
+            <p class="slogan-text">Your story,<span> we print!</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-content">
+        <div class="footer-header"></div>
+        <div class="footer-top">
+          <div class="brand-col">
+            <div class="footer-logo">
+              <a href="index.html">PRIN<span>TORY</span></a>
+            </div>
+            <p class="footer-slogan">Your story, <span>we print!</span></p>
+            <div class="socials">
+              <p>Thông tin liên hệ</p>
+              <div class="icon-container">
+                <a href="#"
+                  ><img
+                    src="images/icons/facebook.png"
+                    alt="Facebook"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/instagram.png"
+                    alt="Instagram"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/thread.png"
+                    alt="Threads"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/tiktok.png"
+                    alt="TikTok"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/telegram.png"
+                    alt="Telegram"
+                    width="80"
+                    height="80"
+                /></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Về PRINTORY</h3>
+            <ul>
+              <li><a href="about_us.html">Câu chuyện thương hiệu</a></li>
+              <li><a href="about_us.html">Giá trị cốt lõi</a></li>
+              <li><a href="PrintoryBlog.html">Cộng đồng</a></li>
+              <li><a href="PrintoryBlog.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Đặt hàng & hỗ trợ</h3>
+            <ul>
+              <li><a href="support.html">Hỏi đáp</a></li>
+              <li><a href="support.html">Hướng dẫn mua hàng</a></li>
+              <li><a href="support.html">Chính sách khách hàng</a></li>
+              <li><a href="support.html">Điều khoản bảo mật</a></li>
+              <li><a href="support.html">Liên hệ với chúng tôi</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright-section">
+        <div class="copyright-text">BẢN QUYỀN THUỘC VỀ PRINTORY ©</div>
+      </div>
+    </footer>
+    <div class="auth-modal" id="authModal">
+      <div class="auth-frame">
+        <span class="close-btn" onclick="closeAuth()">×</span>
+
+        <iframe src="auth.html" frameborder="0"></iframe>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>

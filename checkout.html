@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Printory - Câu chuyện</title>
+
+    <link rel="stylesheet" href="css/font.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="css/checkout.css" />
+    <link rel="stylesheet" href="component/footer.css" />
+    <link rel="stylesheet" href="component/header.css" />
+  </head>
+
+  <body>
+    <!--HEADER-->
+    <header>
+      <div class="logo">
+        <a href="index.html"> PRIN<span>TORY</span> </a>
+      </div>
+    </header>
+    <!--MAIN CONTENT-->
+    <div class="checkout-container">
+      <h1 class="checkout-title">Thanh toán</h1>
+
+      <div class="checkout-grid">
+        <!-- THÔNG TIN KHÁCH HÀNG -->
+        <div>
+          <div class="checkout-section">
+            <h2 class="section-title">Thông tin nhận hàng</h2>
+            <p class="section-description">
+              Bạn vui lòng nhập đầy đủ thông tin nhận hàng và số điện thoại
+              trong thời gian giao hàng nhé!
+            </p>
+
+            <form id="checkoutForm">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label">Họ và tên</label>
+                  <input
+                    type="text"
+                    class="form-input"
+                    id="fullName"
+                    required
+                  />
+                  <span class="error-message" id="nameError"
+                    >Vui lòng nhập họ tên</span
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Số điện thoại</label>
+                  <input type="tel" class="form-input" id="phone" required />
+                  <span class="error-message" id="phoneError"
+                    >Vui lòng nhập số điện thoại</span
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Địa chỉ</label>
+                  <input type="text" class="form-input" id="address" required />
+                  <span class="error-message" id="addressError"
+                    >Vui lòng nhập địa chỉ</span
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-input" id="email" required />
+                  <span class="error-message" id="emailError"
+                    >Vui lòng nhập email hợp lệ</span
+                  >
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="checkout-section" style="margin-top: 20px">
+            <h2 class="section-title">Phương thức thanh toán</h2>
+
+            <div class="payment-methods">
+              <label class="payment-option">
+                <input type="radio" name="payment" value="cod" checked />
+                <span class="payment-label"
+                  >Thanh toán trực tiếp khi nhận hàng</span
+                >
+              </label>
+
+              <label class="payment-option">
+                <input type="radio" name="payment" value="bank" />
+                <span class="payment-label"
+                  >Thanh toán bằng thẻ quốc tế/thẻ nội địa/QR code</span
+                >
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- ĐỌN HÀNG -->
+        <div>
+          <div class="order-summary">
+            <h2 class="section-title">ĐƠN HÀNG</h2>
+
+            <div id="orderItems">
+              <!-- Order items sẽ được render bằng JavaScript -->
+            </div>
+
+            <div class="order-total">
+              <div class="shipping-row">
+                <span class="shipping-label">Tạm tính:</span>
+                <span class="shipping-price" id="subtotal">0 VNĐ</span>
+              </div>
+              <div class="shipping-row">
+                <span class="shipping-label">Phí vận chuyển:</span>
+                <span class="shipping-price" id="shippingFee">30.000 VNĐ</span>
+              </div>
+              <div class="total-row">
+                <span class="total-label">TỔNG CỘNG:</span>
+                <span class="total-price" id="totalPrice">0 VNĐ</span>
+              </div>
+            </div>
+
+            <button class="checkout-btn" onclick="completeOrder()">
+              HOÀN TẤT ĐẶT HÀNG
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+      <div class="top-image">
+        <img src="images/banners/footer.jpg" alt="Printory Banner" />
+        <div class="small-box">
+          <div class="logo-text">
+            <a href="../index.html">PRIN<span>TORY</span></a>
+          </div>
+          <div class="small-box-bottom">
+            <p class="slogan-text">Your story,<span> we print!</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-content">
+        <div class="footer-header"></div>
+        <div class="footer-top">
+          <div class="brand-col">
+            <div class="footer-logo">
+              <a href="index.html">PRIN<span>TORY</span></a>
+            </div>
+            <p class="footer-slogan">Your story, <span>we print!</span></p>
+            <div class="socials">
+              <p>Thông tin liên hệ</p>
+              <div class="icon-container">
+                <a href="#"
+                  ><img
+                    src="images/icons/facebook.png"
+                    alt="Facebook"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/instagram.png"
+                    alt="Instagram"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/thread.png"
+                    alt="Threads"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/tiktok.png"
+                    alt="TikTok"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/telegram.png"
+                    alt="Telegram"
+                    width="80"
+                    height="80"
+                /></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Về PRINTORY</h3>
+            <ul>
+              <li><a href="about_us.html">Câu chuyện thương hiệu</a></li>
+              <li><a href="about_us.html">Giá trị cốt lõi</a></li>
+              <li><a href="PrintoryBlog.html">Cộng đồng</a></li>
+              <li><a href="PrintoryBlog.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Đặt hàng & hỗ trợ</h3>
+            <ul>
+              <li><a href="support.html">Hỏi đáp</a></li>
+              <li><a href="support.html">Hướng dẫn mua hàng</a></li>
+              <li><a href="support.html">Chính sách khách hàng</a></li>
+              <li><a href="support.html">Điều khoản bảo mật</a></li>
+              <li><a href="support.html">Liên hệ với chúng tôi</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright-section">
+        <div class="copyright-text">BẢN QUYỀN THUỘC VỀ PRINTORY ©</div>
+      </div>
+    </footer>
+
+    <script src="js/checkout.js"></script>
+  </body>
+</html>

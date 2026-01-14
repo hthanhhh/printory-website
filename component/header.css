@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #053046;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Kanit", sans-serif;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: white;
+  font-family: "Denk One", sans-serif;
+}
+
+.logo span {
+  color: #fa8501;
+}
+a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.search-box {
+  flex: 0.9;
+  margin: 0 20px;
+  position: relative;
+  transform: translateY(1px);
+}
+
+.search-box input {
+  width: 100%;
+  max-width: 100%;
+  padding: 14px 20px 14px 70px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  transition: none;
+  box-sizing: border-box;
+}
+
+.search-box input:focus {
+  width: 100%;
+}
+
+.search-box button {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.search-box i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a5a2a2;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+@media screen and (max-width: 768px) {
+  .search-box {
+    margin: 0 15px;
+    flex: 1;
+    max-width: 100%;
+  }
+
+  .search-box input {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 15px 12px 45px;
+    font-size: 14px;
+    transition: none;
+  }
+
+  .search-box i {
+    font-size: 16px;
+    left: 12px;
+  }
+
+  .search-box button {
+    left: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .search-box input {
+    padding: 10px 12px 10px 40px;
+    font-size: 13px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .search-box i {
+    font-size: 14px;
+    left: 10px;
+  }
+
+  .search-box button {
+    left: 10px;
+  }
+}
+.user,
+.user-profile {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #ffffff;
+  font-family: "Baloo Thambi 2", sans-serif;
+  font-size: 20px;
+}
+
+.nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cart-icon {
+  font-size: 20px;
+  color: #fa8501;
+}
+
+.cart-text {
+  font-family: "Baloo Thambi 2", sans-serif;
+  color: white;
+  margin-left: 8px;
+  font-size: 20px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-text {
+  font-family: "Baloo Thambi 2", sans-serif;
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+  background-color: #fa8501;
+  padding: 8px 20px;
+  border-radius: 25px;
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  line-height: 1.2;
+  box-shadow: 0 4px 8px rgba(250, 133, 1, 0.2);
+}

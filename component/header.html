@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header Printory</title>
+
+    <link rel="stylesheet" href="../css/font.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="header.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="index.html"> PRIN<span>TORY</span> </a>
+      </div>
+
+      <div class="search-box">
+        <button type="button" id="searchBtn">
+          <i class="fa fa-search"></i>
+        </button>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
+      </div>
+      <nav class="nav">
+        <a href="../PrintoryBlog.html">Printory Blog</a>
+        <a href="../support.html">Hỗ trợ</a>
+        <a href="../cart.html" class="cart">
+          <i class="fa fa-shopping-cart cart-icon"></i>
+          <span class="cart-text">Giỏ hàng</span>
+        </a>
+
+        <div class="user" id="loginBtn">
+          <span class="user-text">Đăng nhập</span>
+        </div>
+
+        <div class="user-profile" id="userProfile" style="display: none">
+          <img src="../images/icons/user.png" class="user-avatar" />
+          <span id="usernameDisplay">Hi, User</span>
+        </div>
+      </nav>
+    </header>
+  </body>
+</html>

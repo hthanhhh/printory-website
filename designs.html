@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Thiết Kế Sản Phẩm</title>
+    <link rel="stylesheet" href="css/designs.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="component/footer.css" />
+    <link rel="stylesheet" href="component/header.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- ==================== HEADER ==================== -->
+    <header>
+      <div class="logo">
+        <a href="index.html"> PRIN<span>TORY</span> </a>
+      </div>
+
+      <div class="search-box">
+        <button type="button" id="searchBtn">
+          <i class="fa fa-search"></i>
+        </button>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
+      </div>
+
+      <nav class="nav">
+        <a href="PrintoryBlog.html">Printory Blog</a>
+        <a href="support.html">Hỗ trợ</a>
+        <a href="cart.html" class="cart">
+          <i class="fa fa-shopping-cart cart-icon"></i>
+          <span class="cart-text">Giỏ hàng</span>
+        </a>
+
+        <a href="auth.html" class="user">
+          <span class="user-text">Đăng nhập</span>
+        </a>
+      </nav>
+    </header>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="container">
+      <h2>THIẾT KẾ CỦA BẠN:</h2>
+
+      <div class="design-box">
+        <img src="images/products/Áo thun trắng Unisex.png" alt="T-shirt" />
+        <div id="sticker-container" class="sticker-container"></div>
+      </div>
+
+      <div class="zoom-control">
+        <button id="zoom-out">-</button>
+        <span id="zoom-level">100%</span>
+        <button id="zoom-in">+</button>
+      </div>
+
+      <div class="action-buttons">
+        <a href="your-story.html">
+          <button class="upload">Tải lên thiết kế của bạn</button>
+        </a>
+        <button class="preview">
+          <a href="preview.html"> PREVIEW</a>
+        </button>
+        <button class="choose">Chọn mẫu thiết kế có sẵn</button>
+      </div>
+    </main>
+
+    <!-- ========== STICKER GALLERY ========== -->
+    <div class="container">
+      <!-- Các sticker items giữ nguyên -->
+      <div class="item">
+        <div class="card">
+          <div class="icon-box">
+            <img src="images/designs/Alien.png" style="transform: scale(0.5)" />
+          </div>
+        </div>
+        <div class="outside-text">Alien người ngoài hành tinh</div>
+      </div>
+
+      <div class="item">
+        <div class="card">
+          <div class="icon-box">
+            <img
+              src="images/designs/AMAZING GOOD JOB.png"
+              style="transform: scale(0.5)"
+            />
+          </div>
+        </div>
+        <div class="outside-text">AMAZING<br />GOOD JOB!</div>
+      </div>
+
+      <div class="item">
+        <div class="card">
+          <div class="icon-box">
+            <img
+              src="images/designs/Bạn là một bông hoa-byhthanh.png"
+              style="transform: scale(0.5)"
+            />
+          </div>
+        </div>
+        <div class="outside-text">Bạn là một bông hoa</div>
+      </div>
+
+      <div class="item">
+        <div class="card">
+          <div class="icon-box">
+            <img src="images/designs/meo.png" style="transform: scale(0.5)" />
+          </div>
+        </div>
+        <div class="outside-text">Bé mèo nhỏ lo âu</div>
+      </div>
+
+      <div class="item">
+        <div class="card">
+          <div class="icon-box">
+            <img
+              src="images/designs/Bí ngô Halloween-byhthuc.png"
+              style="transform: scale(0.5)"
+            />
+          </div>
+        </div>
+        <div class="outside-text">Bí ngô Halloween</div>
+      </div>
+
+      <div class="item">
+        <div class="card">
+          <div class="icon-box">
+            <img
+              src="images/designs/Bộ xương-bydhuy.png"
+              style="transform: scale(0.5)"
+            />
+          </div>
+        </div>
+        <div class="outside-text">Bộ xương</div>
+      </div>
+
+      <div class="item">
+        <div class="card">
+          <div class="icon-box">
+            <img src="images/designs/Cam.png" style="transform: scale(0.5)" />
+          </div>
+        </div>
+        <div class="outside-text">Cam ơi thương lấy quýt cùng</div>
+      </div>
+
+      <div class="item">
+        <div class="card">
+          <div class="icon-box">
+            <img
+              src="images/designs/Cánh cụt cutephomaique-byhlinh.png"
+              style="transform: scale(0.5)"
+            />
+          </div>
+        </div>
+        <div class="outside-text">Cánh cụt cutephomaique</div>
+      </div>
+
+      <div class="item">
+        <div class="card">
+          <div class="icon-box">
+            <img
+              src="images/designs/Con ong chăm chỉ-bynchuong.png"
+              style="transform: scale(0.5)"
+            />
+          </div>
+        </div>
+        <div class="outside-text">Con ong chăm chỉ</div>
+      </div>
+
+      <div class="item">
+        <div class="card">
+          <div class="icon-box">
+            <img
+              src="images/designs/Hoa màu hồng cute-bythien.png"
+              style="transform: scale(0.5)"
+            />
+          </div>
+        </div>
+        <div class="outside-text">Hoa cute màu hồng</div>
+      </div>
+
+      <div class="item">
+        <div class="card">
+          <div class="icon-box">
+            <img
+              src="images/designs/Khủng long tinh nghịch-byhlinh.png"
+              style="transform: scale(0.5)"
+            />
+          </div>
+        </div>
+        <div class="outside-text">Khủng long tinh nghịch</div>
+      </div>
+
+      <div class="item">
+        <div class="card">
+          <div class="icon-box">
+            <img
+              src="images/designs/Made in VietNam-bybtram.png"
+              style="transform: scale(0.5)"
+            />
+          </div>
+        </div>
+        <div class="outside-text">Made in VietNam</div>
+      </div>
+
+      <div class="item">
+        <div class="card">
+          <div class="icon-box">
+            <img
+              src="images/designs/Mặt trời của em-bythien.png"
+              style="transform: scale(0.5)"
+            />
+          </div>
+        </div>
+        <div class="outside-text">Mặt trời của em</div>
+      </div>
+
+      <div class="item">
+        <div class="card">
+          <div class="icon-box">
+            <img
+              src="images/designs/meme-bydhuy.png"
+              style="transform: scale(0.5)"
+            />
+          </div>
+        </div>
+        <div class="outside-text">Meme</div>
+      </div>
+
+      <div class="item">
+        <div class="card">
+          <div class="icon-box">
+            <img
+              src="images/designs/Ngôi sao Phương Nam-bybtram.png"
+              style="transform: scale(0.5)"
+            />
+          </div>
+        </div>
+        <div class="outside-text">Ngôi sao Phương Nam</div>
+      </div>
+
+      <div class="item">
+        <div class="card">
+          <div class="icon-box">
+            <img
+              src="images/designs/Sau cơn mưa sẽ có cầu vồng-byqgiang.png"
+              style="transform: scale(0.5)"
+            />
+          </div>
+        </div>
+        <div class="outside-text">Sau cơn mưa sẽ có cầu vồng</div>
+      </div>
+
+      <div class="item">
+        <div class="card">
+          <div class="icon-box">
+            <img
+              src="images/designs/SUPER!-byhlinh.png"
+              style="transform: scale(0.5)"
+            />
+          </div>
+        </div>
+        <div class="outside-text">SUPER!</div>
+      </div>
+
+      <div class="item">
+        <div class="card">
+          <div class="icon-box">
+            <img
+              src="images/designs/VIETNAM.png"
+              style="transform: scale(0.5)"
+            />
+          </div>
+        </div>
+        <div class="outside-text">VIETNAM</div>
+      </div>
+
+      <div class="item">
+        <div class="card">
+          <div class="icon-box">
+            <img
+              src="images/designs/Xác sống trỗi dậy-bynchuong.png"
+              style="transform: scale(0.5)"
+            />
+          </div>
+        </div>
+        <div class="outside-text">Xác sống trỗi dậy</div>
+      </div>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+      <div class="top-image">
+        <img src="images/banners/footer.jpg" alt="Printory Banner" />
+        <div class="small-box">
+          <div class="logo-text">
+            <a href="../index.html">PRIN<span>TORY</span></a>
+          </div>
+          <div class="small-box-bottom">
+            <p class="slogan-text">Your story,<span> we print!</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-content">
+        <div class="footer-header"></div>
+        <div class="footer-top">
+          <div class="brand-col">
+            <div class="footer-logo">
+              <a href="index.html">PRIN<span>TORY</span></a>
+            </div>
+            <p class="footer-slogan">Your story, <span>we print!</span></p>
+            <div class="socials">
+              <p>Thông tin liên hệ</p>
+              <div class="icon-container">
+                <a href="#"
+                  ><img
+                    src="images/icons/facebook.png"
+                    alt="Facebook"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/instagram.png"
+                    alt="Instagram"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/thread.png"
+                    alt="Threads"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/tiktok.png"
+                    alt="TikTok"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/telegram.png"
+                    alt="Telegram"
+                    width="80"
+                    height="80"
+                /></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Về PRINTORY</h3>
+            <ul>
+              <li><a href="about_us.html">Câu chuyện thương hiệu</a></li>
+              <li><a href="about_us.html">Giá trị cốt lõi</a></li>
+              <li><a href="PrintoryBlog.html">Cộng đồng</a></li>
+              <li><a href="PrintoryBlog.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Đặt hàng & hỗ trợ</h3>
+            <ul>
+              <li><a href="support.html">Hỏi đáp</a></li>
+              <li><a href="support.html">Hướng dẫn mua hàng</a></li>
+              <li><a href="support.html">Chính sách khách hàng</a></li>
+              <li><a href="support.html">Điều khoản bảo mật</a></li>
+              <li><a href="support.html">Liên hệ với chúng tôi</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright-section">
+        <div class="copyright-text">BẢN QUYỀN THUỘC VỀ PRINTORY ©</div>
+      </div>
+    </footer>
+
+    <script src="js/designs.js"></script>
+  </body>
+</html>

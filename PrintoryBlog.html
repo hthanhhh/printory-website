@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="component/header.css" />
+    <link rel="stylesheet" href="component/footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/blog.css" />
+  </head>
+  <body>
+    <!--HEADER-->
+    <header>
+      <div class="logo">
+        <a href="index.html"> PRIN<span>TORY</span> </a>
+      </div>
+
+      <div class="search-box">
+        <button type="button" id="searchBtn">
+          <i class="fa fa-search"></i>
+        </button>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
+      </div>
+      <nav class="nav">
+        <a href="PrintoryBlog.html">Printory Blog</a>
+        <a href="support.html">Hỗ trợ</a>
+        <a href="cart.html" class="cart">
+          <i class="fa fa-shopping-cart cart-icon"></i>
+          <span class="cart-text">Giỏ hàng</span>
+        </a>
+
+        <a href="auth.html" class="user">
+          <span class="user-text">Đăng nhập</span>
+        </a>
+      </nav>
+    </header>
+    <!--MAIN CONTENT-->
+    <div class="banner-container">
+      <div href="index.html" class="header-logo">
+        <img src="images/Tainguyen/Printoryblog.png" alt="Printory Blog" />
+      </div>
+
+      <div class="banner-content">
+        <div class="banner-left" id="bg-left">
+          <img
+            src="images/Tainguyen/blog_tet.jpg"
+            alt="Tet Shirt"
+            id="product-img"
+          />
+        </div>
+
+        <div class="banner-right" id="bg-right">
+          <button class="nav-arrow" onclick="nextSlide()">❯</button>
+          <p class="daterange" id="date-range">DIỄN RA TỪ 31/12 - 1/2/2026</p>
+          <div class="slide-content-wrapper">
+            <h1 class="title" id="title">
+              NĂM MỚI RẠNG NGỜI <br />
+              KHỞI SẮC
+            </h1>
+            <p class="description" id="description">
+              Mùa xuân luôn là thời điểm tuyệt vời nhất để chúng ta làm mới bản
+              thân và không gian sống. Thấu hiểu điều đó, từ ngày 31/12/2025 đến
+              hết ngày 01/02/2026, PRINTORY mang đến một luồng gió mới với hàng
+              loạt mẫu thiết kế vừa ra mắt.
+            </p>
+          </div>
+          <div class="actions">
+            <button class="btn-view">Xem ngay</button>
+            <div class="nav-dots" id="dots-container">
+              <span class="dot active" onclick="goToSlide(0)"></span>
+              <span class="dot" onclick="goToSlide(1)"></span>
+              <span class="dot" onclick="goToSlide(2)"></span>
+              <span class="dot" onclick="goToSlide(3)"></span>
+              <span class="dot" onclick="goToSlide(4)"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <header class="category-header">
+        <h2>CHƯƠNG TRÌNH ĐẶC BIỆT</h2>
+        <button class="btn-all toggle-posts">XEM TẤT CẢ BÀI VIẾT</button>
+      </header>
+
+      <section class="post-grid">
+        <a href="PrintoryBlogDetail11.html" class="post-card">
+          <div class="img-container">
+            <img src="images/Tainguyen/blog_tet.jpg" alt="Tet" />
+          </div>
+          <p class="post-date">31 Tháng 12, 2025</p>
+          <h3>NĂM MỚI RẠNG NGỜI KHỞI SẮC</h3>
+          <p class="post-excerpt">
+            Trong không khí hân hoan của những ngày đầu năm mới 2026, PRINTORY
+            chính thức khởi động chiến dịch quy mô lớn mang tên Năm Mới Rạng
+            Ngời Khởi Sắc. Đây không chỉ là lời tri ân gửi đến khách hàng mà còn
+            là cột mốc đánh dấu sự lột xác về phong cách với những bộ sưu tập
+            thiết kế độc bản.
+          </p>
+        </a>
+        <a href="PrintoryBlogDetail12.html" class="post-card">
+          <div class="img-container">
+            <img src="images/Tainguyen/blog_giangsinh.jpg" alt="Christmas" />
+          </div>
+          <p class="post-date">15 Tháng 12, 2025</p>
+          <h3>GIÁNG SINH ẤM ÁP</h3>
+          <p class="post-excerpt">
+            Giáng sinh không chỉ là dịp để tụ họp, mà còn là thời điểm để làm
+            mới không gian sống và tủ đồ của bạn. Hòa chung không khí lễ hội,
+            PRINTORY chính thức tung ra cơn mưa ưu đãi cực khủng cùng bộ sưu tập
+            họa tiết Giáng sinh có một không hai.
+          </p>
+        </a>
+        <a
+          href="PrintoryBlogDetail13.html"
+          class="post-card extra-post"
+          style="display: none"
+        >
+          <div class="img-container">
+            <img src="images/Tainguyen/blog_ngay2010.jpg" alt="20-10" />
+          </div>
+          <p class="post-date">10 Tháng 10, 2025</p>
+          <h3>GÓI TRỌN YÊU THƯƠNG</h3>
+          <p class="post-excerpt">
+            Tháng 10 về mang theo những cơn gió nhẹ nhàng và cũng là dịp để
+            chúng ta tôn vinh những người phụ nữ tuyệt vời nhất. Với mong muốn
+            trở thành cầu nối giúp bạn gửi gắm tâm tư, Printory chính thức ra
+            mắt chiến dịch Gói Trọn Yêu Thương – nơi mỗi món quà là một lời tri
+            ân sâu sắc dành cho một nửa thế giới.
+          </p>
+        </a>
+        <a href="PrintoryBlogDetail14.html" class="post-card">
+          <div class="img-container">
+            <img src="images/Tainguyen/blog_quockhanh.jpg" alt="National Day" />
+          </div>
+          <p class="post-date">25 Tháng 8, 2025</p>
+          <h3>RẠNG RỠ SẮC ĐỎ</h3>
+          <p class="post-excerpt">
+            Chào mừng kỷ niệm ngày Quốc khánh 2/9, không chỉ là dịp để nghỉ
+            ngơi, đây còn là thời điểm tuyệt vời để chúng ta thể hiện lòng tự
+            hào dân tộc qua những sản phẩm cá nhân hóa độc đáo. PRINTORY chính
+            thức khởi động chiến dịch ưu đãi lớn nhất mùa Thu, giúp bạn nhuộm đỏ
+            không gian sống và phong cách thời trang bằng tinh thần Việt Nam.
+          </p>
+        </a>
+        <a
+          href="PrintoryBlogDetail15.html"
+          class="post-card extra-post"
+          style="display: none"
+        >
+          <div class="img-container">
+            <img src="images/Tainguyen/blog_ngay16.jpg" alt="Children" />
+          </div>
+          <p class="post-date">1 Tháng 6, 2025</p>
+          <h3>THẾ GIỚI TRẺ THƠ</h3>
+          <p class="post-excerpt">
+            Hòa chung không khí rộn ràng của ngày Tết Thiếu nhi, Printory chính
+            thức khởi động chiến dịch đặc biệt mang tên Thế Giới Trẻ Thơ Rực Rỡ
+            Sắc Màu. Đây là món quà ý nghĩa mà chúng tôi muốn gửi gắm đến các
+            thiên thần nhỏ, giúp các em tự do thể hiện cá tính và lưu giữ những
+            khoảnh khắc tuổi thơ tuyệt vời nhất.
+          </p>
+        </a>
+      </section>
+
+      <header class="category-header">
+        <h2>CÂU CHUYỆN THƯƠNG HIỆU</h2>
+        <button class="btn-all toggle-posts">XEM TẤT CẢ BÀI VIẾT</button>
+      </header>
+
+      <section class="post-grid">
+        <a href="PrintoryBlogDetail21.html" class="post-card">
+          <div class="img-container">
+            <img src="images/Tainguyen/blog_2.jpg" alt="Brand" />
+          </div>
+          <p class="post-date">28 Tháng 12, 2025</p>
+          <h3>HÀNH TRÌNH THƯƠNG HIỆU QUỐC DÂN</h3>
+          <p class="post-excerpt">
+            Trong bối cảnh thị trường in ấn và quà tặng cá nhân hóa ngày càng
+            cạnh tranh gay gắt, PRINTORY nổi lên như một hiện tượng dưới sự dẫn
+            dắt của bà Biện Hà Thành. Không chỉ dừng lại ở một xưởng in địa
+            phương, PRINTORY đã vươn mình trở thành một cái tên phổ biến trên
+            khắp cả nước, định nghĩa lại khái niệm IN ẤN SÁNG TẠO tại Việt Nam.
+          </p>
+        </a>
+        <a href="PrintoryBlogDetail22.html" class="post-card">
+          <div class="img-container">
+            <img src="images/Tainguyen/blog_1.jpg" alt="Fashion" />
+          </div>
+          <p class="post-date">15 Tháng 12, 2025</p>
+          <h3>CƠN SỐT THỜI TRANG ĐÌNH ĐÁM NĂM 2025</h3>
+          <p class="post-excerpt">
+            Năm 2025, định nghĩa về thời trang không còn nằm ở những sàn diễn xa
+            hoa tại Paris hay Milan, mà nằm ngay trong tư duy độc bản của mỗi cá
+            nhân và doanh nghiệp. Trong dòng chảy đó, Printory đã bứt phá từ một
+            đơn vị sản xuất để trở thành biểu tượng dẫn đầu xu hướng thời trang
+            in ấn thiết kế riêng, biến mỗi chiếc áo trở thành một tác phẩm nghệ
+            thuật mang đậm bản sắc cá nhân.
+          </p>
+        </a>
+        <a href="PrintoryBlogDetail23.html" class="post-card">
+          <div class="img-container">
+            <img src="images/Tainguyen/blog_3.jpg" alt="Feelings" />
+          </div>
+          <p class="post-date">25 Tháng 8, 2025</p>
+          <h3>KHI CẢM XÚC ĐƯỢC ĐỊNH HÌNH BẰNG SỰ TỬ TẾ</h3>
+          <p class="post-excerpt">
+            Trong kỷ nguyên số, chúng ta chụp hàng nghìn bức ảnh nhưng lại hiếm
+            khi chạm tay vào chúng. Tại PRINTORY, chúng tôi tin rằng những
+            khoảnh khắc quý giá nhất không nên bị lãng quên trong bộ nhớ điện
+            thoại hay đám mây lạnh lẽo. Chúng xứng đáng có một hình hài, một hơi
+            ấm và một sự hiện diện cụ thể trong căn nhà của bạn. Nhưng để một
+            khoảnh khắc trở thành một dấu ấn thời gian, đó là cả một hành trình
+            của sự tỉ mỉ. Hãy cùng bước vào hậu trường để thấy cách chúng tôi
+            nâng niu câu chuyện của bạn.
+          </p>
+        </a>
+        <a
+          href="PrintoryBlogDetail24.html"
+          class="post-card extra-post"
+          style="display: none"
+        >
+          <div class="img-container">
+            <img src="images/Tainguyen/blog_9.jpg" alt="Recycle" />
+          </div>
+          <p class="post-date">10 Tháng 5, 2025</p>
+          <h3>BIẾN RÁC THẢI THÀNH DI SẢN CÁ NHÂN</h3>
+          <p class="post-excerpt">
+            Trong kỷ nguyên kinh tế tuần hoàn, PRINTORY không chỉ dừng lại ở vị
+            thế một thương hiệu in ấn quốc dân. Dưới sự dẫn dắt của bà Biện Hà
+            Thành, doanh nghiệp này đang viết tiếp chương mới đầy cảm hứng: Tái
+            định nghĩa vật liệu tái chế thông qua ngôn ngữ nghệ thuật và công
+            nghệ in ấn đỉnh cao.
+          </p>
+        </a>
+      </section>
+
+      <header class="category-header">
+        <h2>GIẢI THƯỞNG</h2>
+        <button class="btn-all toggle-posts">XEM TẤT CẢ BÀI VIẾT</button>
+      </header>
+
+      <section class="post-grid">
+        <a href="PrintoryBlogDetail31.html" class="post-card">
+          <div class="img-container">
+            <img src="images/Tainguyen/blog_4.jpg" alt="Award 1" />
+          </div>
+          <p class="post-date">31 Tháng 12, 2025</p>
+          <h3>PRINTORY ĐƯỢC VINH DANH TẠI DOANH NGHIỆP CỦA NĂM</h3>
+          <p class="post-excerpt">
+            PRINTORY vừa chính thức được vinh danh tại giải thưởng Doanh nghiệp
+            của Năm, đánh dấu một cột mốc quan trọng trên hành trình phát triển
+            và khẳng định vị thế trong lĩnh vực in ấn họa tiết quần áo và sản
+            xuất quần áo tại Việt Nam. Đây không chỉ là niềm tự hào của riêng
+            doanh nghiệp, mà còn là sự ghi nhận xứng đáng cho một tập thể đã
+            kiên định theo đuổi giá trị sáng tạo, chất lượng và cảm xúc suốt
+            nhiều năm qua.
+          </p>
+        </a>
+        <a href="PrintoryBlogDetail32.html" class="post-card">
+          <div class="img-container">
+            <img src="images/Tainguyen/blog_6.jpg" alt="Award 2" />
+          </div>
+          <p class="post-date">25 Tháng 12, 2025</p>
+          <h3>DOANH NGHIỆP ĐƯỢC KHÁN GIẢ YÊU THÍCH NHẤT</h3>
+          <p class="post-excerpt">
+            Một dấu mốc đáng tự hào vừa được ghi thêm trên hành trình phát triển
+            của PRINTORY khi doanh nghiệp chính thức được vinh danh tại giải
+            thưởng Doanh nghiệp được khán giả yêu thích nhất. Đây không chỉ là
+            một danh hiệu, mà còn là sự công nhận đầy ý nghĩa dành cho chất
+            lượng, sự sáng tạo và tinh thần không ngừng đổi mới mà PRINTORY theo
+            đuổi suốt chặng đường vừa qua.
+          </p>
+        </a>
+        <a href="PrintoryBlogDetail33.html" class="post-card">
+          <div class="img-container">
+            <img src="images/Tainguyen/blog_7.jpg" alt="Award 3" />
+          </div>
+          <p class="post-date">25 Tháng 12, 2025</p>
+          <h3>PRINTORY ĐƯỢC CÁC MẶT BÁO LỚN CA NGỢI</h3>
+          <p class="post-excerpt">
+            Sau lễ trao giải sáng tạo gần đây, PRINTORY đã nhanh chóng trở thành
+            cái tên được nhắc đến rộng rãi trên nhiều mặt báo và trang tin uy
+            tín trong nước. Không chỉ gây ấn tượng bởi ý tưởng sản phẩm,
+            PRINTORY còn chạm đến công chúng bằng một triết lý rất riêng: giữ
+            lại những điều từng rất quan trọng – một khoảnh khắc, một hình ảnh,
+            một câu chuyện cá nhân – bằng hình hài cụ thể và bền vững theo thời
+            gian.
+          </p>
+        </a>
+        <a
+          href="PrintoryBlogDetail34.html"
+          class="post-card extra-post"
+          style="display: none"
+        >
+          <div class="img-container">
+            <img src="images/Tainguyen/blog_8.jpg" alt="Award 4" />
+          </div>
+          <p class="post-date">10 Tháng 12, 2025</p>
+          <h3>GIẢI THƯỞNG BIG SHOW EVENT OF THE YEAR</h3>
+          <p class="post-excerpt">
+            Vượt qua nhiều tên tuổi lớn trong ngành, PRINTORY đã chính thức được
+            vinh danh tại hạng mục Big Show Event of the Year. Đây là sự công
+            nhận xứng đáng cho một đêm diễn thời trang mãn nhãn, nơi những cảm
+            xúc vô hình được chuyển hóa thành những tác phẩm in ấn đầy nghệ
+            thuật.
+          </p>
+        </a>
+      </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+      <div class="top-image">
+        <img src="images/banners/footer.jpg" alt="Printory Banner" />
+        <div class="small-box">
+          <div class="logo-text">
+            <a href="../index.html">PRIN<span>TORY</span></a>
+          </div>
+          <div class="small-box-bottom">
+            <p class="slogan-text">Your story,<span> we print!</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-content">
+        <div class="footer-header"></div>
+        <div class="footer-top">
+          <div class="brand-col">
+            <div class="footer-logo">
+              <a href="index.html">PRIN<span>TORY</span></a>
+            </div>
+            <p class="footer-slogan">Your story, <span>we print!</span></p>
+            <div class="socials">
+              <p>Thông tin liên hệ</p>
+              <div class="icon-container">
+                <a href="#"
+                  ><img
+                    src="images/icons/facebook.png"
+                    alt="Facebook"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/instagram.png"
+                    alt="Instagram"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/thread.png"
+                    alt="Threads"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/tiktok.png"
+                    alt="TikTok"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/telegram.png"
+                    alt="Telegram"
+                    width="80"
+                    height="80"
+                /></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Về PRINTORY</h3>
+            <ul>
+              <li><a href="about_us.html">Câu chuyện thương hiệu</a></li>
+              <li><a href="about_us.html">Giá trị cốt lõi</a></li>
+              <li><a href="PrintoryBlog.html">Cộng đồng</a></li>
+              <li><a href="PrintoryBlog.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Đặt hàng & hỗ trợ</h3>
+            <ul>
+              <li><a href="support.html">Hỏi đáp</a></li>
+              <li><a href="support.html">Hướng dẫn mua hàng</a></li>
+              <li><a href="support.html">Chính sách khách hàng</a></li>
+              <li><a href="support.html">Điều khoản bảo mật</a></li>
+              <li><a href="support.html">Liên hệ với chúng tôi</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright-section">
+        <div class="copyright-text">BẢN QUYỀN THUỘC VỀ PRINTORY ©</div>
+      </div>
+    </footer>
+
+    <script src="js/blog.js"></script>
+  </body>
+</html>

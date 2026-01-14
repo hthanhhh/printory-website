@@ -1,0 +1,729 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #053046;
+  font-family: "Baloo Thambi 2", sans-serif;
+  font-weight: 400;
+  color: white;
+}
+
+.header-frame,
+.footer-frame {
+  width: 100%;
+  border: none;
+  display: block;
+}
+
+.header-frame {
+  height: 90px;
+}
+
+.footer-frame {
+  height: 300px;
+}
+
+.hero {
+  min-height: 100vh;
+  background-image: url("../images/banners/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+  position: relative;
+}
+
+.hero-box {
+  max-width: 1000px;
+  background: rgba(9, 38, 60, 0.85);
+  border-radius: 28px;
+  padding: 70px 80px;
+  text-align: center;
+  color: #ffffff;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  z-index: 2;
+}
+
+.hero-box h1 {
+  font-family: "Denk One", sans-serif;
+  font-weight: 800;
+  font-size: 48px;
+}
+
+.hero-box p {
+  font-family: "Baloo Thambi 2", sans-serif;
+  font-weight: bold;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.hero-btn {
+  background-color: #0e1f2d;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 30px;
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+  font-family: "Mansalva", sans-serif;
+}
+
+.hero-btn span {
+  color: #fa8501;
+}
+.auth-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.auth-frame {
+  width: 420px;
+  height: 540px;
+  border-radius: 20px;
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.auth-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+}
+.products-section {
+  padding: 60px 20px;
+  background-color: #053046;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Denk One", sans-serif;
+  -webkit-text-stroke: 0.5px #fa8501;
+  text-shadow: -1px -1px 0 #fa8501, 1px -1px 0 #fa8501, -1px 1px 0 #fa8501,
+    1px 1px 0 #fa8501;
+}
+
+/* Danh sách danh mục */
+.categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.category-item {
+  background-color: #053046;
+  color: rgb(255, 255, 255);
+  padding: 12px 20px;
+  border-radius: 20px;
+  font-family: "Baloo Thambi 2", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 120px;
+}
+
+/* Biểu tượng danh mục */
+.category-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.category-item.active {
+  transform: scale(1.02);
+}
+
+.category-item:hover {
+  background-color: #fa8501;
+  transform: scale(1.02);
+}
+
+.category-item.active .category-icon,
+.category-item:hover .category-icon {
+  filter: none;
+}
+
+/* Thêm viền cam khi hover */
+.product-card:hover {
+  border: 2px solid #fa8501;
+  transform: translateY(-5px);
+}
+
+.product-card:hover .product-rating {
+  color: #ff9900;
+  font-size: 20px;
+}
+
+.divider {
+  margin: 25px 0 30px 0;
+  display: none;
+}
+
+.divider hr {
+  border: none;
+  height: 1px;
+  background-color: #fa8501;
+  width: 90%;
+  margin: 0 auto;
+}
+/* ===== THAY ĐỔI: Cập nhật products-section ===== */
+.products-section {
+  padding: 60px 20px;
+  background-color: #053046;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* ===== THAY ĐỔI: Danh mục mới - .cat-nav thay vì .categories ===== */
+.cat-nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+/* ===== THAY ĐỔI: .cat-item giống hệt products.css ===== */
+.cat-item {
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 15px;
+  width: 100px;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  background: transparent;
+}
+
+.cat-item img {
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin: 0 auto 5px;
+}
+
+.cat-item span {
+  font-family: "Baloo Thambi 2", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* ===== Hover effect - Scale nhẹ ===== */
+.cat-item:hover {
+  transform: scale(1.1);
+}
+
+/* ===== Active style - Viền trắng + nền mờ xanh ===== */
+.cat-item.active {
+  border: 2px solid #ffffff;
+  background: rgba(36, 157, 188, 0.3);
+}
+
+/* ===== THAY ĐỔI: .grid thay vì .products-grid ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== THAY ĐỔI: .card thay vì .product-card ===== */
+.card {
+  background-color: #032131;
+  border-radius: 25px;
+  padding: 15px;
+  text-align: left;
+  position: relative;
+  transition: all 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card:active {
+  transform: scale(0.95);
+}
+
+/* ===== THAY ĐỔI: .img-box thay vì .product-image ===== */
+.img-box {
+  background: #d9d9d9;
+  border-radius: 20px;
+  padding: 10px;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.img-box img {
+  width: 100%;
+  object-fit: contain;
+}
+
+/* ===== THAY ĐỔI: .name thay vì .product-title ===== */
+.name {
+  font-family: "Baloo Thambi 2", sans-serif;
+  font-size: 1rem;
+  height: 2.6em;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+/* ===== THAY ĐỔI: .stars thay vì .product-rating ===== */
+.stars {
+  color: #ffcc33;
+  font-size: 0.75rem;
+  margin-bottom: 8px;
+}
+
+/* ===== THAY ĐỔI: .price thay vì .product-price ===== */
+.price {
+  font-family: "Kanit", sans-serif;
+  color: #ff0000;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* ===== THAY ĐỔI: Nút loadMoreBtn với hiệu ứng 3D ===== */
+#loadMoreBtn {
+  background-color: #fa8501;
+  color: #ffffff;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 12px;
+  font-family: "Baloo Thambi 2", cursive;
+  font-weight: 800;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #b35f00;
+  transition: all 0.1s;
+}
+
+#loadMoreBtn:hover {
+  background-color: #ff9a2e;
+  transform: translateY(-6px);
+  box-shadow: 0 12px 0 #b35f00;
+}
+
+#loadMoreBtn:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #b35f00;
+}
+
+/* ===== THIẾT KẾ NỔI BẬT - GIỮ NGUYÊN ===== */
+.featured-designs {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  color: #000;
+}
+
+.featured-title {
+  text-align: center;
+  font-size: 36px;
+  font-family: "Denk One", sans-serif;
+  margin-bottom: 45px;
+  color: #ffffff;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px #fa8501;
+  text-shadow: none;
+}
+
+.featured-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.featured-card {
+  text-align: center;
+  position: relative;
+  transition: transform 0.35s ease;
+}
+
+.featured-card img {
+  width: 180px;
+  height: 200px;
+  object-fit: contain;
+  padding: 16px;
+  background: #fff;
+  border: 3px solid #1c3447;
+  border-radius: 18px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.featured-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  font-family: "Baloo Thambi 2", sans-serif;
+}
+
+.featured-card p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.featured-card .stars {
+  color: #f4b400;
+  font-size: 18px;
+}
+
+.featured-card.low {
+  transform: translateY(80px);
+}
+
+.featured-card.high {
+  transform: translateY(30px);
+}
+
+.featured-card.center {
+  transform: translateY(-20px);
+  z-index: 3;
+}
+
+.featured-btn {
+  text-align: center;
+  margin-top: 35px;
+}
+
+.featured-btn a {
+  background: #6fa3bd;
+  color: white;
+  padding: 12px 36px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+  font-family: "Baloo Thambi 2", sans-serif;
+}
+
+.featured-btn a:hover {
+  background: #558aa3;
+}
+
+.featured-designs .container {
+  max-width: none;
+}
+
+/* ===== HERO MAIN - GIỮ NGUYÊN ===== */
+.hero-main {
+  background-color: #053046;
+  padding: 30px 0px;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.hero-inner {
+  background: #355c74;
+  border-radius: 28px;
+  display: flex;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-image {
+  flex: 1;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 28px 0 0 28px;
+}
+
+.hero-content {
+  flex: 1;
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-family: "Mansalva", cursive;
+  color: #fa8501;
+  font-size: 42px;
+  margin-bottom: 30px;
+}
+
+.hero-text {
+  background: #ffffff;
+  padding: 35px 40px;
+  width: 100%;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  max-width: 700px;
+}
+
+.hero-text p {
+  font-family: "Baloo Thambi 2", sans-serif;
+  font-size: 18px;
+  color: #0f172a;
+  line-height: 1.5;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+.hero-main .hero-btn {
+  background: #355c74;
+  font-family: "Mansalva", cursive;
+  font-size: 20px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 35px;
+  border-radius: 30px;
+  display: inline-block;
+  width: fit-content;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.hero-main .hero-btn:hover {
+  background: #fa8501;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(250, 133, 1, 0.3);
+}
+
+/* ===== FOOTER - GIỮ NGUYÊN ===== */
+html,
+body {
+  height: auto;
+  min-height: 100vh;
+}
+
+#footer-placeholder {
+  margin-top: auto;
+}
+
+.top-image {
+  height: 400px !important;
+  flex: none !important;
+}
+
+.footer {
+  flex: none !important;
+  min-height: auto !important;
+}
+
+/* ===== RESPONSIVE - GIỮ NGUYÊN ===== */
+@media (max-width: 1200px) {
+  .hero-inner {
+    max-width: 95%;
+  }
+
+  .hero-content h1 {
+    font-size: 38px;
+  }
+
+  .hero-text p {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-inner {
+    flex-direction: column;
+  }
+
+  .hero-image {
+    padding: 30px;
+  }
+
+  .hero-content {
+    padding: 40px 30px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-text {
+    padding: 20px 25px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featured-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .featured-card.low,
+  .featured-card.high,
+  .featured-card.center {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-box {
+    padding: 40px 30px;
+  }
+
+  .hero-box h1 {
+    font-size: 36px;
+  }
+
+  .hero-box p {
+    font-size: 16px;
+  }
+
+  .title-text {
+    font-size: 1.8rem;
+  }
+
+  .cat-item {
+    width: 90px;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .cat-item img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .featured-title {
+    font-size: 30px;
+  }
+
+  .featured-card img {
+    width: 150px;
+    height: 170px;
+  }
+}
+
+@media (max-width: 576px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .hero-text {
+    padding: 20px;
+  }
+
+  .hero-text p {
+    font-size: 15px;
+  }
+
+  .hero-main .hero-btn {
+    font-size: 18px;
+    padding: 10px 30px;
+  }
+
+  .featured-card {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}
+
+/* ===== SCROLL REVEAL - GIỮ NGUYÊN ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal.delay-1 {
+  transition-delay: 0.1s;
+}
+.reveal.delay-2 {
+  transition-delay: 0.1s;
+}
+.reveal.delay-3 {
+  transition-delay: 0.1s;
+}
+.reveal.delay-4 {
+  transition-delay: 0.1s;
+}

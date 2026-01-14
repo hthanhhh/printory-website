@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/font.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="component/header.css" />
+    <link rel="stylesheet" href="component/footer.css" />
+    <link rel="stylesheet" href="Css/blog.css" />
+    <link rel="stylesheet" href="Css/blog-detail.css" />
+    <link rel="stylesheet" href="css/font.css" />
+
+    <title>PRINTORY - details</title>
+  </head>
+  <body>
+    <!--HEADER-->
+    <header>
+      <div class="logo">
+        <a href="index.html"> PRIN<span>TORY</span> </a>
+      </div>
+
+      <div class="search-box">
+        <button type="button" id="searchBtn">
+          <i class="fa fa-search"></i>
+        </button>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
+      </div>
+      <nav class="nav">
+        <a href="PrintoryBlog.html">Printory Blog</a>
+        <a href="support.html">Hỗ trợ</a>
+        <a href="cart.html" class="cart">
+          <i class="fa fa-shopping-cart cart-icon"></i>
+          <span class="cart-text">Giỏ hàng</span>
+        </a>
+
+        <a href="auth.html" class="user">
+          <span class="user-text">Đăng nhập</span>
+        </a>
+      </nav>
+    </header>
+
+    <div class="banner-container">
+      <div href="index.html" class="header-logo">
+        <img src="images/Tainguyen/Printoryblog.png" alt="Printory Blog" />
+      </div>
+
+      <div class="banner-content">
+        <div class="banner-left" id="bg-left">
+          <img
+            src="images/Tainguyen/blog_tet.jpg"
+            alt="Tet Shirt"
+            id="product-img"
+          />
+        </div>
+
+        <div class="banner-right" id="bg-right">
+          <button class="nav-arrow" onclick="nextSlide()">❯</button>
+          <p class="daterange" id="date-range">DIỄN RA TỪ 31/12 - 1/2/2026</p>
+          <div class="slide-content-wrapper">
+            <h1 class="title" id="title">
+              NĂM MỚI RẠNG NGỜI <br />
+              KHỞI SẮC
+            </h1>
+            <p class="description" id="description">
+              Mùa xuân luôn là thời điểm tuyệt vời nhất để chúng ta làm mới bản
+              thân và không gian sống. Thấu hiểu điều đó, từ ngày 31/12/2025 đến
+              hết ngày 01/02/2026, PRINTORY mang đến một luồng gió mới với hàng
+              loạt mẫu thiết kế vừa ra mắt.
+            </p>
+          </div>
+          <div class="actions">
+            <button class="btn-view">Xem ngay</button>
+            <div class="nav-dots" id="dots-container">
+              <span class="dot active" onclick="goToSlide(0)"></span>
+              <span class="dot" onclick="goToSlide(1)"></span>
+              <span class="dot" onclick="goToSlide(2)"></span>
+              <span class="dot" onclick="goToSlide(3)"></span>
+              <span class="dot" onclick="goToSlide(4)"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="hero-section">
+        <div class="hero-image-container">
+          <img
+            src="images/Tainguyen/blog_tet.jpg"
+            alt="Chúc Mừng Năm Mới 2026"
+            class="hero-image"
+          />
+        </div>
+
+        <div class="hero-content">
+          <span class="hero-tagline">"BÃO VOUCHER" & BST 2026</span>
+          <h1>
+            NĂM MỚI<br />RẠNG NGỜI<br /><span class="highlight">KHỞI SẮC</span>
+          </h1>
+          <p>
+            Trong không khí hân hoan của những ngày đầu năm mới 2026,
+            <strong>PRINTORY</strong> chính thức khởi động chiến dịch quy mô
+            lớn. Đây không chỉ là lời tri ân mà còn là cột mốc đánh dấu sự lột
+            xác về phong cách với những bộ sưu tập độc bản.
+          </p>
+          <a href="#kham-pha" class="cta-button">SĂN ƯU ĐÃI NGAY</a>
+        </div>
+      </div>
+
+      <section id="kham-pha">
+        <h2>Một khởi đầu mới, một diện mạo mới</h2>
+        <p>
+          Mùa xuân luôn là thời điểm tuyệt vời nhất để chúng ta làm mới bản thân
+          và không gian sống. Thấu hiểu điều đó, từ ngày
+          <strong>31/12/2025 đến hết ngày 01/02/2026</strong>, PRINTORY mang đến
+          một luồng gió mới với hàng loạt mẫu thiết kế vừa ra mắt.
+        </p>
+        <p>
+          Các mẫu thiết kế năm nay tập trung vào sự tối giản sang trọng nhưng
+          không kém phần rực rỡ, lấy cảm hứng từ sắc màu của bình minh năm 2026
+          – biểu trưng cho niềm hy vọng và sự bứt phá.
+        </p>
+      </section>
+
+      <section>
+        <h2>Tâm điểm chương trình: "Đại tiệc Voucher"</h2>
+        <div class="voucher-grid">
+          <div class="voucher-card">
+            <h3>Voucher Khởi Sắc</h3>
+            <p>
+              Giảm ngay <strong>5%</strong> cho tất cả đơn hàng thuộc BST mới.
+            </p>
+          </div>
+          <div class="voucher-card">
+            <h3>Lì Xì May Mắn</h3>
+            <p>
+              Tặng mã giảm giá lên đến <strong>1.000.000 VNĐ</strong> cho khách
+              đăng ký sớm.
+            </p>
+          </div>
+          <div class="voucher-card">
+            <h3>Combo Đón Xuân</h3>
+            <p>
+              Tiết kiệm đến <strong>10%</strong> chi phí khi mua trọn bộ thiết
+              kế.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Khám phá bộ sưu tập thiết kế 2026</h2>
+        <p>
+          Được đội ngũ chuyên gia dày công nghiên cứu trong suốt 6 tháng qua,
+          các sản phẩm mới không chỉ đáp ứng tiêu chuẩn thẩm mỹ khắt khe mà còn
+          mang tính ứng dụng cao:
+        </p>
+        <ul>
+          <li>
+            <strong>Chất liệu:</strong> Cập nhật các xu hướng bền vững, thân
+            thiện với môi trường.
+          </li>
+          <li>
+            <strong>Màu sắc:</strong> Sử dụng bảng màu "Radiant 2026" đầy năng
+            lượng.
+          </li>
+          <li>
+            <strong>Phong cách:</strong> Đa dạng từ hiện đại, năng động đến tinh
+            tế, cổ điển.
+          </li>
+        </ul>
+
+        <div class="collection-gallery">
+          <div class="gallery-item">
+            <img
+              src="images/Tainguyen/blogdetail_11.jpg"
+              alt="Mẫu thiết kế 2026 - 1"
+            />
+            <div class="gallery-caption">Bộ Chữ Cách Điệu "Bính Ngọ 2026"</div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/Tainguyen/blogdetail_12.jpg"
+              alt="Mẫu thiết kế 2026 - 2"
+            />
+            <div class="gallery-caption">Họa Tiết Truyền Thống "Khởi Sắc"</div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/Tainguyen/blogdetail_13.jpg"
+              alt="Mẫu thiết kế 2026 - 3"
+            />
+            <div class="gallery-caption">Thiết Kế Đồ Họa "Năng Lượng Mới"</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+      <div class="top-image">
+        <img src="images/banners/footer.jpg" alt="Printory Banner" />
+        <div class="small-box">
+          <div class="logo-text">
+            <a href="../index.html">PRIN<span>TORY</span></a>
+          </div>
+          <div class="small-box-bottom">
+            <p class="slogan-text">Your story,<span> we print!</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-content">
+        <div class="footer-header"></div>
+        <div class="footer-top">
+          <div class="brand-col">
+            <div class="footer-logo">
+              <a href="index.html">PRIN<span>TORY</span></a>
+            </div>
+            <p class="footer-slogan">Your story, <span>we print!</span></p>
+            <div class="socials">
+              <p>Thông tin liên hệ</p>
+              <div class="icon-container">
+                <a href="#"
+                  ><img
+                    src="images/icons/facebook.png"
+                    alt="Facebook"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/instagram.png"
+                    alt="Instagram"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/thread.png"
+                    alt="Threads"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/tiktok.png"
+                    alt="TikTok"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/telegram.png"
+                    alt="Telegram"
+                    width="80"
+                    height="80"
+                /></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Về PRINTORY</h3>
+            <ul>
+              <li><a href="about_us.html">Câu chuyện thương hiệu</a></li>
+              <li><a href="about_us.html">Giá trị cốt lõi</a></li>
+              <li><a href="PrintoryBlog.html">Cộng đồng</a></li>
+              <li><a href="PrintoryBlog.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Đặt hàng & hỗ trợ</h3>
+            <ul>
+              <li><a href="support.html">Hỏi đáp</a></li>
+              <li><a href="support.html">Hướng dẫn mua hàng</a></li>
+              <li><a href="support.html">Chính sách khách hàng</a></li>
+              <li><a href="support.html">Điều khoản bảo mật</a></li>
+              <li><a href="support.html">Liên hệ với chúng tôi</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright-section">
+        <div class="copyright-text">BẢN QUYỀN THUỘC VỀ PRINTORY ©</div>
+      </div>
+    </footer>
+    <script src="js/blog.js"></script>
+  </body>
+</html>

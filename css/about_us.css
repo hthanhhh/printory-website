@@ -1,0 +1,682 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.about-top-image {
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+}
+
+.about-top-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.about-top-image .small-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.about-top-image .logo-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 80px;
+  font-weight: 900;
+  letter-spacing: 5px;
+  color: #ffffff; /* Chữ PRIN màu TRẮNG */
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.about-top-image .logo-text span {
+  color: #ff8c00; /* Chữ TORY màu CAM */
+}
+
+.about-top-image .small-box-bottom {
+  margin-top: 10px;
+}
+
+.about-top-image .slogan-text {
+  font-family: "Comic Sans MS", "Marker Felt", cursive;
+  font-size: 32px;
+  font-weight: 600;
+  color: #ffffff; /* "Your story," màu TRẮNG */
+  margin: 0;
+  font-style: italic;
+}
+
+.about-top-image .slogan-text span {
+  color: #ff8c00; /* "we print!" màu CAM */
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-top-image .logo-text {
+    font-size: 50px;
+    letter-spacing: 3px;
+  }
+
+  .about-top-image .slogan-text {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-top-image .logo-text {
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+
+  .about-top-image .slogan-text {
+    font-size: 18px;
+  }
+}
+
+.story {
+  padding: 0 80px;
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+  height: 500px;
+  padding-top: 50px;
+}
+
+.section-title {
+  background: #0e2a3a;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px;
+  border-radius: 30px;
+  width: 70%;
+  margin: 80px auto 80px;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Denk One", sans-serif;
+  text-shadow: -1px -1px 0 #fa8501, 1px -1px 0 #fa8501, -1px 1px 0 #fa8501,
+    1px 1px 0 #fa8501;
+}
+
+.story-content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 40px;
+  font-size: 24px;
+  font-family: "Baloo Thambi 2", sans-serif;
+  font-weight: bold;
+  color: #0e2a3a;
+}
+
+.story-content img {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
+.story-content p {
+  line-height: 1.7;
+  margin: 0;
+  font-size: 20px;
+}
+
+.split {
+  padding: 80px;
+}
+
+.split-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.split-content img {
+  width: 100%;
+  border-radius: 0 !important;
+  -webkit-mask-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+
+  mask-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-repeat: no-repeat;
+  mask-size: cover;
+}
+
+.mission .split-content img {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-repeat: no-repeat;
+  mask-size: cover;
+}
+
+.split-content .text h2 {
+  font-size: 60px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #fff;
+  font-family: "Denk One", sans-serif;
+  text-shadow: -1px -1px 0 #0e2a3a, 1px -1px 0 #0e2a3a, -1px 1px 0 #0e2a3a,
+    1px 1px 0 #0e2a3a, 0 4px 8px rgba(14, 42, 58, 0.4);
+}
+
+.split-content .text p {
+  line-height: 1.7;
+  margin-bottom: 10px;
+  color: #0e2a3a;
+  font-family: "Baloo Thambi 2", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.split-content .text small {
+  font-size: 14px;
+  color: #0e2a3a;
+  font-family: "Baloo Thambi 2", sans-serif;
+}
+
+.mission .split-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.mission .split-content img {
+  order: 1;
+}
+
+.mission .split-content .text {
+  order: 2;
+}
+
+@media (max-width: 768px) {
+  .split-content {
+    grid-template-columns: 1fr;
+  }
+  .split-content img {
+    width: 100%;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+}
+
+.core {
+  background: #053046;
+  padding: 70px 0;
+  color: #fff;
+  font-family: "Baloo Thambi 2", sans-serif;
+}
+
+.core-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 60px;
+  font-weight: 800;
+}
+
+.core-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.core-grid::before,
+.core-grid::after {
+  content: "";
+  position: absolute;
+  top: -50px;
+  height: 260px;
+  width: 3px;
+  background: #fff;
+}
+
+.core-grid::before {
+  left: 33.333%;
+}
+.core-grid::after {
+  left: 66.666%;
+}
+
+.line-center {
+  position: absolute;
+  top: 230px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 260px;
+  width: 3px;
+  background: #fff;
+  z-index: 1;
+}
+
+.core-item {
+  text-align: center;
+  max-width: 240px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.dot {
+  width: 64px;
+  height: 64px;
+  background: #f4a340;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+}
+
+.core-item h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.core-item small {
+  font-size: 14px;
+  line-height: 1.6;
+  display: block;
+  opacity: 0.9;
+}
+
+.bottom-left {
+  grid-column: 1 / 3;
+  margin-left: 60px;
+  transform: translateX(185px);
+}
+
+.bottom-right {
+  grid-column: 3/ 3;
+  margin-right: 60px;
+  transform: translateX(-185px);
+}
+
+.policy-wrapper {
+  background: #fff;
+  padding-bottom: 100px;
+  font-family: "Baloo Thambi 2", sans-serif;
+}
+
+/* ===== BANNER ===== */
+.policy-banner {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+}
+
+.policy-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 10%;
+}
+
+.policy-banner-title {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  background: rgba(20, 40, 55, 0.75);
+  padding: 18px 50px;
+  color: #f4a340;
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  border-radius: 40px;
+  font-family: "Denk One", sans-serif;
+}
+
+/* ===== TIMELINE ===== */
+.policy-timeline {
+  max-width: 1200px;
+  margin: 80px auto 0;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-top: 60px;
+}
+
+/* ĐƯỜNG KẺ NGANG LIÊN MẠCH */
+.policy-timeline::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 5%;
+  right: 5%;
+  height: 3px;
+  background: #0e2a3a;
+  z-index: 1;
+}
+
+/* ITEM */
+.policy-item {
+  width: 100%;
+  max-width: 240px;
+  text-align: center;
+  position: relative;
+  padding: 0 10px;
+}
+
+/* DOT - LỚN HƠN VÀ CÓ VIỀN */
+.policy-item::before {
+  content: "";
+  position: absolute;
+  top: -44px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 22px;
+  background: #7fb3c8;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  box-shadow: 0 0 0 2px #0e2a3a;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+/* CONTAINER CHỮ - CÓ NỀN VÀ VIỀN */
+.policy-item-content {
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px 15px;
+  width: 300px; /* cố định chiều ngang */
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.policy-item:hover .policy-item-content {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border-color: #7fb3c8;
+}
+
+/* TIÊU ĐỀ - MÀU ĐẬM VÀ LỚN */
+.policy-item h4 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0e2a3a;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  font-family: "Denk One", sans-serif;
+}
+
+/* MÔ TẢ - MÀU TỐI VÀ CÓ KHOẢNG CÁCH */
+.policy-item p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+  .policy-timeline {
+    max-width: 95%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .policy-item {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 992px) {
+  .policy-timeline {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding-top: 40px;
+  }
+
+  .policy-item {
+    max-width: 45%;
+    margin-bottom: 30px;
+  }
+
+  .policy-timeline::before {
+    display: none;
+  }
+
+  .policy-item::before {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .policy-banner-title {
+    font-size: 28px;
+    padding: 15px 30px;
+  }
+
+  .policy-item {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .policy-item-content {
+    min-height: 120px;
+    padding: 15px;
+  }
+
+  .policy-item h4 {
+    font-size: 18px;
+  }
+
+  .policy-item p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .policy-banner {
+    height: 280px;
+  }
+
+  .policy-banner-title {
+    font-size: 24px;
+    padding: 12px 25px;
+    bottom: 20px;
+  }
+
+  .policy-timeline {
+    margin-top: 50px;
+    gap: 25px;
+  }
+}
+
+/* ===== BOARD ===== */
+.board-banner {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.board-banner img {
+  width: 100%;
+  height: 130%;
+  object-fit: cover;
+  object-position: left top;
+  transform: translateY(-100px);
+}
+
+.board-banner-title {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  background: rgba(20, 40, 55, 0.75);
+  padding: 18px 50px;
+  color: #249dbc;
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  border-radius: 40px;
+  font-family: "Denk One", sans-serif;
+}
+
+/* GRID 4 – 3 */
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 35px 40px;
+  max-width: 1100px;
+  margin: auto;
+  margin-top: 60px;
+  padding-bottom: 30px;
+}
+
+/* ITEM */
+.board-item {
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  padding-top: 18px;
+  text-align: center; /* Canh giữa nội dung */
+  transition: transform 0.3s ease; /* Thêm hiệu ứng */
+  font-family: "Baloo Thambi 2", sans-serif;
+}
+
+.board-item:hover {
+  transform: translateY(-5px); /* Hiệu ứng hover */
+}
+
+.board-item span {
+  font-size: 25px;
+  opacity: 0.75;
+  display: block;
+  margin-bottom: 5px;
+  font-style: italic; /* Chữ nghiêng */
+  color: #ffffff;
+}
+
+.board-item h4 {
+  font-size: 20px;
+  margin: 6px 0;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.board-item p {
+  font-size: 16px;
+  opacity: 0.9;
+  color: #ffffff; /* Màu xanh nhạt cho chức vụ */
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+  .board-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .board h3 {
+    font-size: 32px;
+    padding: 15px 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .board-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .board {
+    padding: 60px 20px;
+  }
+
+  .board h3 {
+    font-size: 28px;
+    padding: 12px 30px;
+  }
+
+  .board-banner {
+    margin-bottom: 40px;
+  }
+
+  .board-banner img {
+    height: 200px;
+  }
+}
+
+/* Animation */
+.reveal {
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+}
+
+.delay-1 {
+  transition-delay: 0.2s;
+}
+.delay-2 {
+  transition-delay: 0.2s;
+}
+.delay-3 {
+  transition-delay: 0.2s;
+}
+.delay-4 {
+  transition-delay: 0s;
+}
+.delay-5 {
+  transition-delay: 0.2s;
+}
+.delay-6 {
+  transition-delay: 0.2s;
+}
+.delay-7 {
+  transition-delay: 0.2s;
+}
+.delay-8 {
+  transition-delay: 0.2s;
+}

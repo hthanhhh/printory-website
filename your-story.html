@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tải Lên Thiết Kế</title>
+    <link rel="stylesheet" href="css/your-story.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="component/footer.css" />
+    <link rel="stylesheet" href="component/header.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- ==================== HEADER ==================== -->
+    <header>
+      <div class="logo">
+        <a href="index.html"> PRIN<span>TORY</span> </a>
+      </div>
+
+      <div class="search-box">
+        <button type="button" id="searchBtn">
+          <i class="fa fa-search"></i>
+        </button>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
+      </div>
+      <nav class="nav">
+        <a href="PrintoryBlog.html">Printory Blog</a>
+        <a href="support.html">Hỗ trợ</a>
+        <a href="cart.html" class="cart">
+          <i class="fa fa-shopping-cart cart-icon"></i>
+          <span class="cart-text">Giỏ hàng</span>
+        </a>
+
+        <a href="auth.html" class="user">
+          <span class="user-text">Đăng nhập</span>
+        </a>
+      </nav>
+    </header>
+    <!-- ==================== MAIN CONTENT ==================== -->
+
+    <div class="container">
+      <header class="header">
+        <h1 class="subtitle">Tạo thiết kế độc đáo cho áo thun của bạn</h1>
+      </header>
+
+      <main class="main-content">
+        <div class="design-preview-section">
+          <div class="preview-container">
+            <h2 class="section-title">THIẾT KẾ CỦA BẠN</h2>
+            <div class="preview-area">
+              <img
+                src="images/products/Áo thun trắng Unisex.png"
+                alt="Áo thun trắng"
+                class="t-shirt-base"
+                id="tShirtBase"
+              />
+              <div class="user-design-overlay" id="userDesignOverlay"></div>
+              <div class="user-text-overlay" id="userTextOverlay"></div>
+            </div>
+            <div class="preview-controls">
+              <button class="preview-btn" id="backBtn">QUAY LẠI</button>
+              <button class="preview-btn" id="saveDesign">
+                <a href="preview.html">PREVIEW </a>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="design-form-section">
+          <form class="design-form" id="designForm">
+            <div class="form-section">
+              <h2 class="section-title">TẢI LÊN CÂU CHUYỆN CỦA BẠN</h2>
+              <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📁</div>
+                <p class="upload-text">
+                  Kéo thả file vào đây hoặc
+                  <span class="browse-link">chọn từ máy tính</span>
+                </p>
+                <p class="upload-requirements">
+                  Định dạng: JPG, PNG, GIF <br />
+                  Kích thước tối đa: 5MB <br />
+                  Độ phân giải đề xuất: 3000x3000px
+                </p>
+                <input
+                  type="file"
+                  id="imageUpload"
+                  accept=".jpg,.jpeg,.png,.gif"
+                  class="file-input"
+                />
+              </div>
+              <div class="upload-preview" id="uploadPreview">
+                <!-- Hình ảnh đã tải lên sẽ hiển thị ở đây -->
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h2 class="section-title">THÊM CHỮ VÀO THIẾT KẾ</h2>
+              <div class="text-input-group">
+                <label for="textInput">Nhập nội dung chữ:</label>
+                <input
+                  type="text"
+                  id="textInput"
+                  class="text-input"
+                  placeholder="Ví dụ: Tôi yêu Việt Nam"
+                />
+              </div>
+              <div class="text-input-group">
+                <label for="fontSelect">Chọn font chữ:</label>
+                <select id="fontSelect" class="font-select">
+                  <option value="Montserrat, sans-serif">
+                    Montserrat (Mặc định)
+                  </option>
+                  <option value="'Baloo Thambi 2', sans-serif">
+                    BalooThambi2-ExtraBold
+                  </option>
+                  <option value="'Denk One', sans-serif">
+                    DenkOne-Regular
+                  </option>
+                  <option value="'Kanit', sans-serif">Kanit-Bold</option>
+                  <option value="'Mansalva', sans-serif">
+                    Mansalva-Regular
+                  </option>
+                  <option value="'UTM Times', serif">UTM Times</option>
+                </select>
+              </div>
+              <div class="text-input-group">
+                <label for="textColor">Chọn màu chữ:</label>
+                <input
+                  type="color"
+                  id="textColor"
+                  class="color-picker"
+                  value="#000000"
+                />
+              </div>
+              <div class="text-input-group">
+                <label for="textSize">Kích thước chữ:</label>
+                <input
+                  type="range"
+                  id="textSize"
+                  class="size-slider"
+                  min="10"
+                  max="100"
+                  value="30"
+                />
+                <span id="sizeValue">30px</span>
+              </div>
+              <button type="button" class="add-text-btn" id="addTextBtn">
+                Thêm chữ vào thiết kế
+              </button>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+
+    <footer class="footer">
+      <div class="top-image">
+        <img src="images/banners/footer.jpg" alt="Printory Banner" />
+        <div class="small-box">
+          <div class="logo-text">
+            <a href="../index.html">PRIN<span>TORY</span></a>
+          </div>
+          <div class="small-box-bottom">
+            <p class="slogan-text">Your story,<span> we print!</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-content">
+        <div class="footer-header"></div>
+        <div class="footer-top">
+          <div class="brand-col">
+            <div class="footer-logo">
+              <a href="index.html">PRIN<span>TORY</span></a>
+            </div>
+            <p class="footer-slogan">Your story, <span>we print!</span></p>
+            <div class="socials">
+              <p>Thông tin liên hệ</p>
+              <div class="icon-container">
+                <a href="#"
+                  ><img
+                    src="images/icons/facebook.png"
+                    alt="Facebook"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/instagram.png"
+                    alt="Instagram"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/thread.png"
+                    alt="Threads"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/tiktok.png"
+                    alt="TikTok"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/telegram.png"
+                    alt="Telegram"
+                    width="80"
+                    height="80"
+                /></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Về PRINTORY</h3>
+            <ul>
+              <li><a href="about_us.html">Câu chuyện thương hiệu</a></li>
+              <li><a href="about_us.html">Giá trị cốt lõi</a></li>
+              <li><a href="PrintoryBlog.html">Cộng đồng</a></li>
+              <li><a href="PrintoryBlog.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Đặt hàng & hỗ trợ</h3>
+            <ul>
+              <li><a href="support.html">Hỏi đáp</a></li>
+              <li><a href="support.html">Hướng dẫn mua hàng</a></li>
+              <li><a href="support.html">Chính sách khách hàng</a></li>
+              <li><a href="support.html">Điều khoản bảo mật</a></li>
+              <li><a href="support.html">Liên hệ với chúng tôi</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright-section">
+        <div class="copyright-text">BẢN QUYỀN THUỘC VỀ PRINTORY ©</div>
+      </div>
+    </footer>
+
+    <!-- Thông báo khi lưu thành công -->
+    <div class="notification" id="notification">
+      <p>Thiết kế của bạn đã được lưu thành công!</p>
+    </div>
+
+    <script src="js/upload-design.js"></script>
+  </body>
+</html>

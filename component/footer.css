@@ -1,0 +1,396 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #053046;
+}
+
+body {
+  font-family: "Baloo Thambi 2", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background-color: #053046;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== TOP IMAGE BÊN TRONG FOOTER ===== */
+.footer .top-image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  background-color: #053046;
+  padding-top: 60px;
+  position: relative;
+  width: 100%;
+}
+
+.footer .top-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
+  border-radius: 40px 40px 0 0;
+}
+
+/* ===== SMALL BOX ===== */
+.footer .small-box {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  height: 180px;
+  background-color: #0f2b3d;
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  z-index: 10;
+}
+
+.footer .logo-text {
+  font-family: "Denk One", sans-serif;
+  font-size: 100px;
+  font-weight: 800;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 2px;
+  margin: 0 0 8px 0;
+  line-height: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.footer .logo-text a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer .logo-text span {
+  color: #fa8501;
+}
+
+.footer .slogan-text {
+  font-family: "Mansalva", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.footer .slogan-text span {
+  color: #fa8501;
+}
+
+/* ===== FOOTER CONTENT ===== */
+.footer-content {
+  background-color: #1f3446;
+  color: #ffffff;
+  padding: 0 60px;
+  width: 100%;
+}
+/* ===== FOOTER HEADER (NỀN ĐẬM TRÊN CÙNG) ===== */
+.footer-header {
+  width: 100%;
+  margin: 0;
+}
+
+.footer-header h2 {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.footer-header h2 span {
+  color: #fa8501;
+}
+
+.footer-header p {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 5px;
+}
+
+.footer-header p span {
+  color: #fa8501;
+  font-weight: 600;
+}
+
+/* ===== FOOTER TOP: 3 CỘT ===== */
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 40px;
+  margin: 30px 0 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Cột 1: Logo + Slogan + Social */
+.brand-col {
+  text-align: left;
+}
+
+.footer-logo {
+  font-family: "Denk One", sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.footer-logo a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-logo span {
+  color: #fa8501;
+}
+
+.footer-slogan {
+  font-family: "Mansalva", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.footer-slogan span {
+  color: #fa8501;
+  font-weight: 600;
+}
+
+/* Social icons */
+.socials {
+  display: flex;
+  flex-direction: column;
+}
+
+.socials p {
+  font-family: "UTM Times", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+/* Chọn tất cả các thẻ a sau thẻ p */
+.socials p ~ a {
+  margin: 0 6px; /* Khoảng cách giữa các icon */
+}
+
+/* Đảm bảo các icon nằm trên cùng một hàng */
+.socials a {
+  width: 38px;
+  height: 38px;
+  background-color: #2a4359;
+  color: #ffffff;
+  border-radius: 50%;
+  display: inline-flex; /* Quan trọng: inline-flex để nằm ngang */
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.socials a:hover {
+  background-color: #fa8501;
+  transform: translateY(-3px);
+}
+/* Cột 2 và 3: Menu */
+.footer-col {
+  text-align: left;
+}
+
+.footer-col h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: "UTM Times", sans-serif;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: block;
+  font-family: "UTM Times", sans-serif;
+}
+
+.footer-col ul li a:hover {
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+/* ===== COPYRIGHT SECTION (NỀN ĐẬM DƯỚI CÙNG) ===== */
+.copyright-section {
+  background-color: #0f2b3d;
+  padding: 20px 40px;
+  text-align: right;
+  width: 100%;
+}
+
+.copyright-text {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  font-family: "Baloo Thambi 2", sans-serif;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .footer {
+    padding: 0 40px;
+  }
+
+  .footer-header,
+  .copyright-section {
+    margin: 0 -40px;
+    width: calc(100% + 80px);
+  }
+
+  .footer-header {
+    padding: 20px 30px;
+  }
+
+  .footer-top {
+    gap: 30px;
+    margin: 25px 0 35px;
+  }
+
+  .copyright-section {
+    padding: 18px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin: 20px 0 30px;
+  }
+
+  .brand-col,
+  .footer-col {
+    text-align: center;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  .footer-col ul li a:hover {
+    transform: none;
+  }
+
+  .footer-header,
+  .copyright-section {
+    margin: 0 -20px;
+    width: calc(100% + 40px);
+    padding: 15px 20px;
+  }
+
+  .footer-header h2 {
+    font-size: 28px;
+  }
+
+  .footer-header p {
+    font-size: 14px;
+  }
+
+  .copyright-section {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 0 20px;
+  }
+
+  .footer-header,
+  .copyright-section {
+    margin: 0 -20px;
+    width: calc(100% + 40px);
+    padding: 12px 15px;
+  }
+
+  .footer-header h2 {
+    font-size: 24px;
+  }
+
+  .footer-header p {
+    font-size: 13px;
+  }
+
+  .footer-logo {
+    font-size: 28px;
+  }
+
+  .footer-slogan {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .socials a {
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+  }
+
+  .footer-col h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .footer-col ul li a {
+    font-size: 14px;
+  }
+
+  .copyright-text {
+    font-size: 12px;
+  }
+}

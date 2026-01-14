@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PRINTORY - Đơn Đặt Hàng</title>
+
+    <link rel="stylesheet" href="css/font.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="css/order.css" />
+    <link rel="stylesheet" href="component/footer.css" />
+    <link rel="stylesheet" href="component/header.css" />
+  </head>
+  <body>
+    <!--HEADER-->
+    <header>
+      <div class="logo">
+        <a href="index.html"> PRIN<span>TORY</span> </a>
+      </div>
+
+      <div class="search-box">
+        <button type="button" id="searchBtn">
+          <i class="fa fa-search"></i>
+        </button>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
+      </div>
+      <nav class="nav">
+        <a href="PrintoryBlog.html">Printory Blog</a>
+        <a href="support.html">Hỗ trợ</a>
+        <a href="cart.html" class="cart">
+          <i class="fa fa-shopping-cart cart-icon"></i>
+          <span class="cart-text">Giỏ hàng</span>
+        </a>
+
+        <a href="auth.html" class="user">
+          <span class="user-text">Đăng nhập</span>
+        </a>
+      </nav>
+    </header>
+    <!--MAIN CONTENT-->
+    <div class="category-header">
+      <div class="title-text">QUẢN LÝ ĐƠN HÀNG</div>
+    </div>
+
+    <div class="container">
+      <!-- User Info -->
+      <div class="user-info-section">
+        <div class="user-profile">
+          <div class="user-avatar">
+            <i class="fas fa-user-circle"></i>
+          </div>
+          <div class="user-details">
+            <h3>Nguyễn Quỳnh Giang</h3>
+            <p>
+              <i class="fas fa-envelope"></i> nguyenquynhgiang3003@gmail.com
+            </p>
+            <p><i class="fas fa-phone"></i> 0373 753 621</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Order Filter Tabs -->
+      <div class="order-tabs">
+        <button class="order-tab active" data-filter="all">
+          Tất cả đơn hàng
+        </button>
+        <button class="order-tab" data-filter="processing">Đang xử lý</button>
+        <button class="order-tab" data-filter="shipping">Đang giao</button>
+        <button class="order-tab" data-filter="delivered">Đã giao</button>
+        <button class="order-tab" data-filter="cancelled">Đã hủy</button>
+      </div>
+
+      <!-- Orders List -->
+      <div class="orders-grid">
+        <!-- Order 1 - Processing -->
+        <div class="order-card" data-status="processing">
+          <div class="order-header">
+            <div class="order-id">
+              <span class="order-label">Mã đơn:</span>
+              <strong>#PRT20240115001</strong>
+            </div>
+            <div class="order-date">
+              <span class="order-label">Ngày đặt:</span>
+              12/01/2026
+            </div>
+          </div>
+
+          <div class="order-items">
+            <div class="order-item">
+              <div class="img-box">
+                <img
+                  src="images/products/Áo thun trắng Unisex.png"
+                  alt="Áo thun"
+                />
+              </div>
+              <div class="item-info">
+                <div class="item-name">
+                  Áo thun trắng Unisex - Thiết kế "Alien"
+                </div>
+                <div class="item-details">
+                  <span>Size: S</span>
+                  <span>Màu: Trắng</span>
+                  <span>Số lượng: 1</span>
+                </div>
+                <div class="item-price">200,000 ₫</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="order-footer">
+            <div class="order-total">
+              <span>Tổng cộng:</span>
+              <strong class="total-price">230,000 ₫</strong>
+            </div>
+            <div class="order-actions">
+              <span class="order-status status-processing">
+                <i class="fas fa-clock"></i> Đang xử lý
+              </span>
+              <button class="order-btn btn-track">
+                <i class="fas fa-map-marker-alt"></i> Theo dõi
+              </button>
+              <button class="order-btn btn-cancel">
+                <i class="fas fa-times"></i> Hủy đơn
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Order 2 - Shipping -->
+        <div class="order-card" data-status="shipping">
+          <div class="order-header">
+            <div class="order-id">
+              <span class="order-label">Mã đơn:</span>
+              <strong>#PRT20240110001</strong>
+            </div>
+            <div class="order-date">
+              <span class="order-label">Ngày đặt:</span>
+              10/01/2024
+            </div>
+          </div>
+
+          <div class="order-items">
+            <div class="order-item">
+              <div class="img-box">
+                <img
+                  src="images/products/Túi tote đen basic.png"
+                  alt="Tote bag"
+                />
+              </div>
+              <div class="item-info">
+                <div class="item-name">
+                  Tote Bag Canvas - "Forest Adventure"
+                </div>
+                <div class="item-details">
+                  <span>Màu: Xanh rêu</span>
+                  <span>Số lượng: 2</span>
+                </div>
+                <div class="item-price">378,000 ₫</div>
+              </div>
+            </div>
+            <div class="order-item">
+              <div class="img-box">
+                <img src="images/products/Cốc trắng basic.png" alt="Cốc sứ" />
+              </div>
+              <div class="item-info">
+                <div class="item-name">Cốc sứ in hình - "Coffee Lover"</div>
+                <div class="item-details">
+                  <span>Loại: Cốc 400ml</span>
+                  <span>Số lượng: 1</span>
+                </div>
+                <div class="item-price">129,000 ₫</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="order-footer">
+            <div class="order-total">
+              <span>Tổng cộng:</span>
+              <strong class="total-price">507,000 ₫</strong>
+            </div>
+            <div class="order-actions">
+              <span class="order-status status-shipping">
+                <i class="fas fa-shipping-fast"></i> Đang giao
+              </span>
+              <button class="order-btn btn-track">
+                <i class="fas fa-map-marker-alt"></i> Theo dõi
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Order 3 - Delivered -->
+        <div class="order-card" data-status="delivered">
+          <div class="order-header">
+            <div class="order-id">
+              <span class="order-label">Mã đơn:</span>
+              <strong>#PRT20231215001</strong>
+            </div>
+            <div class="order-date">
+              <span class="order-label">Ngày đặt:</span>
+              15/12/2023
+            </div>
+          </div>
+
+          <div class="order-items">
+            <div class="order-item">
+              <div class="img-box">
+                <img
+                  src="images/products/Áo hoodie đen Unisex.png"
+                  alt="Hoodie"
+                />
+              </div>
+              <div class="item-info">
+                <div class="item-name">Hoodie Unisex - "Urban Street"</div>
+                <div class="item-details">
+                  <span>Size: M</span>
+                  <span>Màu: Xám</span>
+                  <span>Số lượng: 1</span>
+                </div>
+                <div class="item-price">389,000 ₫</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="order-footer">
+            <div class="order-total">
+              <span>Tổng cộng:</span>
+              <strong class="total-price">389,000 ₫</strong>
+            </div>
+            <div class="order-actions">
+              <span class="order-status status-delivered">
+                <i class="fas fa-check-circle"></i> Đã giao
+              </span>
+              <button
+                class="order-btn btn-review"
+                data-order-id="PRT20231215001"
+              >
+                <i class="fas fa-star"></i> Đánh giá
+              </button>
+              <button class="order-btn btn-reorder">
+                <i class="fas fa-redo"></i> Mua lại
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Order 4 - Delivered -->
+        <div class="order-card" data-status="delivered">
+          <div class="order-header">
+            <div class="order-id">
+              <span class="order-label">Mã đơn:</span>
+              <strong>#PRT20231120001</strong>
+            </div>
+            <div class="order-date">
+              <span class="order-label">Ngày đặt:</span>
+              20/11/2023
+            </div>
+          </div>
+
+          <div class="order-items">
+            <div class="order-item">
+              <div class="img-box">
+                <img
+                  src="images/products/Áo thun trắng Unisex.png"
+                  alt="Áo thun trắng"
+                />
+              </div>
+              <div class="item-info">
+                <div class="item-name">
+                  Áo thun Cotton - "Minimalist Design"
+                </div>
+                <div class="item-details">
+                  <span>Size: XL</span>
+                  <span>Màu: Trắng</span>
+                  <span>Số lượng: 1</span>
+                </div>
+                <div class="item-price">220,000 ₫</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="order-footer">
+            <div class="order-total">
+              <span>Tổng cộng:</span>
+              <strong class="total-price">220,000 ₫</strong>
+            </div>
+            <div class="order-actions">
+              <span class="order-status status-delivered">
+                <i class="fas fa-check-circle"></i> Đã giao
+              </span>
+              <button
+                class="order-btn btn-review"
+                data-order-id="PRT20231120001"
+              >
+                <i class="fas fa-star"></i> Đánh giá
+              </button>
+              <button class="order-btn btn-reorder">
+                <i class="fas fa-redo"></i> Mua lại
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review Modal -->
+      <div id="reviewModal" class="review-modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2><i class="fas fa-star"></i> ĐÁNH GIÁ SẢN PHẨM</h2>
+            <button class="close-modal">&times;</button>
+          </div>
+
+          <div class="modal-body">
+            <div class="product-review">
+              <div class="img-box">
+                <img src="" alt="Sản phẩm" id="modal-product-img" />
+              </div>
+              <div class="review-product-info">
+                <h3 id="modal-product-name"></h3>
+                <p id="modal-order-id"></p>
+              </div>
+            </div>
+
+            <!-- Rating section với layout mới -->
+            <div class="rating-section">
+              <div class="rating-row">
+                <span class="label">Chất lượng sản phẩm</span>
+                <div class="stars-container">
+                  <div class="stars" data-rating="0" data-type="quality">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                  </div>
+                  <span class="rating-value" id="quality-value">0/5</span>
+                </div>
+              </div>
+
+              <div class="rating-row">
+                <span class="label">Chất lượng in ấn</span>
+                <div class="stars-container">
+                  <div class="stars" data-rating="0" data-type="printing">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                  </div>
+                  <span class="rating-value" id="printing-value">0/5</span>
+                </div>
+              </div>
+
+              <div class="rating-row">
+                <span class="label">Độ bền sản phẩm</span>
+                <div class="stars-container">
+                  <div class="stars" data-rating="0" data-type="durability">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                  </div>
+                  <span class="rating-value" id="durability-value">0/5</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="review-form">
+              <h4>Nhận xét của bạn</h4>
+              <textarea
+                id="reviewText"
+                placeholder="Chia sẻ trải nghiệm của bạn về sản phẩm..."
+              ></textarea>
+              <div class="review-actions">
+                <button class="order-btn btn-cancel-review">Hủy</button>
+                <button class="order-btn btn-submit-review">
+                  <i class="fas fa-paper-plane"></i> Gửi đánh giá
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reviews Section -->
+      <div id="reviewsSection" class="reviews-section" style="display: none">
+        <h2 class="section-title">ĐÁNH GIÁ ĐÃ GỬI</h2>
+
+        <div class="reviews-grid">
+          <!-- Các review sẽ được thêm bằng JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+      <div class="top-image">
+        <img src="images/banners/footer.jpg" alt="Printory Banner" />
+        <div class="small-box">
+          <div class="logo-text">
+            <a href="../index.html">PRIN<span>TORY</span></a>
+          </div>
+          <div class="small-box-bottom">
+            <p class="slogan-text">Your story,<span> we print!</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-content">
+        <div class="footer-header"></div>
+        <div class="footer-top">
+          <div class="brand-col">
+            <div class="footer-logo">
+              <a href="index.html">PRIN<span>TORY</span></a>
+            </div>
+            <p class="footer-slogan">Your story, <span>we print!</span></p>
+            <div class="socials">
+              <p>Thông tin liên hệ</p>
+              <div class="icon-container">
+                <a href="#"
+                  ><img
+                    src="images/icons/facebook.png"
+                    alt="Facebook"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/instagram.png"
+                    alt="Instagram"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/thread.png"
+                    alt="Threads"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/tiktok.png"
+                    alt="TikTok"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/telegram.png"
+                    alt="Telegram"
+                    width="80"
+                    height="80"
+                /></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Về PRINTORY</h3>
+            <ul>
+              <li><a href="about_us.html">Câu chuyện thương hiệu</a></li>
+              <li><a href="about_us.html">Giá trị cốt lõi</a></li>
+              <li><a href="PrintoryBlog.html">Cộng đồng</a></li>
+              <li><a href="PrintoryBlog.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Đặt hàng & hỗ trợ</h3>
+            <ul>
+              <li><a href="support.html">Hỏi đáp</a></li>
+              <li><a href="support.html">Hướng dẫn mua hàng</a></li>
+              <li><a href="support.html">Chính sách khách hàng</a></li>
+              <li><a href="support.html">Điều khoản bảo mật</a></li>
+              <li><a href="support.html">Liên hệ với chúng tôi</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright-section">
+        <div class="copyright-text">BẢN QUYỀN THUỘC VỀ PRINTORY ©</div>
+      </div>
+    </footer>
+
+    <script src="js/order.js"></script>
+  </body>
+</html>

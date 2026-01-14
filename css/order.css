@@ -1,0 +1,1072 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --background: #053046;
+  --blue-light: #249dbc;
+  --blue-lighter: #b1d9ec;
+  --orange: #fa8501;
+  --gray: #d9d9d9;
+  --red: #ff0000;
+  --dark-bar: #021a27;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--white);
+  font-family: "Baloo Thambi 2", sans-serif;
+  font-weight: 500;
+}
+
+/* ===== CATEGORY HEADER ===== */
+.category-header {
+  background-color: var(--dark-bar);
+  padding: 20px 0;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.title-text,
+.section-title {
+  font-family: "Baloo Thambi 2", sans-serif;
+  font-weight: 800;
+}
+
+.title-text {
+  font-family: "Baloo Thambi 2", cursive;
+  font-weight: 800;
+  font-size: 2.2rem;
+  color: #ffcc33;
+  text-transform: uppercase;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* ===== USER INFO SECTION ===== */
+.user-info-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 30px;
+  text-align: left;
+  border: 1px solid rgba(36, 157, 188, 0.2);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.user-avatar {
+  font-size: 60px;
+  color: var(--blue-light);
+  background: rgba(36, 157, 188, 0.1);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--orange);
+  flex-shrink: 0;
+}
+
+.user-details h3 {
+  font-family: "Kanit", sans-serif;
+  font-size: 24px;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.user-details p {
+  color: var(--blue-lighter);
+  margin: 5px 0;
+  font-family: "Baloo Thambi 2", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-details i {
+  color: var(--orange);
+  width: 20px;
+}
+
+/* ===== ORDER TABS ===== */
+.order-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.order-tab {
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 25px;
+  color: var(--white);
+  font-family: "Baloo Thambi 2", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.order-tab:hover {
+  background: rgba(36, 157, 188, 0.3);
+  transform: translateY(-3px);
+}
+
+.order-tab.active {
+  background: var(--orange);
+  box-shadow: 0 4px 15px rgba(250, 133, 1, 0.4);
+}
+
+.order-tab.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ===== ORDERS GRID ===== */
+.orders-grid {
+  display: grid;
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+/* ===== ORDER CARD ===== */
+.order-card {
+  background-color: #032131;
+  border-radius: 25px;
+  padding: 25px;
+  text-align: left;
+  position: relative;
+  transition: all 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.order-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.order-card:active {
+  transform: scale(0.98);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.order-label {
+  color: var(--blue-lighter);
+  margin-right: 5px;
+  font-family: "UTM Times", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.order-id strong {
+  color: var(--orange);
+  font-family: "Kanit", sans-serif;
+  font-size: 18px;
+}
+
+.order-date {
+  color: var(--white);
+  font-family: "Baloo Thambi 2", sans-serif;
+  font-size: 16px;
+}
+
+/* ===== ORDER ITEMS ===== */
+.order-items {
+  margin-bottom: 20px;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.order-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(5px);
+}
+
+.img-box {
+  background: var(--gray);
+  border-radius: 20px;
+  padding: 10px;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.img-box.small {
+  width: 60px;
+  height: 60px;
+  padding: 5px;
+}
+
+.item-info {
+  flex: 1;
+}
+
+.item-name {
+  font-family: "Baloo Thambi 2", sans-serif;
+  font-weight: 800; /* hoặc 500 nếu muốn nhẹ hơn */
+  font-size: 18px;
+  color: var(--white);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.item-details {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 8px;
+  color: var(--blue-lighter);
+  font-family: "Baloo Thambi 2", sans-serif;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+
+.item-price {
+  font-family: "Kanit", sans-serif;
+  color: var(--red);
+  font-size: 18px;
+  font-weight: 700;
+  min-width: 100px;
+  text-align: right;
+}
+
+/* ===== ORDER FOOTER ===== */
+.order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.order-total {
+  font-family: "Baloo Thambi 2", sans-serif;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.order-total span {
+  color: var(--blue-lighter);
+}
+
+.total-price {
+  color: var(--orange);
+  font-size: 24px;
+  font-family: "Kanit", sans-serif;
+}
+
+.order-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* ===== ORDER STATUS ===== */
+.order-status {
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Baloo Thambi 2", sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.status-processing {
+  background: rgba(250, 133, 1, 0.2);
+  color: var(--orange);
+  border: 1px solid rgba(250, 133, 1, 0.5);
+}
+
+.status-shipping {
+  background: rgba(36, 157, 188, 0.2);
+  color: var(--blue-light);
+  border: 1px solid rgba(36, 157, 188, 0.5);
+}
+
+.status-delivered {
+  background: rgba(0, 200, 0, 0.2);
+  color: #00cc00;
+  border: 1px solid rgba(0, 200, 0, 0.5);
+}
+
+.status-cancelled {
+  background: rgba(255, 0, 0, 0.2);
+  color: var(--red);
+  border: 1px solid rgba(255, 0, 0, 0.5);
+}
+
+/* ===== ORDER BUTTONS ===== */
+.order-btn {
+  padding: 10px 20px;
+  background-color: var(--orange);
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  font-family: "Baloo Thambi 2", cursive;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 0 #b35f00;
+}
+
+.order-btn:hover {
+  background-color: #ff9a2e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #b35f00;
+}
+
+.order-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #b35f00;
+}
+
+.btn-track {
+  background-color: var(--blue-light);
+  box-shadow: 0 4px 0 #1a7a94;
+}
+
+.btn-track:hover {
+  background-color: #2bb2d5;
+  box-shadow: 0 6px 0 #1a7a94;
+}
+
+.btn-review {
+  background-color: var(--orange);
+}
+
+.btn-reorder {
+  background-color: #4caf50;
+  box-shadow: 0 4px 0 #2e7d32;
+}
+
+.btn-reorder:hover {
+  background-color: #66bb6a;
+  box-shadow: 0 6px 0 #2e7d32;
+}
+
+.btn-cancel {
+  background-color: var(--red);
+  box-shadow: 0 4px 0 #b30000;
+}
+
+.btn-cancel:hover {
+  background-color: #ff6666;
+  box-shadow: 0 6px 0 #b30000;
+}
+
+/* ===== REVIEW MODAL - ĐÃ CHỈNH SỬA ===== */
+.review-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background: var(--background);
+  width: 90%;
+  max-width: 450px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid var(--blue-light);
+  max-height: 85vh;
+  overflow-y: auto;
+  transform: scale(0.9);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.modal-header {
+  background: linear-gradient(135deg, var(--blue-light), #1a7a94);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.modal-header h2 {
+  font-family: "Baloo Thambi 2", sans-serif;
+  color: var(--white);
+  margin: 0;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 24px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(90deg);
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+/* Product review section */
+.product-review {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.product-review .img-box {
+  width: 60px;
+  height: 60px;
+  padding: 5px;
+  border-radius: 15px;
+  background: var(--gray);
+  flex-shrink: 0;
+}
+
+.review-product-info h3 {
+  font-family: "Baloo Thambi 2", sans-serif;
+  color: var(--white);
+  margin-bottom: 5px;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.review-product-info p {
+  color: var(--blue-lighter);
+  font-family: "Baloo Thambi 2", sans-serif;
+  font-size: 12px;
+}
+
+/* ===== RATING SECTION - ĐÃ CHỈNH LẠI ===== */
+.rating-section {
+  margin-bottom: 20px;
+}
+
+.rating-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rating-row:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.rating-row .label {
+  flex: 1;
+  color: var(--white);
+  font-family: "Baloo Thambi 2", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.rating-row .stars-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stars {
+  display: flex;
+  gap: 3px;
+}
+
+.star {
+  font-size: 22px;
+  color: var(--gray);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  position: relative;
+}
+
+.star:hover {
+  color: #ffcc00;
+  transform: scale(1.1);
+}
+
+.star.active {
+  color: var(--orange);
+}
+
+.star::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: transparent;
+  z-index: -1;
+}
+
+.star:hover::after {
+  background: rgba(255, 204, 0, 0.1);
+}
+
+.rating-value {
+  font-family: "Baloo Thambi 2", sans-serif;
+  font-size: 12px;
+  color: var(--gray);
+  min-width: 30px;
+  text-align: right;
+  transition: color 0.3s ease;
+}
+
+/* ===== REVIEW FORM ===== */
+.review-form h4 {
+  color: var(--white);
+  margin: 15px 0 8px;
+  font-family: "Baloo Thambi 2", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.review-form textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(36, 157, 188, 0.3);
+  border-radius: 10px;
+  color: var(--white);
+  font-size: 14px;
+  resize: vertical;
+  font-family: "Baloo Thambi 2", sans-serif;
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.review-form textarea:focus {
+  outline: none;
+  border-color: var(--orange);
+  box-shadow: 0 0 10px rgba(250, 133, 1, 0.3);
+}
+
+.review-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.btn-submit-review,
+.btn-cancel-review {
+  padding: 8px 16px;
+  font-size: 13px;
+  border-radius: 8px;
+}
+
+.btn-cancel-review {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+}
+
+.btn-cancel-review:hover {
+  background: rgba(255, 0, 0, 0.2);
+}
+
+/* ===== REVIEWS SECTION ===== */
+.reviews-section {
+  margin-top: 50px;
+}
+
+.section-title {
+  font-family: "Baloo Thambi 2", cursive;
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: #ffcc33;
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.reviews-grid {
+  display: grid;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* ===== REVIEW CARD ===== */
+.review-card {
+  background-color: #032131;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.review-product {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.review-product .img-box.small {
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  border-radius: 12px;
+}
+
+.review-product h4 {
+  font-family: "Baloo Thambi 2", sans-serif;
+  color: var(--white);
+  margin-bottom: 3px;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.review-date {
+  color: var(--blue-lighter);
+  font-size: 12px;
+  font-family: "Baloo Thambi 2", sans-serif;
+}
+
+.review-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.star-rating {
+  color: var(--gray);
+  font-size: 16px;
+  display: flex;
+  gap: 2px;
+}
+
+.star-rating .filled {
+  color: var(--orange);
+}
+
+.rating-text {
+  color: var(--white);
+  font-weight: bold;
+  font-family: "Baloo Thambi 2", sans-serif;
+  font-size: 14px;
+}
+
+.review-body {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+  margin-bottom: 15px;
+  font-family: "Baloo Thambi 2", sans-serif;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.rating-details {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-family: "Baloo Thambi 2", sans-serif;
+  color: #b1d9ec;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+
+.rating-details span {
+  background: rgba(36, 157, 188, 0.1);
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(36, 157, 188, 0.3);
+}
+
+.review-helpful {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Baloo Thambi 2", sans-serif;
+  color: var(--blue-lighter);
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+
+.helpful-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 15px;
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Baloo Thambi 2", sans-serif;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.helpful-btn:hover {
+  background: rgba(36, 157, 188, 0.3);
+  transform: translateY(-2px);
+}
+
+.helpful-btn i {
+  color: var(--blue-light);
+  font-size: 12px;
+}
+
+/* ===== NOTIFICATION ===== */
+.notification {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  background: linear-gradient(135deg, #249dbc, #1a7a94);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  transform: translateX(400px);
+  transition: transform 0.3s ease;
+  font-family: "Baloo Thambi 2", sans-serif;
+  max-width: 300px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .search-box {
+    margin: 0 15px;
+    flex: 1;
+    max-width: 100%;
+  }
+
+  .search-box input {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 15px 12px 45px;
+    font-size: 14px;
+    transition: none;
+  }
+
+  .search-box i {
+    font-size: 16px;
+    left: 12px;
+  }
+
+  .search-box button {
+    left: 12px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .order-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .order-tab {
+    width: 100%;
+    text-align: center;
+  }
+
+  .order-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .order-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .item-details {
+    justify-content: center;
+  }
+
+  .item-price {
+    text-align: center;
+    min-width: auto;
+  }
+
+  .order-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .order-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Modal responsive */
+  .modal-content {
+    width: 95%;
+    max-width: 400px;
+  }
+
+  .rating-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .rating-row .stars-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .review-actions {
+    flex-direction: column;
+  }
+
+  .btn-submit-review,
+  .btn-cancel-review {
+    width: 100%;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin: 20px 0 30px;
+  }
+
+  .brand-col,
+  .footer-col {
+    text-align: center;
+  }
+
+  .socials {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .copyright-section {
+    margin: 0 -20px;
+    width: calc(100% + 40px);
+    padding: 15px 20px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-box input {
+    padding: 10px 12px 10px 40px;
+    font-size: 13px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .search-box i {
+    font-size: 14px;
+    left: 10px;
+  }
+
+  .search-box button {
+    left: 10px;
+  }
+
+  .title-text {
+    font-size: 1.8rem;
+  }
+
+  .user-profile {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .user-avatar {
+    width: 70px;
+    height: 70px;
+    font-size: 50px;
+  }
+
+  .order-status {
+    padding: 6px 15px;
+    font-size: 12px;
+  }
+
+  .order-btn {
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+
+  /* Modal responsive */
+  .modal-content {
+    width: 98%;
+    max-width: 350px;
+  }
+
+  .product-review {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .review-product-info {
+    text-align: center;
+  }
+
+  .stars {
+    justify-content: center;
+  }
+
+  .review-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .review-helpful {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Scrollbar cho modal */
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: var(--blue-light);
+  border-radius: 3px;
+}

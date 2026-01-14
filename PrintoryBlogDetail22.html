@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/font.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="component/header.css" />
+    <link rel="stylesheet" href="component/footer.css" />
+    <link rel="stylesheet" href="Css/blog.css" />
+    <link rel="stylesheet" href="Css/blog-detail.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <title>PRINTORY - details</title>
+  </head>
+  <body>
+    <!--HEADER-->
+    <header>
+      <div class="logo">
+        <a href="index.html"> PRIN<span>TORY</span> </a>
+      </div>
+
+      <div class="search-box">
+        <button type="button" id="searchBtn">
+          <i class="fa fa-search"></i>
+        </button>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
+      </div>
+      <nav class="nav">
+        <a href="PrintoryBlog.html">Printory Blog</a>
+        <a href="support.html">Hỗ trợ</a>
+        <a href="cart.html" class="cart">
+          <i class="fa fa-shopping-cart cart-icon"></i>
+          <span class="cart-text">Giỏ hàng</span>
+        </a>
+
+        <a href="auth.html" class="user">
+          <span class="user-text">Đăng nhập</span>
+        </a>
+      </nav>
+    </header>
+    <!--MAIN CONTENT-->
+    <div class="banner-container">
+      <div href="index.html" class="header-logo">
+        <img src="images/Tainguyen/Printoryblog.png" alt="Printory Blog" />
+      </div>
+
+      <div class="banner-content">
+        <div class="banner-left" id="bg-left">
+          <img
+            src="images/Tainguyen/blog_tet.jpg"
+            alt="Tet Shirt"
+            id="product-img"
+          />
+        </div>
+
+        <div class="banner-right" id="bg-right">
+          <button class="nav-arrow" onclick="nextSlide()">❯</button>
+          <p class="daterange" id="date-range">DIỄN RA TỪ 31/12 - 1/2/2026</p>
+          <div class="slide-content-wrapper">
+            <h1 class="title" id="title">
+              NĂM MỚI RẠNG NGỜI <br />
+              KHỞI SẮC
+            </h1>
+            <p class="description" id="description">
+              Mùa xuân luôn là thời điểm tuyệt vời nhất để chúng ta làm mới bản
+              thân và không gian sống. Thấu hiểu điều đó, từ ngày 31/12/2025 đến
+              hết ngày 01/02/2026, PRINTORY mang đến một luồng gió mới với hàng
+              loạt mẫu thiết kế vừa ra mắt.
+            </p>
+          </div>
+          <div class="actions">
+            <button class="btn-view">Xem ngay</button>
+            <div class="nav-dots" id="dots-container">
+              <span class="dot active" onclick="goToSlide(0)"></span>
+              <span class="dot" onclick="goToSlide(1)"></span>
+              <span class="dot" onclick="goToSlide(2)"></span>
+              <span class="dot" onclick="goToSlide(3)"></span>
+              <span class="dot" onclick="goToSlide(4)"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="hero-section">
+        <div class="hero-image-container">
+          <img
+            src="images/Tainguyen/blog_1.jpg"
+            alt="Printory - Xu hướng thời trang 2025"
+            class="hero-image"
+          />
+        </div>
+
+        <div class="hero-content">
+          <span class="hero-tagline">XU HƯỚNG THỜI TRANG ĐÌNH ĐÁM 2025</span>
+          <h1>
+            PRINTORY<br />CÁ NHÂN HÓA<br /><span class="highlight"
+              >ĐỘC BẢN</span
+            >
+          </h1>
+          <p>
+            Năm 2025, Printory bứt phá trở thành biểu tượng dẫn đầu xu hướng
+            thời trang in ấn thiết kế riêng, biến mỗi chiếc áo trở thành một tác
+            phẩm nghệ thuật mang đậm bản sắc cá nhân.
+          </p>
+          <a href="#kham-pha" class="cta-button">CẬP NHẬT XU HƯỚNG</a>
+        </div>
+      </div>
+
+      <section id="kham-pha">
+        <h2>1. Cuộc Cách Mạng "Cá Nhân Hóa" – Khi Bạn Là Nhà Thiết Kế</h2>
+        <p>
+          Lý do khiến Printory trở thành xu hướng chủ đạo của năm 2025 chính là
+          việc xóa bỏ rào cản giữa "người mặc" và "nhà thiết kế". Thời trang năm
+          nay chứng kiến sự lên ngôi của hai thái cực:
+        </p>
+        <ul>
+          <li>
+            <strong>Sự tinh tế của Minimalism:</strong> Thiết kế logo "siêu nhỏ"
+            với các tông màu chữa lành như Digital Lavender hay Sage Green.
+          </li>
+          <li>
+            <strong>Sự bùng nổ của Chaotic Customization:</strong> Những bản in
+            khổ lớn, họa tiết trừu tượng mang hơi thở Retro-Futurism.
+          </li>
+        </ul>
+        <p>
+          💡
+          <em
+            >Với trình mô phỏng Mockup 3D của Printory, việc hiện thực hóa những
+            ý tưởng điên rồ nhất chưa bao giờ dễ dàng đến thế.</em
+          >
+        </p>
+      </section>
+
+      <section>
+        <h2>2. Công Nghệ In 2025: Thời Trang Đi Đôi Với Trách Nhiệm</h2>
+        <p>
+          Printory không chỉ tạo nên xu hướng bằng hình ảnh, mà còn bằng trải
+          nghiệm xúc giác và ý thức môi trường.
+        </p>
+
+        <style>
+          .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+          }
+          .tech-table th,
+          .tech-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+          }
+          .tech-table th {
+            background-color: #f8f8f8;
+            color: #333;
+          }
+        </style>
+
+        <table class="tech-table">
+          <thead>
+            <tr>
+              <th>Công nghệ</th>
+              <th>Đặc điểm nổi bật</th>
+              <th>Lợi ích cho người dùng</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>In DTF Thế Hệ Mới</strong></td>
+              <td>Sắc nét, co giãn đa chiều</td>
+              <td>
+                Hình in không nứt vỡ sau 50 lần giặt, bền bỉ theo thời gian.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Mực Gốc Nước (Eco-Ink)</strong></td>
+              <td>Thấm sâu vào sợi vải</td>
+              <td>Cực kỳ thoáng khí, mềm mại và 100% thân thiện với làn da.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>3. Print On Demand (POD): Lời Giải Cho Thời Trang Bền Vững</h2>
+        <div class="voucher-grid">
+          <div class="voucher-card">
+            <h3>KHÔNG TỒN KHO</h3>
+            <p>Chỉ sản xuất đúng những gì bạn cần, dù là 01 hay 1.000 chiếc.</p>
+            <p><small>Giá trị: Tiết kiệm tài nguyên</small></p>
+          </div>
+
+          <div class="voucher-card">
+            <h3>TỐI ƯU CÁ NHÂN</h3>
+            <p>
+              Mỗi cá nhân sở hữu một phiên bản riêng trên cùng một bộ nhận diện.
+            </p>
+            <p><small>Giá trị: Độc bản duy nhất</small></p>
+          </div>
+
+          <div class="voucher-card">
+            <h3>TỐC ĐỘ DẪN ĐẦU</h3>
+            <p>Quy trình từ ý tưởng đến tay người dùng được rút ngắn tối đa.</p>
+            <p><small>Giá trị: Kỷ nguyên số</small></p>
+          </div>
+
+          <div class="voucher-card">
+            <h3>BỀN VỮNG</h3>
+            <p>
+              Giảm thiểu rác thải thời trang thông qua sản xuất theo nhu cầu.
+            </p>
+            <p><small>Giá trị: Tương lai xanh</small></p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Đừng chỉ mặc, hãy "tuyên ngôn"</h2>
+        <p>
+          Thời trang 2025 là tiếng nói của cái tôi. Printory đã khéo léo biến
+          những chiếc áo phông, áo hoodie đơn thuần trở thành những "biển hiệu
+          di động" đầy phong cách.
+        </p>
+
+        <div class="collection-gallery">
+          <div class="gallery-item">
+            <img
+              src="images/Tainguyen/blogdetail_b21.jpg"
+              alt="Bộ sưu tập 2025"
+            />
+            <div class="gallery-caption">BST Xu hướng 2025</div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/Tainguyen/blogdetail_b22.jpg"
+              alt="Công nghệ in ấn"
+            />
+            <div class="gallery-caption">Chất lượng in ấn cao cấp</div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/Tainguyen/blogdetail_b23.jpg"
+              alt="Thời trang bền vững"
+            />
+            <div class="gallery-caption">Khẳng định bản sắc riêng</div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px">
+          <a href="#" class="cta-button" style="margin-right: 10px"
+            >GHÉ THĂM BST 2025</a
+          >
+          <a href="#" class="cta-button" style="background: #333"
+            >TỰ THIẾT KẾ NGAY</a
+          >
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+      <div class="top-image">
+        <img src="images/banners/footer.jpg" alt="Printory Banner" />
+        <div class="small-box">
+          <div class="logo-text">
+            <a href="../index.html">PRIN<span>TORY</span></a>
+          </div>
+          <div class="small-box-bottom">
+            <p class="slogan-text">Your story,<span> we print!</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-content">
+        <div class="footer-header"></div>
+        <div class="footer-top">
+          <div class="brand-col">
+            <div class="footer-logo">
+              <a href="index.html">PRIN<span>TORY</span></a>
+            </div>
+            <p class="footer-slogan">Your story, <span>we print!</span></p>
+            <div class="socials">
+              <p>Thông tin liên hệ</p>
+              <div class="icon-container">
+                <a href="#"
+                  ><img
+                    src="images/icons/facebook.png"
+                    alt="Facebook"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/instagram.png"
+                    alt="Instagram"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/thread.png"
+                    alt="Threads"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/tiktok.png"
+                    alt="TikTok"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/telegram.png"
+                    alt="Telegram"
+                    width="80"
+                    height="80"
+                /></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Về PRINTORY</h3>
+            <ul>
+              <li><a href="about_us.html">Câu chuyện thương hiệu</a></li>
+              <li><a href="about_us.html">Giá trị cốt lõi</a></li>
+              <li><a href="PrintoryBlog.html">Cộng đồng</a></li>
+              <li><a href="PrintoryBlog.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Đặt hàng & hỗ trợ</h3>
+            <ul>
+              <li><a href="support.html">Hỏi đáp</a></li>
+              <li><a href="support.html">Hướng dẫn mua hàng</a></li>
+              <li><a href="support.html">Chính sách khách hàng</a></li>
+              <li><a href="support.html">Điều khoản bảo mật</a></li>
+              <li><a href="support.html">Liên hệ với chúng tôi</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright-section">
+        <div class="copyright-text">BẢN QUYỀN THUỘC VỀ PRINTORY ©</div>
+      </div>
+    </footer>
+    <script src="JavaScript/main.js"></script>
+  </body>
+</html>

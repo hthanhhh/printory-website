@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Trang cá nhân | PRINTORY</title>
+
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="component/footer.css" />
+    <link rel="stylesheet" href="css/user-profile.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <a href="index.html"> PRIN<span>TORY</span> </a>
+      </div>
+      <div class="user-info">Xin chào, <span>Nguyễn Quỳnh Giang</span></div>
+    </header>
+
+    <div class="container">
+      <aside class="sidebar">
+        <div class="avatar">
+          <img id="avatarPreview" src="images/icons/avatar.jpg" alt="Avatar" />
+          <label>
+            📷 Đổi ảnh đại diện
+            <input
+              type="file"
+              accept="image/*"
+              onchange="previewAvatar(event)"
+            />
+          </label>
+        </div>
+
+        <h3>Tài khoản</h3>
+        <div class="menu">
+          <a class="active" onclick="showSection('profile',this)"
+            >👤 Thông tin cá nhân</a
+          >
+          <a onclick="showSection('update',this)">✏️ Cập nhật thông tin</a>
+
+          <a href="order.html" onclick="showSection('orders',this)"
+            >📦 Đơn đặt hàng</a
+          >
+
+          <a onclick="showSection('auth',this)">🔑 Đổi mật khẩu</a>
+          <a href="auth.html" class="danger">⏻ Đăng xuất</a>
+        </div>
+      </aside>
+
+      <!-- CONTENT -->
+      <main class="content">
+        <div id="profile" class="section active">
+          <h2>👤 Thông tin tài khoản</h2>
+          <div class="profile-list">
+            <p><strong>Họ tên:</strong> Nguyễn Quỳnh Giang</p>
+            <p><strong>SĐT:</strong> 0373 753 621</p>
+            <p><strong>Email:</strong> giang@gmail.com</p>
+            <p><strong>Địa chỉ:</strong> Thủ Đức - TP.HCM</p>
+            <p><strong>Xếp hạng:</strong> <span class="rank">VIP POD</span></p>
+          </div>
+        </div>
+
+        <div id="update" class="section">
+          <h2>✏️ Cập nhật thông tin</h2>
+          <label>Họ tên</label>
+          <input type="text" />
+
+          <label>Số điện thoại</label>
+          <input type="text" />
+
+          <label>Email</label>
+          <input type="email" />
+
+          <label>Địa chỉ</label>
+          <input type="text" />
+
+          <button><h3>Lưu thay đổi</h3></button>
+        </div>
+
+        <div id="auth" class="section">
+          <h2>🔑 Đổi mật khẩu</h2>
+          <label>Mật khẩu hiện tại</label>
+          <input type="password" />
+          <label>Mật khẩu mới</label>
+          <input type="password" />
+          <button><h3>Đổi mật khẩu</h3></button>
+        </div>
+
+        <div class="chat-toggle" onclick="toggleChat()">
+          <i class="fa fa-comment" aria-hidden="true"></i>
+        </div>
+
+        <div class="chat-box" id="chatBox">
+          <div class="chat-header">
+            💬 Tư vấn hỗ trợ
+            <span onclick="toggleChat()">✕</span>
+          </div>
+
+          <div class="chat-body"></div>
+
+          <div class="chat-input">
+            <input type="text" placeholder="Nhập tin nhắn..." />
+            <button>➤</button>
+          </div>
+        </div>
+      </main>
+
+      <div class="right-sidebar">
+        <div class="ads">
+          <a href="products.html"
+            ><img src="images/banners/sale.jpg" alt="Banner quảng cáo"
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+
+    <footer class="footer">
+      <div class="top-image">
+        <img src="images/banners/footer.jpg" alt="Printory Banner" />
+        <div class="small-box">
+          <div class="logo-text">
+            <a href="../index.html">PRIN<span>TORY</span></a>
+          </div>
+          <div class="small-box-bottom">
+            <p class="slogan-text">Your story,<span> we print!</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-content">
+        <div class="footer-header"></div>
+        <div class="footer-top">
+          <div class="brand-col">
+            <div class="footer-logo">
+              <a href="index.html">PRIN<span>TORY</span></a>
+            </div>
+            <p class="footer-slogan">Your story, <span>we print!</span></p>
+            <div class="socials">
+              <p>Thông tin liên hệ</p>
+              <div class="icon-container">
+                <a href="#"
+                  ><img
+                    src="images/icons/facebook.png"
+                    alt="Facebook"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/instagram.png"
+                    alt="Instagram"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/thread.png"
+                    alt="Threads"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/tiktok.png"
+                    alt="TikTok"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/telegram.png"
+                    alt="Telegram"
+                    width="80"
+                    height="80"
+                /></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Về PRINTORY</h3>
+            <ul>
+              <li><a href="about_us.html">Câu chuyện thương hiệu</a></li>
+              <li><a href="about_us.html">Giá trị cốt lõi</a></li>
+              <li><a href="PrintoryBlog.html">Cộng đồng</a></li>
+              <li><a href="PrintoryBlog.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Đặt hàng & hỗ trợ</h3>
+            <ul>
+              <li><a href="support.html">Hỏi đáp</a></li>
+              <li><a href="support.html">Hướng dẫn mua hàng</a></li>
+              <li><a href="support.html">Chính sách khách hàng</a></li>
+              <li><a href="support.html">Điều khoản bảo mật</a></li>
+              <li><a href="support.html">Liên hệ với chúng tôi</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright-section">
+        <div class="copyright-text">BẢN QUYỀN THUỘC VỀ PRINTORY ©</div>
+      </div>
+    </footer>
+
+    <!---JAVASCRIPT--->
+    <script>
+      function toggleChat() {
+        const box = document.getElementById("chatBox");
+        box.style.display = box.style.display === "flex" ? "none" : "flex";
+      }
+
+      const chatBody = document.querySelector(".chat-body");
+      const chatInput = document.querySelector(".chat-input input");
+      const chatBtn = document.querySelector(".chat-input button");
+
+      function addMsg(text, from) {
+        const m = document.createElement("div");
+        m.className = "chat-msg";
+        m.style.background = from === "user" ? "#0084ff" : "#e4e6eb";
+        m.style.color = from === "user" ? "#fff" : "#000";
+        m.style.alignSelf = from === "user" ? "flex-end" : "flex-start";
+        m.innerText = text;
+        chatBody.appendChild(m);
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }
+
+      function botReply(msg) {
+        setTimeout(() => {
+          let rep =
+            "Dạ bạn đợi Printory chút nha, chúng mình sẽ cho nhân viên hỗ trợ ngay ạ!";
+          if (/giá/i.test(msg))
+            rep =
+              "💰Các sản phẩm của Printory có giá tuỳ theo thiết kế và số lượng, cho chúng mình biết rõ hơn yêu cầu của bạn nha!";
+          if (/ship|giao/i.test(msg))
+            rep =
+              "Giao hàng toàn quốc từ 7-15 ngày, bao gồm cả thời gian in ấn ạ 🚚";
+          addMsg(rep, "bot");
+        }, 900);
+      }
+
+      chatBtn.onclick = () => {
+        if (!chatInput.value) return;
+        addMsg(chatInput.value, "user");
+        botReply(chatInput.value);
+        chatInput.value = "";
+      };
+
+      chatInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") chatBtn.click();
+      });
+
+      setTimeout(() => {
+        addMsg("👋 Xin chào! Bạn cần hỗ trợ gì ạ?", "bot");
+      }, 1000);
+    </script>
+
+    <script>
+      function showSection(id, el) {
+        document
+          .querySelectorAll(".menu a")
+          .forEach((a) => a.classList.remove("active"));
+        el.classList.add("active");
+        document
+          .querySelectorAll(".section")
+          .forEach((s) => s.classList.remove("active"));
+        document.getElementById(id).classList.add("active");
+      }
+
+      function toggleOrder(el) {
+        const d = el.nextElementSibling;
+        d.style.display = d.style.display === "block" ? "none" : "block";
+      }
+
+      function previewAvatar(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = () => {
+          const imgData = reader.result;
+          document.getElementById("avatarPreview").src = imgData;
+          localStorage.setItem("printory_avatar", imgData);
+        };
+        reader.readAsDataURL(file);
+      }
+    </script>
+  </body>
+</html>

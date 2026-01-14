@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Printory - Câu chuyện</title>
+
+    <link rel="stylesheet" href="css/font.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="component/header.css" />
+    <link rel="stylesheet" href="component/footer.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+  </head>
+
+  <body>
+    <!--HEADER-->
+    <header>
+      <div class="logo">
+        <a href="index.html"> PRIN<span>TORY</span> </a>
+      </div>
+
+      <div class="search-box">
+        <button type="button" id="searchBtn">
+          <i class="fa fa-search"></i>
+        </button>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
+      </div>
+      <nav class="nav">
+        <a href="PrintoryBlog.html">Printory Blog</a>
+        <a href="support.html">Hỗ trợ</a>
+        <a href="cart.html" class="cart">
+          <i class="fa fa-shopping-cart cart-icon"></i>
+          <span class="cart-text">Giỏ hàng</span>
+        </a>
+
+        <a href="auth.html" class="user">
+          <span class="user-text">Đăng nhập</span>
+        </a>
+      </nav>
+    </header>
+    <!--MAIN CONTENT-->
+    <div class="cart-container">
+      <h1 class="cart-title">GIỎ HÀNG</h1>
+
+      <div class="cart-box">
+        <div class="cart-header">
+          <div>
+            <input type="checkbox" id="selectAll" class="item-checkbox" />
+          </div>
+          <div>Sản phẩm</div>
+          <div style="text-align: center">Số lượng</div>
+          <div style="text-align: center">Giá</div>
+          <div></div>
+        </div>
+
+        <div id="cartItems">
+          <!-- Cart items sẽ được render bằng JavaScript -->
+        </div>
+
+        <div class="cart-summary">
+          <div class="summary-left">
+            <span class="total-label">TỔNG:</span>
+            <span class="total-items" id="totalItems">0</span>
+          </div>
+          <div class="total-price" id="totalPrice">0đ</div>
+        </div>
+
+        <div class="cart-actions">
+          <button class="continue-btn" onclick="continueShopping()">
+            Tiếp tục mua sắm
+          </button>
+          <button class="checkout-btn" onclick="checkout()">Thanh toán</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal xác nhận xóa -->
+    <div class="modal" id="deleteModal">
+      <div class="modal-content">
+        <div class="modal-title">Bạn có chắc muốn xóa sản phẩm này?</div>
+        <div class="modal-buttons">
+          <button class="modal-btn cancel-btn" onclick="closeDeleteModal()">
+            Hủy
+          </button>
+          <button class="modal-btn confirm-btn" onclick="confirmDelete()">
+            Xóa
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal xem thiết kế -->
+    <div class="design-modal" id="designModal">
+      <div class="design-content">
+        <button class="design-close" onclick="closeDesignModal()">×</button>
+        <div class="design-title" id="designTitle">Thiết kế sản phẩm</div>
+        <img class="design-image" id="designImage" src="" alt="Design" />
+      </div>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+      <div class="top-image">
+        <img src="images/banners/footer.jpg" alt="Printory Banner" />
+        <div class="small-box">
+          <div class="logo-text">
+            <a href="../index.html">PRIN<span>TORY</span></a>
+          </div>
+          <div class="small-box-bottom">
+            <p class="slogan-text">Your story,<span> we print!</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-content">
+        <div class="footer-header"></div>
+        <div class="footer-top">
+          <div class="brand-col">
+            <div class="footer-logo">
+              <a href="index.html">PRIN<span>TORY</span></a>
+            </div>
+            <p class="footer-slogan">Your story, <span>we print!</span></p>
+            <div class="socials">
+              <p>Thông tin liên hệ</p>
+              <div class="icon-container">
+                <a href="#"
+                  ><img
+                    src="images/icons/facebook.png"
+                    alt="Facebook"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/instagram.png"
+                    alt="Instagram"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/thread.png"
+                    alt="Threads"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/tiktok.png"
+                    alt="TikTok"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/telegram.png"
+                    alt="Telegram"
+                    width="80"
+                    height="80"
+                /></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Về PRINTORY</h3>
+            <ul>
+              <li><a href="about_us.html">Câu chuyện thương hiệu</a></li>
+              <li><a href="about_us.html">Giá trị cốt lõi</a></li>
+              <li><a href="PrintoryBlog.html">Cộng đồng</a></li>
+              <li><a href="PrintoryBlog.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Đặt hàng & hỗ trợ</h3>
+            <ul>
+              <li><a href="support.html">Hỏi đáp</a></li>
+              <li><a href="support.html">Hướng dẫn mua hàng</a></li>
+              <li><a href="support.html">Chính sách khách hàng</a></li>
+              <li><a href="support.html">Điều khoản bảo mật</a></li>
+              <li><a href="support.html">Liên hệ với chúng tôi</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright-section">
+        <div class="copyright-text">BẢN QUYỀN THUỘC VỀ PRINTORY ©</div>
+      </div>
+    </footer>
+
+    <script src="js/cart1.js"></script>
+  </body>
+</html>

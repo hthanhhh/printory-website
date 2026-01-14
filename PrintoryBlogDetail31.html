@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/font.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="component/header.css" />
+    <link rel="stylesheet" href="component/footer.css" />
+    <link rel="stylesheet" href="Css/blog.css" />
+    <link rel="stylesheet" href="Css/blog-detail.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <title>PRINTORY - details</title>
+  </head>
+  <body>
+    <!--HEADER-->
+    <header>
+      <div class="logo">
+        <a href="index.html"> PRIN<span>TORY</span> </a>
+      </div>
+
+      <div class="search-box">
+        <button type="button" id="searchBtn">
+          <i class="fa fa-search"></i>
+        </button>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
+      </div>
+      <nav class="nav">
+        <a href="PrintoryBlog.html">Printory Blog</a>
+        <a href="support.html">Hỗ trợ</a>
+        <a href="cart.html" class="cart">
+          <i class="fa fa-shopping-cart cart-icon"></i>
+          <span class="cart-text">Giỏ hàng</span>
+        </a>
+
+        <a href="auth.html" class="user">
+          <span class="user-text">Đăng nhập</span>
+        </a>
+      </nav>
+    </header>
+    <!--MAIN CONTENT-->
+    <div class="banner-container">
+      <div href="index.html" class="header-logo">
+        <img src="images/Tainguyen/Printoryblog.png" alt="Printory Blog" />
+      </div>
+
+      <div class="banner-content">
+        <div class="banner-left" id="bg-left">
+          <img
+            src="images/Tainguyen/blog_tet.jpg"
+            alt="Tet Shirt"
+            id="product-img"
+          />
+        </div>
+
+        <div class="banner-right" id="bg-right">
+          <button class="nav-arrow" onclick="nextSlide()">❯</button>
+          <p class="daterange" id="date-range">DIỄN RA TỪ 31/12 - 1/2/2026</p>
+          <div class="slide-content-wrapper">
+            <h1 class="title" id="title">
+              NĂM MỚI RẠNG NGỜI <br />
+              KHỞI SẮC
+            </h1>
+            <p class="description" id="description">
+              Mùa xuân luôn là thời điểm tuyệt vời nhất để chúng ta làm mới bản
+              thân và không gian sống. Thấu hiểu điều đó, từ ngày 31/12/2025 đến
+              hết ngày 01/02/2026, PRINTORY mang đến một luồng gió mới với hàng
+              loạt mẫu thiết kế vừa ra mắt.
+            </p>
+          </div>
+          <div class="actions">
+            <button class="btn-view">Xem ngay</button>
+            <div class="nav-dots" id="dots-container">
+              <span class="dot active" onclick="goToSlide(0)"></span>
+              <span class="dot" onclick="goToSlide(1)"></span>
+              <span class="dot" onclick="goToSlide(2)"></span>
+              <span class="dot" onclick="goToSlide(3)"></span>
+              <span class="dot" onclick="goToSlide(4)"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="hero-section">
+        <div class="hero-image-container">
+          <img
+            src="images/Tainguyen/blog_4.jpg"
+            alt="PRINTORY - Doanh nghiệp của năm"
+            class="hero-image"
+          />
+        </div>
+
+        <div class="hero-content">
+          <span class="hero-tagline"
+            >CỘT MỐC VÀNG TRÊN HÀNH TRÌNH SÁNG TẠO</span
+          >
+          <h1>
+            PRINTORY<br />DOANH NGHIỆP<br /><span class="highlight"
+              >CỦA NĂM</span
+            >
+          </h1>
+          <p>
+            Khẳng định vị thế – Ghi dấu cảm xúc – Lưu giữ giá trị bền vững. Một
+            chương mới đầy tự hào của tập thể PRINTORY.
+          </p>
+          <a href="#y-nghia" class="cta-button">XEM CHI TIẾT GIẢI THƯỞNG</a>
+        </div>
+      </div>
+
+      <section id="y-nghia">
+        <h2>Minh Chứng Cho Nỗ Lực Không Ngừng Nghỉ</h2>
+        <p>
+          PRINTORY vừa chính thức được vinh danh tại giải thưởng
+          <strong>Doanh nghiệp của Năm</strong>, đánh dấu một cột mốc quan trọng
+          trên hành trình khẳng định vị thế trong lĩnh vực in ấn họa tiết và sản
+          xuất quần áo tại Việt Nam.
+        </p>
+        <p>
+          Đây không chỉ là niềm tự hào của riêng doanh nghiệp, mà còn là sự ghi
+          nhận xứng đáng cho một tập thể đã kiên định theo đuổi giá trị sáng
+          tạo, chất lượng và cảm xúc suốt nhiều năm qua. Trong một thị trường
+          cạnh tranh khốc liệt, PRINTORY đã chọn con đường khác biệt:
+          <strong
+            >Không chỉ tạo ra sản phẩm, mà tạo ra những giá trị được lưu
+            giữ.</strong
+          >
+        </p>
+      </section>
+
+      <section>
+        <h2>⚡ Triết Lý Của Sự Trân Trọng</h2>
+        <div class="voucher-grid">
+          <div class="voucher-card">
+            <h3>HỮU HÌNH HÓA</h3>
+            <p>
+              Những khoảnh khắc, hình ảnh, câu chuyện riêng xứng đáng được giữ
+              lại bằng hình hài cụ thể.
+            </p>
+            <p><small>Giá trị: Biến ký ức thành vật hữu hình</small></p>
+          </div>
+
+          <div class="voucher-card">
+            <h3>LƯU GIỮ CẢM XÚC</h3>
+            <p>
+              Cảm xúc không nên chỉ tồn tại trong trí nhớ. Thời gian có thể phai
+              nhạt, nhưng sản phẩm in ấn thì không.
+            </p>
+            <p><small>Giá trị: Vật chứng của thời gian</small></p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Sứ Mệnh "Kho Lưu Giữ Ký Ức"</h2>
+        <p>
+          Mỗi sản phẩm tại PRINTORY không đơn thuần là một chiếc áo. Đó là một
+          dấu ấn – được in ra, được nâng niu và đồng hành cùng người sở hữu qua
+          năm tháng. Dù là kỷ niệm cá nhân hay câu chuyện thương hiệu, chúng tôi
+          luôn biến chúng thành những giá trị bền vững.
+        </p>
+
+        <blockquote>
+          <br />"Bởi vì có những câu chuyện, nếu không giữ lại – thời gian sẽ
+          mang chúng đi. Và PRINTORY ở đây, để cùng bạn lưu giữ chúng."
+        </blockquote>
+
+        <p>
+          <br />Trong tương lai, PRINTORY sẽ tiếp tục đổi mới công nghệ và nâng
+          cao chất lượng dịch vụ, để mỗi dấu ấn được in ra không chỉ đẹp về hình
+          thức, mà còn sâu sắc về giá trị tinh thần.
+        </p>
+      </section>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+      <div class="top-image">
+        <img src="images/banners/footer.jpg" alt="Printory Banner" />
+        <div class="small-box">
+          <div class="logo-text">
+            <a href="../index.html">PRIN<span>TORY</span></a>
+          </div>
+          <div class="small-box-bottom">
+            <p class="slogan-text">Your story,<span> we print!</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-content">
+        <div class="footer-header"></div>
+        <div class="footer-top">
+          <div class="brand-col">
+            <div class="footer-logo">
+              <a href="index.html">PRIN<span>TORY</span></a>
+            </div>
+            <p class="footer-slogan">Your story, <span>we print!</span></p>
+            <div class="socials">
+              <p>Thông tin liên hệ</p>
+              <div class="icon-container">
+                <a href="#"
+                  ><img
+                    src="images/icons/facebook.png"
+                    alt="Facebook"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/instagram.png"
+                    alt="Instagram"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/thread.png"
+                    alt="Threads"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/tiktok.png"
+                    alt="TikTok"
+                    width="80"
+                    height="80"
+                /></a>
+                <a href="#"
+                  ><img
+                    src="images/icons/telegram.png"
+                    alt="Telegram"
+                    width="80"
+                    height="80"
+                /></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Về PRINTORY</h3>
+            <ul>
+              <li><a href="about_us.html">Câu chuyện thương hiệu</a></li>
+              <li><a href="about_us.html">Giá trị cốt lõi</a></li>
+              <li><a href="PrintoryBlog.html">Cộng đồng</a></li>
+              <li><a href="PrintoryBlog.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Đặt hàng & hỗ trợ</h3>
+            <ul>
+              <li><a href="support.html">Hỏi đáp</a></li>
+              <li><a href="support.html">Hướng dẫn mua hàng</a></li>
+              <li><a href="support.html">Chính sách khách hàng</a></li>
+              <li><a href="support.html">Điều khoản bảo mật</a></li>
+              <li><a href="support.html">Liên hệ với chúng tôi</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright-section">
+        <div class="copyright-text">BẢN QUYỀN THUỘC VỀ PRINTORY ©</div>
+      </div>
+    </footer>
+    <script src="JavaScript/main.js"></script>
+  </body>
+</html>
